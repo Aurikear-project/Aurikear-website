@@ -1,0 +1,1 @@
+import{g as e,t}from"./utils-C7cmGTWp.js";var n=e();function r({src:e,alt:r,className:i,imgClassName:a,priority:o=!1}){return(0,n.jsx)(`div`,{className:t(`overflow-hidden bg-sky-pale`,i),children:(0,n.jsx)(`img`,{src:e,alt:r,className:t(`framed size-full object-cover`,a),loading:o?`eager`:`lazy`,decoding:`async`,fetchPriority:o?`high`:`auto`})})}export{r as t};

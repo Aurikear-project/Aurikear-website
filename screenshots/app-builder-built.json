@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Aurikear – Hear for good",
+      "hasCanvas": false,
+      "bodyTextLen": 3429,
+      "bodyTextHash": "3e4b3308fab1f965802cf8a74d2aa99128133408174661a4d03215970f381d01",
+      "bodyTextPrefix": "Skip to content auriKear Hear for good Home About Services Paedi",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Aurikear – Hear for good",
+      "hasCanvas": false,
+      "bodyTextLen": 3366,
+      "bodyTextHash": "9785a75d467f1b8efcdba4a4f27918511cfca6f0b6b2adfd91a78d66dba7acc3",
+      "bodyTextPrefix": "Skip to content auriKear Hear for good UCL PHD · HCPC REGISTERED",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

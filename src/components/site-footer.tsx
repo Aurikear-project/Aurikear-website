@@ -2,6 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { navLinks, practice, services } from "@/lib/practice";
 import { Logo } from "./logo";
 
+const hospitalClinics = [
+  { name: "Nuffield Health Brentwood Hospital", phone: "01277 695695" },
+  { name: "Nuffield Health The Holly Hospital", phone: "020 8505 3311" },
+  { name: "Spire Cambridge Lea Hospital", phone: "01223 266900" },
+  { name: "Spire Hartswood Hospital", phone: "01277 232525" },
+  { name: "Spire London East Hospital", phone: "020 8551 1100" },
+];
+
 export function SiteFooter() {
   return (
     <footer className="bg-ink text-foam/65">
@@ -10,9 +18,7 @@ export function SiteFooter() {
           <div className="md:col-span-1">
             <Logo inverted />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              Research-led audiology for all ages, from newborn to adult.
-              Combining UCL-trained clinical expertise with warm, personalised
-              care.
+              Research-led audiology combining UCL-trained clinical expertise with warm, personalised care.
             </p>
           </div>
           <div>
@@ -46,25 +52,26 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-sm font-bold text-foam">Contact</p>
+            <p className="mb-3 text-sm font-bold text-foam">Hospital Clinics</p>
             <ul className="space-y-2 text-sm">
-              {practice.addressLines.map((line) => (
-                <li key={line}>{line}</li>
+              {hospitalClinics.map((loc) => (
+                <li key={loc.name} className="text-xs">
+                  <span className="text-foam/80 font-medium block">{loc.name}</span>
+                  <a
+                    href={`tel:${loc.phone.replace(/\s+/g, "")}`}
+                    className="hover:text-sky text-foam/55 transition-colors"
+                  >
+                    {loc.phone}
+                  </a>
+                </li>
               ))}
-              <li>
-                <a href={practice.phoneHref} className="hover:text-sky">
-                  {practice.phone}
+              <li className="pt-2">
+                <a
+                  href="mailto:aurikear@gmail.com"
+                  className="hover:text-sky text-sm text-foam/80 transition-colors"
+                >
+                  aurikear@gmail.com
                 </a>
-              </li>
-              <li>
-                <a href={practice.emailHref} className="hover:text-sky">
-                  {practice.email}
-                </a>
-              </li>
-              <li>
-                <Link to="/booking" className="hover:text-sky">
-                  Book an appointment
-                </Link>
               </li>
             </ul>
           </div>

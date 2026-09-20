@@ -48,14 +48,14 @@ export function ServicesPage() {
                 <span>To inquire or arrange an appointment, please </span>
                 <Link
                   to="/contact"
-                  className="font-medium text-sky hover:underline"
+className="font-medium text-primary-deep hover:underline"
                 >
                   contact your preferred hospital clinic
                 </Link>
                 <span> or email </span>
                 <a
                   href="mailto:aurikear@gmail.com"
-                  className="font-medium text-sky hover:underline"
+className="font-medium text-primary-deep hover:underline"
                 >
                   aurikear@gmail.com
                 </a>

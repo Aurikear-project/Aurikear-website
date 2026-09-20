@@ -49,10 +49,10 @@ function Musicians() {
               hours in complete comfort.
             </p>
           </div>
-          <FramedImage
+          <img
             src="/images/musician-earplugs.jpg"
             alt="Custom musician ear plugs"
-            className="aspect-wide rounded-2xl bg-ink"
+            className="w-full rounded-2xl object-contain"
           />
         </div>
 

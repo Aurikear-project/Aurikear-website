@@ -45,7 +45,11 @@ export function SiteHeader() {
               );
             })}
           </ul>
-          <Button asChild size="sm" className="ml-3 rounded-full bg-primary px-5 text-white hover:bg-primary-deep">
+          <Button
+            asChild
+            size="sm"
+            className="ml-3 rounded-full bg-primary px-5 text-white hover:bg-primary-deep"
+          >
             <Link to="/contact">Contact us</Link>
           </Button>
         </nav>

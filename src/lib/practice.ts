@@ -51,8 +51,8 @@ export const services = [
       "Detailed written report and clear recommendations",
       "Suitable for children and adults",
     ],
-    href: "/services#assessments",
-    to: "/services" as const,
+    href: "/contact",
+    to: "/contact" as const,
     image: "/images/diagnostic.jpg",
     imageAlt: "Diagnostic audiology booth with headphones and console",
     icon: "waves",
@@ -71,8 +71,8 @@ export const services = [
       "Real-ear measurement verification",
       "Ongoing aftercare and fine-tuning appointments",
     ],
-    href: "/services#hearing-aids",
-    to: "/services" as const,
+    href: "/contact",
+    to: "/contact" as const,
     image: "/images/hearing-aid.jpg",
     imageAlt: "A modern receiver-in-canal hearing aid in a patient's hand",
     icon: "ear",
@@ -130,23 +130,12 @@ export const services = [
       "Suitable for children and adults",
       "Available in a range of colours",
     ],
-    href: "/services#swim-moulds",
-    to: "/services" as const,
+    href: "/contact",
+    to: "/contact" as const,
     image: "/images/waiting-room%20(2).jpg",
     imageAlt: "A child and audiologist using a playful hearing assessment table",
     icon: "droplets",
   },
-] as const;
-
-export const bookingServices = [
-  "Audiology assessment (adult)",
-  "Audiology assessment (child)",
-  "Hearing aid consultation",
-  "Musician ear plugs",
-  "Swim moulds",
-  "Paediatric assessment (newborn)",
-  "Paediatric assessment (child)",
-  "Other / not sure",
 ] as const;
 
 export const timePreferences = [

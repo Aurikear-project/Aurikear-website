@@ -1,113 +1,56 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import type { ReactNode } from "react";
-import { FramedImage } from "@/components/framed-image";
-import { PageHero } from "@/components/page-hero";
-import { Section } from "@/components/section";
-import { Button } from "@/components/ui/button";
-import { practice } from "@/lib/practice";
+import { clinics } from "../lib/practice";
 
-export const Route = createFileRoute("/contact")({
-  component: Contact,
-  head: () => ({
-    meta: [
-      { title: "Contact – Aurikear" },
-      {
-        name: "description",
-        content:
-          "Visit Aurikear in Islington, London. Call, email, or book a hearing test online. Monday to Saturday.",
-      },
-    ],
-  }),
-});
-
-function Contact() {
+export default function ContactPage() {
   return (
-    <main>
-      <PageHero
-        eyebrow="Get in touch"
-        title="Contact Aurikear"
-        lede="We’d love to hear from you. Reach out with any questions or to book an appointment."
-        image="/images/exterior.jpg"
-        imageAlt=""
-      />
-      <Section tone="off">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <FramedImage
-              src="/images/exterior.jpg"
-              alt="The Aurikear clinic on a leafy London street"
-              className="aspect-wide rounded-2xl"
-            />
-            <div className="mt-5 rounded-2xl border border-border bg-paper p-6">
-              <h2 className="font-bold text-ink">Getting here</h2>
-              <p className="mt-2 text-sm leading-relaxed text-mid">
-                {practice.addressLines.join(", ")}. A short walk from Highbury
-                & Islington station, with street parking nearby. Full
-                directions are included with your appointment confirmation.
+    <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">Our Hospital & Clinic Locations</h1>
+        <p className="text-slate-600">
+          Online booking is not available. Please contact your preferred clinic location directly using the phone numbers below to arrange an appointment.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Hospital Cards List */}
+        <div className="space-y-4">
+          {clinics.map((clinic) => (
+            <div key={clinic.id} className="p-5 border rounded-xl bg-white shadow-sm space-y-2">
+              <span className="inline-block text-xs font-semibold bg-sky-100 text-sky-800 px-2.5 py-0.5 rounded">
+                {clinic.type}
+              </span>
+              <h2 className="text-xl font-bold text-slate-800">{clinic.name}</h2>
+              <p className="text-slate-600 text-sm">
+                {clinic.address}, {clinic.town}, {clinic.postcode}
               </p>
-              <a
-                href={practice.mapsUrl}
-                className="mt-3 inline-block text-sm font-bold text-primary hover:underline"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open in Google Maps
-              </a>
-            </div>
-          </div>
-          <div className="space-y-3">
-            <ContactRow icon={Phone} title="Phone">
-              <a href={practice.phoneHref} className="font-semibold text-primary">
-                {practice.phone}
-              </a>
-              <p>Call to book or ask a question. We aim to answer within one business day.</p>
-            </ContactRow>
-            <ContactRow icon={Mail} title="Email">
-              <a href={practice.emailHref} className="font-semibold text-primary">
-                {practice.email}
-              </a>
-              <p>We’ll respond within one working day.</p>
-            </ContactRow>
-            <ContactRow icon={Clock} title="Opening hours">
-              {practice.hours.map((h) => (
-                <p key={h.days}>
-                  {h.days}: {h.time}
-                </p>
-              ))}
-            </ContactRow>
-            <ContactRow icon={MapPin} title="Clinic address">
-              {practice.addressLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </ContactRow>
-            <Button asChild className="mt-3 w-full">
-              <Link to="/booking">Book an appointment</Link>
-            </Button>
-          </div>
-        </div>
-      </Section>
-    </main>
-  );
-}
+              
+              <div className="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                <a href={clinic.phoneHref} className="text-sky-700 hover:underline">
+                  📞 {clinic.phone}
+                </a>
+                <a href={clinic.website} target="_blank" rel="noreferrer" className="text-sky-700 hover:underline">
+                  🌐 Visit Website
+                </a>
+              </div>
 
-function ContactRow({
-  icon: Icon,
-  title,
-  children,
-}: {
-  icon: typeof Phone;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="flex gap-4 rounded-2xl border border-border bg-sky-pale p-5">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-fg">
-        <Icon className="size-5" />
-      </span>
-      <div className="min-w-0 text-sm leading-relaxed text-mid">
-        <h3 className="font-bold text-primary-deep">{title}</h3>
-        <div className="mt-1 space-y-0.5">{children}</div>
+              <div className="mt-2 text-xs text-emerald-800 bg-emerald-50 p-2.5 rounded border border-emerald-100">
+                <strong>Services provided:</strong> {clinic.services}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Embedded Google Map */}
+        <div className="w-full h-[650px] rounded-xl overflow-hidden shadow border border-slate-200 sticky top-4">
+          <iframe
+            title="AuriKear Hospital Locations Map"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d316710!2d0.01!3d51.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSpire%20Nuffield%20Hospital%20Brentwood%20Cambridge!5e0!3m2!1sen!2suk!4v1700000000000"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   );

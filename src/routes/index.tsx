@@ -51,8 +51,8 @@ function Home() {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <FramedImage
-              src="/images/hero-consult.jpg"
-              alt="An unhurried hearing consultation in a quiet, light-filled clinic"
+              src="/images/exterior.jpg"
+              alt="The front exterior of the Aurikear clinic and garden"
               className="col-span-2 aspect-photo rounded-2xl"
               priority
             />

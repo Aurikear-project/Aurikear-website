@@ -13,12 +13,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/95 shadow-[0_2px_20px_rgba(26,122,138,0.06)] backdrop-blur-md">
-      
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-fg"
-        ></header>
-        Skip to content
-      </a>
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-fg">Skip to content</a>
       <div className="mx-auto flex h-[70px] max-w-6xl items-center justify-between gap-4 px-5 md:px-8">
         <Logo />
         <nav className="hidden items-center lg:flex" aria-label="Primary">
@@ -45,22 +40,13 @@ export function SiteHeader() {
               );
             })}
           </ul>
-          <Button
-            asChild
-            size="sm"
-            className="ml-3 rounded-full bg-primary px-5 text-white hover:bg-primary-deep"
-          >
+          <Button asChild size="sm" className="ml-3 rounded-full bg-primary px-5 text-white hover:bg-primary-deep">
             <Link to="/contact">Contact us</Link>
           </Button>
         </nav>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden"
-              aria-label="Open menu"
-            >
+            <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
               <Menu className="size-5" />
             </Button>
           </Dialog.Trigger>
@@ -68,9 +54,7 @@ export function SiteHeader() {
             <Dialog.Overlay className="fixed inset-0 z-50 bg-ink/40 data-[state=open]:animate-in" />
             <Dialog.Content className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col bg-paper px-5 py-5 shadow-lift outline-none">
               <div className="flex items-center justify-between">
-                <Dialog.Title className="font-display text-lg font-bold text-primary-deep">
-                  Menu
-                </Dialog.Title>
+                <Dialog.Title className="font-display text-lg font-bold text-primary-deep">Menu</Dialog.Title>
                 <Dialog.Close asChild>
                   <Button variant="ghost" size="icon" aria-label="Close menu">
                     <X className="size-5" />
@@ -91,9 +75,7 @@ export function SiteHeader() {
               </nav>
               <div className="mt-auto flex flex-col gap-3 pt-8">
                 <Button asChild className="w-full">
-                  <Link to="/contact" onClick={() => setOpen(false)}>
-                    Contact us
-                  </Link>
+                  <Link to="/contact" onClick={() => setOpen(false)}>Contact us</Link>
                 </Button>
               </div>
             </Dialog.Content>

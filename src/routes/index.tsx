@@ -86,14 +86,23 @@ function Home() {
           <p className="mb-6 text-center text-xs font-bold uppercase tracking-widest text-muted">
             Accepted insurance providers
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Bupa_logo.svg/320px-Bupa_logo.svg.png" alt="Bupa" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/AXA_Logo.svg/320px-AXA_Logo.svg.png" alt="AXA Health" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Vitality_health_logo.png/320px-Vitality_health_logo.png" alt="Vitality" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Aviva_logo.svg/320px-Aviva_logo.svg.png" alt="Aviva" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cigna_logo.svg/320px-Cigna_logo.svg.png" alt="Cigna" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://www.wpa.org.uk/wp-content/themes/wpa/assets/images/logo.svg" alt="WPA" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
-            <img src="https://www.healix.com/wp-content/uploads/2021/03/healix-logo.svg" alt="Healix" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {[
+              { name: "Bupa",       src: "/images/insurers/bupa.png" },
+              { name: "AXA Health", src: "/images/insurers/axa.png" },
+              { name: "Vitality",   src: "/images/insurers/vitality.png" },
+              { name: "Aviva",      src: "/images/insurers/aviva.png" },
+              { name: "Cigna",      src: "/images/insurers/cigna.png" },
+              { name: "WPA",        src: "/images/insurers/wpa.png" },
+              { name: "Healix",     src: "/images/insurers/healix.png" },
+            ].map((ins) => (
+              <img
+                key={ins.name}
+                src={ins.src}
+                alt={ins.name}
+                className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -176,8 +185,8 @@ function Home() {
           <h2 className="font-display text-title font-bold mt-2">
             Ready to improve your hearing?
           </h2>
-          <div className="mt-8 flex flex-wrap justify-content gap-3">
-            <Button asChild variant="outline">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button asChild variant="secondary" size="lg">
               <Link to="/contact">
                 Contact us <ArrowRight className="size-4" />
               </Link>

@@ -45,6 +45,31 @@ export function SiteHeader() {
               );
             })}
           </ul>
+          <Button asChild size="sm" className="ml-3 bg-primary hover:bg-primary-deep text-white rounded-full px-5">
+            <Link to="/contact">Contact us</Link>
+          </Button>
+        </nav>
+              const active =
+                link.to === "/"
+                  ? pathname === "/"
+                  : pathname === link.to || pathname.startsWith(`${link.to}/`);
+              return (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className={cn(
+                      "rounded-lg px-3 py-2 text-sm font-semibold transition-colors duration-150",
+                      active
+                        ? "bg-sky-pale text-primary"
+                        : "text-mid hover:bg-sky-pale hover:text-primary",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
         </nav>
         <Dialog.Root open={open} onOpenChange={setOpen}>

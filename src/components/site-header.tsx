@@ -16,7 +16,7 @@ export function SiteHeader() {
       
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-fg"
-      >
+        ></header>
         Skip to content
       </a>
       <div className="mx-auto flex h-[70px] max-w-6xl items-center justify-between gap-4 px-5 md:px-8">

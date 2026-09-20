@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
@@ -83,35 +83,20 @@ function Home() {
       {/* Insurance band */}
       <div className="border-y border-border bg-sky-pale py-8">
         <div className="mx-auto max-w-5xl px-4">
-          <p className="mb-5 text-center text-xs font-bold uppercase tracking-widest text-muted">
+          <p className="mb-6 text-center text-xs font-bold uppercase tracking-widest text-muted">
             Accepted insurance providers
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { name: "Bupa", color: "#003087" },
-              { name: "AXA Health", color: "#00008f" },
-              { name: "Vitality", color: "#4a9e2a" },
-              { name: "Aviva", color: "#d4021d" },
-              { name: "Cigna", color: "#006298" },
-              { name: "WPA", color: "#005baa" },
-              { name: "Healix", color: "#7b2d8b" },
-            ].map((ins) => (
-              <span
-                key={ins.name}
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-5 py-2.5 text-sm font-bold"
-                style={{ color: ins.color }}
-              >
-                <span
-                  className="size-2.5 rounded-full flex-shrink-0"
-                  style={{ background: ins.color }}
-                />
-                {ins.name}
-              </span>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Bupa_logo.svg/320px-Bupa_logo.svg.png" alt="Bupa" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/AXA_Logo.svg/320px-AXA_Logo.svg.png" alt="AXA Health" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Vitality_health_logo.png/320px-Vitality_health_logo.png" alt="Vitality" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Aviva_logo.svg/320px-Aviva_logo.svg.png" alt="Aviva" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cigna_logo.svg/320px-Cigna_logo.svg.png" alt="Cigna" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://www.wpa.org.uk/wp-content/themes/wpa/assets/images/logo.svg" alt="WPA" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
+            <img src="https://www.healix.com/wp-content/uploads/2021/03/healix-logo.svg" alt="Healix" className="h-8 object-contain grayscale hover:grayscale-0 transition" />
           </div>
         </div>
       </div>
-
       {/* About strip */}
       <Section>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
@@ -191,16 +176,7 @@ function Home() {
           <h2 className="font-display text-title font-bold mt-2">
             Ready to improve your hearing?
           </h2>
-          <p className="mt-3 opacity-80">
-            Call us today to arrange your hearing assessment.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="secondary">
-              <a href={practice.phoneHref}>
-                <Phone className="size-4" />
-                {practice.phone}
-              </a>
-            </Button>
+          <div className="mt-8 flex flex-wrap justify-content gap-3">
             <Button asChild variant="outline">
               <Link to="/contact">
                 Contact us <ArrowRight className="size-4" />

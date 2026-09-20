@@ -1,8 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { navLinks, practice } from "@/lib/practice";
+import { navLinks } from "@/lib/practice";
 import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
 import { Button } from "./ui/button";
@@ -45,9 +45,7 @@ export function SiteHeader() {
               );
             })}
           </ul>
-          <Button asChild size="sm" className="ml-3">
-            <Link to="/booking">Book now</Link>
-          </Button>
+
         </nav>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
@@ -87,17 +85,10 @@ export function SiteHeader() {
               </nav>
               <div className="mt-auto flex flex-col gap-3 pt-8">
                 <Button asChild className="w-full">
-                  <Link to="/booking" onClick={() => setOpen(false)}>
-                    Book a hearing test
+                  <Link to="/contact" onClick={() => setOpen(false)}>
+                    Contact us
                   </Link>
                 </Button>
-                <a
-                  href={practice.phoneHref}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-semibold text-primary"
-                >
-                  <Phone className="size-4" />
-                  {practice.phone}
-                </a>
               </div>
             </Dialog.Content>
           </Dialog.Portal>

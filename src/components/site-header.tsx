@@ -13,7 +13,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/95 shadow-[0_2px_20px_rgba(26,122,138,0.06)] backdrop-blur-md">
-      <a
+      
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-fg"
       >
@@ -45,32 +45,9 @@ export function SiteHeader() {
               );
             })}
           </ul>
-          <Button asChild size="sm" className="ml-3 bg-primary hover:bg-primary-deep text-white rounded-full px-5">
+          <Button asChild size="sm" className="ml-3 rounded-full bg-primary px-5 text-white hover:bg-primary-deep">
             <Link to="/contact">Contact us</Link>
           </Button>
-        </nav>
-              const active =
-                link.to === "/"
-                  ? pathname === "/"
-                  : pathname === link.to || pathname.startsWith(`${link.to}/`);
-              return (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className={cn(
-                      "rounded-lg px-3 py-2 text-sm font-semibold transition-colors duration-150",
-                      active
-                        ? "bg-sky-pale text-primary"
-                        : "text-mid hover:bg-sky-pale hover:text-primary",
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
         </nav>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>

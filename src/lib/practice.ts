@@ -13,7 +13,7 @@ export const practice = {
     "Nuffield Health The Holly Hospital",
     "Spire Cambridge Lea Hospital",
     "Spire Hartswood Hospital",
-    "Spire London East Hospital"
+    "Spire London East Hospital",
   ],
   founded: "2009",
   registration: "HCPC registered audiologist",
@@ -138,12 +138,44 @@ export const services = [
   },
 ] as const;
 
+export const bookingServices = [
+  {
+    id: "hearing-test",
+    title: "Comprehensive Hearing Assessment",
+    duration: "60 mins",
+  },
+  {
+    id: "earwax-removal",
+    title: "Earwax Removal (Micro-suction)",
+    duration: "30 mins",
+  },
+  {
+    id: "hearing-aid-consultation",
+    title: "Hearing Aid Consultation & Fitting",
+    duration: "60 mins",
+  },
+  {
+    id: "paediatric-hearing",
+    title: "Paediatric Audiology",
+    duration: "60 mins",
+  },
+  {
+    id: "tinnitus-consultation",
+    title: "Tinnitus Assessment & Management",
+    duration: "60 mins",
+  },
+  {
+    id: "custom-ear-protection",
+    title: "Custom Ear Protection Impressions",
+    duration: "30 mins",
+  },
+] as const;
+
 export const timePreferences = [
-  "No preference",
-  "Monday – Friday morning",
-  "Monday – Friday afternoon",
-  "Saturday morning",
-  "Flexible",
+  { id: "morning", label: "Monday – Friday morning" },
+  { id: "afternoon", label: "Monday – Friday afternoon" },
+  { id: "saturday", label: "Saturday morning" },
+  { id: "flexible", label: "Flexible / No preference" },
 ] as const;
 
 export const qualifications = [
@@ -354,5 +386,5 @@ export const clinics = [
     phoneHref: "tel:+442085511100",
     services: "Toddler, pre-school, children & school-age audiology",
     website: "https://www.spirehealthcare.com/spire-london-east-hospital/",
-  }
+  },
 ] as const;

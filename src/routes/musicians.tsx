@@ -27,8 +27,8 @@ function Musicians() {
         eyebrow="Hearing protection"
         title="Custom musician ear plugs"
         lede="Your hearing is your instrument. Protect it without compromising a single note."
-        image="/images/lifestyle.jpg"
-        imageAlt=""
+        image="/images/musician-earplugs.jpg"
+        imageAlt="Custom musician ear plugs"
       />
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
@@ -50,8 +50,8 @@ function Musicians() {
             </p>
           </div>
           <FramedImage
-            src="/images/hearing-aid.jpg"
-            alt="A precision hearing device held in the palm of a hand"
+            src="/images/musician-earplugs.jpg"
+            alt="Custom musician ear plugs"
             className="aspect-wide rounded-2xl bg-ink"
           />
         </div>
@@ -80,7 +80,7 @@ function Musicians() {
             on for the rest of your life. Ear impressions take under 15 minutes.
           </p>
           <Button asChild variant="foam" className="mt-7">
-            <Link to="/booking">Book ear impressions</Link>
+            <Link to="/contact">Contact us</Link>
           </Button>
         </div>
       </Section>

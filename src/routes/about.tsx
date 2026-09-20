@@ -131,10 +131,10 @@ function About() {
             </blockquote>
 
             <Button asChild className="mt-8">
-              <Link to="/booking">
-                Book an appointment
-                <ArrowRight className="size-4" />
-              </Link>
+              <Link to="/contact">
+  Contact us
+  <ArrowRight className="size-4" />
+</Link>
             </Button>
           </div>
         </div>

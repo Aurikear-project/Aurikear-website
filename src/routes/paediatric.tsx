@@ -115,8 +115,8 @@ function Paediatric() {
             makes all the difference.
           </p>
           <Button asChild className="mt-6">
-            <Link to="/booking">
-              Book a paediatric assessment
+<Link to="/contact">
+              Contact us
               <ArrowRight className="size-4" />
             </Link>
           </Button>

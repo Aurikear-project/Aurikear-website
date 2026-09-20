@@ -1,68 +1,40 @@
-import { Link } from "@tanstack/react-router";
-import { services } from "@/lib/practice";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-export function ServicesPage() {
+export const Route = createFileRoute("/")({
+  component: HomePage,
+});
+
+export function HomePage() {
   return (
-    <div className="bg-foam/20 py-16 md:py-24">
+    <div className="bg-foam/10 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        {/* Page Header */}
+        {/* Hero Section */}
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-ink md:text-5xl">
-            Our Clinical Services
+          <h1 className="text-4xl font-bold tracking-tight text-ink md:text-6xl">
+            Welcome to AuriKear
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-ink/70 md:text-lg">
+          <p className="mt-6 text-lg leading-relaxed text-ink/80 md:text-xl">
             Research-led audiological care tailored to your needs. Combining
-            UCL-trained expertise with state-of-the-art diagnostic technology.
+            UCL-trained expertise with state-of-the-art diagnostic technology across leading London clinics.
           </p>
-        </div>
-
-        {/* Services List */}
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.slug}
-              className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm border border-foam/20 transition-all hover:shadow-md"
+          <div className="mt-8 flex justify-center gap-4">
+            <Link
+              to="/services"
+              className="rounded-xl bg-sky px-6 py-3 font-semibold text-white shadow-sm hover:bg-sky/90 transition-colors"
             >
-              <div>
-                {service.image && (
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="mb-4 h-48 w-full rounded-xl object-cover"
-                  />
-                )}
-                <h2 className="text-xl font-semibold text-ink">
-                  {service.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Updated Contact Notice (Replaces Booking Button) */}
-              <div className="mt-6 pt-4 border-t border-foam/20 text-xs text-ink/60">
-                <span>To inquire or arrange an appointment, please </span>
-                <Link
-                  to="/contact"
-                  className="font-medium text-sky hover:underline"
-                >
-                  contact your preferred hospital clinic
-                </Link>
-                <span> or email </span>
-                <a
-                  href="mailto:aurikear@gmail.com"
-                  className="font-medium text-sky hover:underline"
-                >
-                  aurikear@gmail.com
-                </a>
-                .
-              </div>
-            </div>
-          ))}
+              Explore Services
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-xl border border-foam/40 bg-white px-6 py-3 font-semibold text-ink hover:bg-foam/20 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default ServicesPage;
+export default HomePage;

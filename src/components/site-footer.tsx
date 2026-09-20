@@ -3,11 +3,31 @@ import { navLinks, practice, services } from "@/lib/practice";
 import { Logo } from "./logo";
 
 const hospitalClinics = [
-  { name: "Nuffield Health Brentwood Hospital", phone: "01277 695695" },
-  { name: "Nuffield Health The Holly Hospital", phone: "020 8505 3311" },
-  { name: "Spire Cambridge Lea Hospital", phone: "01223 266900" },
-  { name: "Spire Hartswood Hospital", phone: "01277 232525" },
-  { name: "Spire London East Hospital", phone: "020 8551 1100" },
+  {
+    name: "Nuffield Health Brentwood Hospital",
+    phone: "01277 695695",
+    mapUrl: "https://maps.google.com/?q=Nuffield+Health+Brentwood+Hospital",
+  },
+  {
+    name: "Nuffield Health The Holly Hospital",
+    phone: "020 8505 3311",
+    mapUrl: "https://maps.google.com/?q=Nuffield+Health+The+Holly+Hospital",
+  },
+  {
+    name: "Spire Cambridge Lea Hospital",
+    phone: "01223 266900",
+    mapUrl: "https://maps.google.com/?q=Spire+Cambridge+Lea+Hospital",
+  },
+  {
+    name: "Spire Hartswood Hospital",
+    phone: "01277 232525",
+    mapUrl: "https://maps.google.com/?q=Spire+Hartswood+Hospital",
+  },
+  {
+    name: "Spire London East Hospital",
+    phone: "020 8551 1100",
+    mapUrl: "https://maps.google.com/?q=Spire+London+East+Hospital",
+  },
 ];
 
 export function SiteFooter() {
@@ -56,13 +76,15 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               {hospitalClinics.map((loc) => (
                 <li key={loc.name} className="text-xs">
-                  <span className="text-foam/80 font-medium block">{loc.name}</span>
                   <a
-                    href={`tel:${loc.phone.replace(/\s+/g, "")}`}
-                    className="hover:text-sky text-foam/55 transition-colors"
+                    href={loc.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foam/80 font-medium block hover:text-sky transition-colors"
                   >
-                    {loc.phone}
+                    {loc.name}
                   </a>
+                  <span className="text-foam/55">{loc.phone}</span>
                 </li>
               ))}
               <li className="pt-2">

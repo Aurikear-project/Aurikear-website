@@ -31,19 +31,19 @@ function Musicians() {
         imageAlt="Custom musician ear plugs"
       />
       <Section>
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
-          <div>
-            <Eyebrow>Why custom?</Eyebrow>
-            <h2 className="font-display text-title font-bold">
-              Flat attenuation. Perfect fit. Uncompromised sound.
-            </h2>
-            <p className="mt-4 leading-relaxed text-mid">
+                <div>
+          <Eyebrow>Why custom?</Eyebrow>
+          <h2 className="font-display text-title font-bold">
+            Flat attenuation. Perfect fit. Uncompromised sound.
+          </h2>
+          <div className="mt-4 grid gap-8 md:grid-cols-2">
+            <p className="leading-relaxed text-mid">
               Standard foam earplugs block high frequencies more than low,
               creating a muffled, unnatural sound. Custom musician ear plugs use
               precision acoustic filters that reduce all frequencies equally —
               so music sounds exactly as it should, just quieter and safer.
             </p>
-            <p className="mt-3 leading-relaxed text-mid">
+            <p className="leading-relaxed text-mid">
               Made from an impression of your unique ear canal, they fit
               perfectly, stay in place during performance, and can be worn for
               hours in complete comfort.
@@ -52,7 +52,7 @@ function Musicians() {
           <img
             src="/images/musician-earplugs.jpg"
             alt="Custom musician ear plugs"
-            className="w-full rounded-2xl object-contain"
+            className="mt-8 w-full rounded-2xl object-contain"
           />
         </div>
 

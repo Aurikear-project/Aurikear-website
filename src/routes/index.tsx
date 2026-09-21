@@ -168,13 +168,12 @@ function Home() {
             </Button>
           </div>
           <div className="relative">
-            <div className="rounded-3xl bg-gradient-to-br from-sky-pale to-sky border border-border aspect-[4/5] flex items-center justify-center overflow-hidden">
-              <div className="text-center">
-                <div className="text-8xl mb-4">🩺</div>
-                <p className="text-sm font-semibold text-primary-deep opacity-60">
-                  Aurikear Audiology
-                </p>
-              </div>
+            <div className="rounded-3xl border border-border aspect-[4/5] overflow-hidden shadow-lift">
+              <img
+                src="/images/portrait-lena.jpg"
+                alt="Aurikear clinical audiologist"
+                className="h-full w-full object-cover"
+              />
             </div>
             {/* Credential badge */}
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-primary-deep text-white px-5 py-4 shadow-lift">
@@ -199,7 +198,6 @@ function Home() {
               key={t.name}
               className="relative rounded-2xl border border-border bg-white p-7 shadow-border transition-all duration-300 hover:shadow-lift hover:-translate-y-1"
             >
-              {/* Large quote mark */}
               <span className="absolute top-5 right-6 font-display text-6xl text-sky leading-none select-none">
                 "
               </span>
@@ -225,7 +223,6 @@ function Home() {
 
       {/* CTA band */}
       <div className="relative overflow-hidden bg-primary-deep py-20 text-center text-white">
-        {/* Decorative circles */}
         <div className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-white/5" />
         <div className="pointer-events-none absolute -bottom-16 -left-16 size-48 rounded-full bg-white/5" />
         <div className="relative mx-auto max-w-xl px-4">

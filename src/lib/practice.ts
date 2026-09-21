@@ -112,8 +112,8 @@ export const services = [
     ],
     href: "/paediatric",
     to: "/paediatric" as const,
-    image: "/images/swim-moulds.jpg",
-    imageAlt: "Custom swim moulds ear protection",
+    image: "/images/waiting-room%20(2).jpg",
+    imageAlt: "A child and audiologist using a playful hearing assessment table",
     icon: "baby",
   },
   {
@@ -132,8 +132,8 @@ export const services = [
     ],
     href: "/contact",
     to: "/contact" as const,
-    image: "/images/waiting-room%20(2).jpg",
-    imageAlt: "A child and audiologist using a playful hearing assessment table",
+    image: "/images/swim-moulds.jpg",
+    imageAlt: "Custom swim moulds ear protection",
     icon: "droplets",
   },
 ] as const;

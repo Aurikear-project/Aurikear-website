@@ -25,7 +25,6 @@ export const navLinks = [
   { to: "/services", label: "Services" },
   { to: "/paediatric", label: "Paediatric" },
   { to: "/musicians", label: "Musician plugs" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export const stats = [

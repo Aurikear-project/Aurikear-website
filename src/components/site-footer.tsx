@@ -101,7 +101,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-2 py-5 text-xs md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} Aurikear. All rights reserved.{" "}
-            {practice.registration}.
+            {practice.registration}. Registration number: HAD 02867.
           </p>
           <p className="flex gap-3">
             <Link to="/privacy" className="hover:text-sky">

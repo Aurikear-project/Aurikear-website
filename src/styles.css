@@ -1,48 +1,67 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 @theme {
-  --color-bg: #f5fafb;
-  --color-paper: #ffffff;
-  --color-sky: #b8e4ef;
-  --color-sky-pale: #e8f6fa;
-  --color-ink: #1a2e35;
-  --color-mid: #3d5c65;
-  --color-muted: #6b8f99;
-  --color-border: #d2eaf0;
-  --color-primary: #1a7a8a;
-  --color-primary-deep: #0c5a72;
-  --color-primary-light: #3a9ab5;
-  --color-primary-fg: #f5fafb;
-  --color-foam: #f5fafb;
-  --color-ring: #1a7a8a;
-  --color-danger: #9b3a32;
+  /* ── Colours ── */
+  --color-bg:            #f7fbfc;
+  --color-paper:         #ffffff;
+  --color-sky:           #a8dcea;
+  --color-sky-pale:      #edf7fa;
+  --color-ink:           #152a30;
+  --color-mid:           #385660;
+  --color-muted:         #698e99;
+  --color-border:        #d4ecf2;
+  --color-primary:       #1a7a8a;
+  --color-primary-deep:  #0b5468;
+  --color-primary-light: #2d96b0;
+  --color-primary-fg:    #f7fbfc;
+  --color-foam:          #f7fbfc;
+  --color-ring:          #1a7a8a;
+  --color-danger:        #9b3a32;
+  --color-gold:          #c9963a;
 
-  --font-sans: "Nunito", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  /* ── Typography ── */
+  --font-sans:    "Nunito", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
 
-  --radius-xs: 0.25rem;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 1.75rem;
-  --radius-3xl: 1.75rem;
+  /* ── Type scale — slightly larger for readability ── */
+  --text-display: clamp(2.5rem, 1.4rem + 4.5vw, 4rem);
+  --text-title:   clamp(1.8rem, 1.2rem + 2.2vw, 2.75rem);
+  --text-lede:    clamp(1.08rem, 1rem + 0.4vw, 1.2rem);
 
+  /* ── Radii ── */
+  --radius-xs:  0.25rem;
+  --radius-sm:  0.5rem;
+  --radius-md:  0.75rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+
+  /* ── Shadows — softer, more premium ── */
   --shadow-border:
-    0px 0px 0px 1px rgba(12, 90, 114, 0.08),
-    0px 1px 2px -1px rgba(12, 90, 114, 0.08),
-    0px 2px 6px 0px rgba(12, 90, 114, 0.05);
+    0px 0px 0px 1px rgba(12, 90, 114, 0.07),
+    0px 1px 3px -1px rgba(12, 90, 114, 0.07),
+    0px 3px 8px 0px rgba(12, 90, 114, 0.04);
   --shadow-lift:
-    0px 0px 0px 1px rgba(12, 90, 114, 0.1),
-    0px 12px 32px -12px rgba(12, 90, 114, 0.22);
+    0px 0px 0px 1px rgba(12, 90, 114, 0.08),
+    0px 16px 48px -12px rgba(12, 90, 114, 0.18),
+    0px 4px 16px -4px rgba(12, 90, 114, 0.1);
+  --shadow-card:
+    0px 2px 4px rgba(12, 90, 114, 0.04),
+    0px 8px 24px rgba(12, 90, 114, 0.06);
 
-  --text-display: clamp(2.25rem, 1.2rem + 4vw, 3.75rem);
-  --text-title: clamp(1.65rem, 1.1rem + 2vw, 2.5rem);
-  --text-lede: clamp(1.02rem, 0.95rem + 0.4vw, 1.125rem);
-  --aspect-photo: 16 / 10;
+  /* ── Aspect ratios ── */
+  --aspect-photo:    16 / 10;
   --aspect-portrait: 3 / 4;
-  --aspect-wide: 4 / 3;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --aspect-wide:     4 / 3;
+
+  /* ── Easing ── */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Spacing scale ── */
+  --section-gap: clamp(4rem, 2rem + 6vw, 7rem);
 }
 
 @layer base {
@@ -50,28 +69,39 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    font-size: 17px;
   }
 
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
     text-wrap: balance;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
     color: var(--color-ink);
   }
 
+  h1 { font-weight: 700; }
+  h2 { font-weight: 700; }
+  h3 { font-weight: 600; }
+  h4 { font-weight: 600; }
+
   p {
     text-wrap: pretty;
+    line-height: 1.75;
+  }
+
+  /* Smooth focus rings */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
   }
 
   button:not(:disabled),
@@ -80,11 +110,74 @@
   }
 
   img.framed {
-    outline: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+    outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent);
     outline-offset: -1px;
+  }
+
+  /* Smooth image rendering */
+  img {
+    image-rendering: auto;
   }
 }
 
+/* ── Scroll-triggered fade-in animations ── */
+@layer utilities {
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.65s var(--ease-out),
+      transform 0.65s var(--ease-out);
+  }
+
+  .animate-fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out);
+  }
+
+  .animate-fade-in.in-view {
+    opacity: 1;
+  }
+}
+
+/* ── Card hover transitions ── */
+@layer components {
+  .card-hover {
+    transition:
+      transform 0.3s var(--ease-out),
+      box-shadow 0.3s var(--ease-out),
+      border-color 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Premium button base */
+  .btn-base {
+    transition:
+      transform 0.2s var(--ease-spring),
+      box-shadow 0.2s var(--ease-out),
+      background-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .btn-base:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-base:active {
+    transform: translateY(0px);
+  }
+}
+
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -99,6 +192,7 @@
   }
 }
 
+/* ── Utility classes ── */
 @utility font-display {
   font-family: var(--font-display);
 }
@@ -113,4 +207,8 @@
 
 @utility text-lede {
   font-size: var(--text-lede);
+}
+
+@utility section-gap {
+  padding-block: var(--section-gap);
 }

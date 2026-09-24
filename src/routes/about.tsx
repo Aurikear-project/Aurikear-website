@@ -64,7 +64,7 @@ function About() {
       <Section>
         {/* Introduction */}
         <div className="grid items-start gap-10 lg:grid-cols-[360px_1fr] lg:gap-16">
-          {/* Portrait */}
+          {/* Portrait and credentials */}
           <div>
             <FramedImage
               src="/images/portrait-lena.jpg"
@@ -72,7 +72,6 @@ function About() {
               className="aspect-portrait rounded-2xl"
             />
 
-            {/* Credentials */}
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {credentials.map((credential) => {
                 const Icon = credential.icon;
@@ -191,7 +190,7 @@ function About() {
             individual approach to every patient.
           </p>
 
-          <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-7 grid max-w-4xl gap-3 sm:grid-cols-2">
             {specialisms.map((specialism) => (
               <li
                 key={specialism}
@@ -213,7 +212,7 @@ function About() {
           </ul>
         </div>
 
-        {/* Philosophy */}
+        {/* Philosophy of care */}
         <div className="mt-16 rounded-2xl border border-border bg-sky-pale px-6 py-10 md:px-10 md:py-12">
           <Eyebrow>Philosophy of care</Eyebrow>
 

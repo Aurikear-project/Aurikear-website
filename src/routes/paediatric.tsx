@@ -60,8 +60,10 @@ function Paediatric() {
           {paediatricAges.map((card) => (
             <article
               key={card.title}
-              className="rounded-2xl border border-border bg-sky-pale p-6 text-center"
-            >
+<div
+  key={item.title}
+  className="rounded-2xl border border-border bg-sky-pale p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+>
               <span className="mx-auto flex size-12 items-center justify-center rounded-xl bg-paper text-primary">
                 <ServiceIcon name={card.icon} />
               </span>

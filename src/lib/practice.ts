@@ -66,10 +66,14 @@ export const services = [
       "Suitable for children and adults",
     ],
 
-href: "/hearing-assessments",
-to: "/hearing-assessments" as const,
+    href: "/hearing-assessments",
+    to: "/hearing-assessments" as const,
 
+    // Service-page image
     image: "/images/diagnostic.jpg",
+
+    // Homepage-specific image
+    homeImage: "/images/homepage-hearing-assessments.jpg",
 
     imageAlt:
       "Clinical audiology equipment used during a hearing assessment",
@@ -101,10 +105,14 @@ to: "/hearing-assessments" as const,
     href: "/hearing-aids",
     to: "/hearing-aids" as const,
 
-image: "/images/hearing-aid-female-consultation.jpg",
+    // Service-page image
+    image: "/images/hearing-aid-female-consultation.jpg",
 
-imageAlt:
-  "Audiologist discussing hearing aid options with a patient",
+    // Homepage-specific image
+    homeImage: "/images/homepage-hearing-aids.jpg",
+
+    imageAlt:
+      "Audiologist discussing hearing aid options with a patient",
 
     icon: "ear",
   },
@@ -132,7 +140,11 @@ imageAlt:
     href: "/musicians",
     to: "/musicians" as const,
 
+    // Service-page image
     image: "/images/musician-earplugs.jpg",
+
+    // Homepage-specific image
+    homeImage: "/images/homepage-musician-earplugs.jpg",
 
     imageAlt:
       "Musician wearing custom hearing protection while performing",
@@ -164,7 +176,11 @@ imageAlt:
     href: "/paediatric",
     to: "/paediatric" as const,
 
+    // Service-page image
     image: "/images/waiting-room%20(2).jpg",
+
+    // Homepage-specific image
+    homeImage: "/images/homepage-childrens-hearing.jpg",
 
     imageAlt:
       "Child taking part in a specialist hearing assessment",
@@ -196,7 +212,11 @@ imageAlt:
     href: "/swim-moulds",
     to: "/swim-moulds" as const,
 
+    // Service-page image
     image: "/images/swim-moulds.jpg",
+
+    // Homepage-specific image
+    homeImage: "/images/homepage-swim-moulds.jpg",
 
     imageAlt:
       "Swimmer wearing custom-made swim moulds",

@@ -27,12 +27,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  // Keep the four strongest headline credentials on the homepage.
-  // This also prevents the fifth statistic from wrapping onto its own row.
-  const homepageStats = stats.filter(
-    (stat) => stat.label.toLowerCase() !== "ages treated",
-  );
-
   return (
     <main>
       {/* Hero */}
@@ -44,27 +38,29 @@ function Home() {
         imageAlt="Audiology equipment used during a professional hearing assessment"
       />
 
-      {/* Stats band */}
+      {/* Stats */}
       <div className="border-y border-white/10 bg-primary-deep">
         <div className="mx-auto grid max-w-4xl grid-cols-2 md:grid-cols-4">
-          {homepageStats.map((s, index) => (
+          {stats.map((stat, index) => (
             <div
-              key={s.label}
+              key={stat.label}
               className={[
                 "flex flex-col items-center px-6 py-8 text-center text-white md:px-8",
                 index > 0 ? "md:border-l md:border-white/15" : "",
-                index % 2 === 1 ? "border-l border-white/15 md:border-l" : "",
+                index % 2 === 1
+                  ? "border-l border-white/15 md:border-l"
+                  : "",
                 index >= 2
                   ? "border-t border-white/15 md:border-t-0"
                   : "",
               ].join(" ")}
             >
               <span className="font-display text-4xl font-semibold tracking-tight">
-                {s.value}
+                {stat.value}
               </span>
 
               <span className="mt-1.5 text-xs font-medium uppercase tracking-widest opacity-60">
-                {s.label}
+                {stat.label}
               </span>
             </div>
           ))}
@@ -94,10 +90,10 @@ function Home() {
               to={svc.to}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_16px_48px_rgba(26,122,138,0.12)]"
             >
-              {svc.image && (
+              {svc.homeImage && (
                 <div className="h-44 overflow-hidden">
                   <img
-                    src={svc.image}
+                    src={svc.homeImage}
                     alt={svc.imageAlt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -127,7 +123,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* About / Meet your audiologist */}
+      {/* About */}
       <Section tone="off">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
@@ -170,12 +166,12 @@ function Home() {
                   icon: BadgeCheck,
                   text: "HCPC registered audiologist",
                 },
-              ].map((q) => {
-                const Icon = q.icon;
+              ].map((item) => {
+                const Icon = item.icon;
 
                 return (
                   <li
-                    key={q.text}
+                    key={item.text}
                     className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
                   >
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
@@ -187,7 +183,7 @@ function Home() {
                     </span>
 
                     <span className="text-sm font-semibold leading-snug text-mid">
-                      {q.text}
+                      {item.text}
                     </span>
                   </li>
                 );
@@ -211,7 +207,6 @@ function Home() {
               />
             </div>
 
-            {/* Credential badge */}
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-primary-deep px-5 py-4 text-white shadow-lift">
               <p className="font-display text-2xl font-semibold leading-none text-white">
                 PhD
@@ -225,7 +220,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* Insurance band */}
+      {/* Insurance */}
       <div className="border-y border-border bg-sky-pale py-10">
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-7 text-center">
@@ -280,11 +275,11 @@ function Home() {
                 name: "Healix",
                 src: "/images/insurers/healix.png",
               },
-            ].map((ins) => (
+            ].map((insurer) => (
               <img
-                key={ins.name}
-                src={ins.src}
-                alt={ins.name}
+                key={insurer.name}
+                src={insurer.src}
+                alt={insurer.name}
                 className="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             ))}

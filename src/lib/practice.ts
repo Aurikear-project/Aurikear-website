@@ -8,12 +8,6 @@ export const practice = {
   lede:
     "Expert, personalised hearing care for babies, children and adults — combining clinical expertise with technology and care tailored to you.",
 
-  phone: "020 7946 0184",
-  phoneHref: "tel:+442079460184",
-
-  email: "hello@aurikear.co.uk",
-  emailHref: "mailto:hello@aurikear.co.uk",
-
   addressLines: [
     "Nuffield Health Brentwood Hospital",
     "Nuffield Health The Holly Hospital",
@@ -41,7 +35,6 @@ export const stats = [
   { value: "1st", label: "Class BSc, UCL" },
   { value: "PhD", label: "University College London" },
   { value: "15+", label: "Years' experience" },
-  { value: "All", label: "Ages treated" },
 ] as const;
 
 export const services = [
@@ -69,10 +62,7 @@ export const services = [
     href: "/hearing-assessments",
     to: "/hearing-assessments" as const,
 
-    // Service-page image
-    image: "/images/diagnostic.jpg",
-
-    // Homepage-specific image
+    image: "/images/hearing-assessment-clinical-equipment.jpg",
     homeImage: "/images/homepage-hearing-assessments.jpg",
 
     imageAlt:
@@ -105,10 +95,7 @@ export const services = [
     href: "/hearing-aids",
     to: "/hearing-aids" as const,
 
-    // Service-page image
-    image: "/images/hearing-aid-female-consultation.jpg",
-
-    // Homepage-specific image
+    image: "/images/hearing-aid-consultation-female.jpg",
     homeImage: "/images/homepage-hearing-aids.jpg",
 
     imageAlt:
@@ -140,10 +127,7 @@ export const services = [
     href: "/musicians",
     to: "/musicians" as const,
 
-    // Service-page image
-    image: "/images/musician-earplugs.jpg",
-
-    // Homepage-specific image
+    image: "/images/musician-violinist-earplugs.jpg",
     homeImage: "/images/homepage-musician-earplugs.jpg",
 
     imageAlt:
@@ -176,10 +160,7 @@ export const services = [
     href: "/paediatric",
     to: "/paediatric" as const,
 
-    // Service-page image
-    image: "/images/waiting-room%20(2).jpg",
-
-    // Homepage-specific image
+    image: "/images/paediatric-hearing-assessment.jpg",
     homeImage: "/images/homepage-childrens-hearing.jpg",
 
     imageAlt:
@@ -199,7 +180,7 @@ export const services = [
       "Comfortable, custom-made ear protection for children and adults who want to keep water out of their ears.",
 
     body:
-      "Custom swim moulds are individually made to provide a comfortable seal that helps prevent water entering the ear canal. They are suitable for regular swimmers and may also be appropriate for people who need additional ear protection around water.",
+      "Custom swim moulds are individually made to provide a comfortable seal that helps reduce water entering the ear canal. They are suitable for regular swimmers and may also be appropriate for people who need additional ear protection around water.",
 
     bullets: [
       "Precise ear impressions for an individual fit",
@@ -212,14 +193,11 @@ export const services = [
     href: "/swim-moulds",
     to: "/swim-moulds" as const,
 
-    // Service-page image
-    image: "/images/swim-moulds.jpg",
-
-    // Homepage-specific image
+    image: "/images/swimmer-wearing-swim-moulds.jpg",
     homeImage: "/images/homepage-swim-moulds.jpg",
 
     imageAlt:
-      "Swimmer wearing custom-made swim moulds",
+      "Swimmer wearing custom-made ear protection",
 
     icon: "droplets",
   },
@@ -266,11 +244,26 @@ export const timePreferences = [
 ] as const;
 
 export const qualifications = [
-  { label: "Qualification", value: "First Class BSc Audiology, UCL" },
-  { label: "Research degree", value: "PhD, University College London" },
-  { label: "Clinical experience", value: "15+ years, newborn to adult" },
-  { label: "Research focus", value: "Cortical Auditory Evoked Potentials" },
-  { label: "Registration", value: "HCPC registered audiologist" },
+  {
+    label: "Qualification",
+    value: "First Class BSc Audiology, UCL",
+  },
+  {
+    label: "Research degree",
+    value: "PhD, University College London",
+  },
+  {
+    label: "Clinical experience",
+    value: "15+ years, newborn to adult",
+  },
+  {
+    label: "Research focus",
+    value: "Cortical Auditory Evoked Potentials",
+  },
+  {
+    label: "Registration",
+    value: "HCPC registered audiologist",
+  },
 ] as const;
 
 export const timeline = [
@@ -309,30 +302,6 @@ export const specialisms = [
   "Tympanometry",
   "Newborn hearing screening",
   "Cortical auditory evoked potentials",
-] as const;
-
-export const testimonials = [
-  {
-    quote:
-      "The care my daughter received was exceptional. The audiologist was calm, patient, and incredibly skilled at making a nervous four-year-old feel completely at ease. The diagnosis was thorough and clearly explained.",
-    name: "Sarah R.",
-    role: "Parent, paediatric patient",
-    initials: "SR",
-  },
-  {
-    quote:
-      "As a professional musician, protecting my hearing is critical. The custom ear plugs are outstanding — crystal-clear sound with real protection. I recommend Aurikear to every musician I know.",
-    name: "James M.",
-    role: "Professional guitarist",
-    initials: "JM",
-  },
-  {
-    quote:
-      "After struggling with hearing aids elsewhere for years, the assessment here transformed my quality of life. The knowledge and research background really shows — this is clinical care at its best.",
-    name: "Margaret P.",
-    role: "Adult hearing aid patient",
-    initials: "MP",
-  },
 ] as const;
 
 export const paediatricAges = [
@@ -385,31 +354,8 @@ export const jsonLd = {
   name: "Aurikear",
   alternateName: "auriKear",
   description:
-    "Research-led independent audiology for newborns, children, and adults in London. HCPC registered. UCL-trained.",
+    "Research-led independent audiology for newborns, children, and adults. HCPC registered. UCL-trained.",
   url: "https://aurikear.co.uk",
-  telephone: "+44-20-7946-0184",
-  email: "hello@aurikear.co.uk",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "18 Compton Terrace",
-    addressLocality: "London",
-    postalCode: "N1 2UN",
-    addressCountry: "GB",
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "13:00",
-    },
-  ],
   medicalSpecialty: "Audiology",
 };
 
@@ -448,7 +394,8 @@ export const clinics = [
     phone: "01223 266900",
     phoneHref: "tel:+441223266900",
     services: "Children & school-age audiology",
-    website: "https://www.spirehealthcare.com/spire-cambridge-lea-hospital/",
+    website:
+      "https://www.spirehealthcare.com/spire-cambridge-lea-hospital/",
   },
   {
     id: "hartswood",
@@ -460,7 +407,8 @@ export const clinics = [
     phone: "01277 232525",
     phoneHref: "tel:+441277232525",
     services: "Children & school-age audiology",
-    website: "https://www.spirehealthcare.com/spire-hartswood-hospital/",
+    website:
+      "https://www.spirehealthcare.com/spire-hartswood-hospital/",
   },
   {
     id: "london-east",
@@ -472,6 +420,7 @@ export const clinics = [
     phone: "020 8551 1100",
     phoneHref: "tel:+442085511100",
     services: "Toddler, pre-school, children & school-age audiology",
-    website: "https://www.spirehealthcare.com/spire-london-east-hospital/",
+    website:
+      "https://www.spirehealthcare.com/spire-london-east-hospital/",
   },
 ] as const;

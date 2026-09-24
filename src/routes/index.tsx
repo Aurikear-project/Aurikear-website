@@ -34,7 +34,7 @@ function Home() {
         eyebrow="HCPC Registered · UCL PhD · 15+ Years' Experience"
         title={practice.headline}
         lede={practice.lede}
-        image="/images/diagnostic.jpg"
+        image="/images/hearing-assessment-clinical-equipment.jpg"
         imageAlt="Audiology equipment used during a professional hearing assessment"
       />
 
@@ -201,7 +201,7 @@ function Home() {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-lift">
               <img
-                src="/images/portrait-lena.jpg"
+                src="/images/audiologist-portrait.jpg"
                 alt="Aurikear clinical audiologist"
                 className="h-full w-full object-cover"
               />

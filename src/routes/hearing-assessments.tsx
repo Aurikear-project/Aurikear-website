@@ -86,7 +86,7 @@ function HearingAssessments() {
         eyebrow="Adult hearing"
         title="Adult hearing assessments"
         lede="Understand your hearing with a thorough clinical assessment, clear results and personalised recommendations."
-        image="/images/diagnostic.jpg"
+        image="/images/hearing-assessment-clinical-equipment.jpg"
         imageAlt="Adult hearing assessment with a clinical audiologist"
       />
 
@@ -120,7 +120,7 @@ function HearingAssessments() {
           </div>
 
           <FramedImage
-            src="/images/diagnostic.jpg"
+            src="/images/hearing-assessment-clinical-equipment.jpg"
             alt="Audiologist carrying out an adult hearing assessment"
             className="aspect-wide rounded-2xl"
           />

@@ -68,7 +68,7 @@ function SwimMoulds() {
         eyebrow="Water protection"
         title="Custom swim moulds"
         lede="Individually made ear protection for swimmers of all ages — designed for a comfortable, secure fit and to help keep water out."
-        image="/images/swim-moulds.jpg"
+        image="/images/swimmer-wearing-swim-moulds.jpg"
         imageAlt="Swimmer wearing custom ear protection"
       />
 
@@ -98,7 +98,7 @@ function SwimMoulds() {
           </div>
 
           <FramedImage
-            src="/images/swim-moulds.jpg"
+            src="/images/swimmer-wearing-swim-moulds.jpg"
             alt="Swimmer wearing custom ear protection"
             className="aspect-wide rounded-2xl"
           />

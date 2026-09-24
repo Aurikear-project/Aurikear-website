@@ -57,7 +57,7 @@ function About() {
         eyebrow="About Aurikear"
         title="Meet your audiologist"
         lede="A passion for hearing science, a commitment to compassionate care, and a research career built at University College London."
-        image="/images/portrait-lena.jpg"
+        image="/images/audiologist-portrait.jpg"
         imageAlt=""
       />
 
@@ -67,7 +67,7 @@ function About() {
           {/* Portrait and credentials */}
           <div>
             <FramedImage
-              src="/images/portrait-lena.jpg"
+              src="/images/audiologist-portrait.jpg"
               alt="Aurikear's clinical audiologist"
               className="aspect-portrait rounded-2xl"
             />

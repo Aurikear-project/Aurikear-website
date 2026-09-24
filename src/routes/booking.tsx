@@ -34,7 +34,7 @@ function Booking() {
         eyebrow="Get started"
         title="Book an appointment"
         lede="Fill in the form below and we’ll confirm your appointment within one working day."
-        image="/images/exterior.jpg"
+        image="/images/clinic-exterior.jpg"
         imageAlt="The front exterior of the Aurikear clinic"
       />
       <Section tone="off">

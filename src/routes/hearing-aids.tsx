@@ -127,7 +127,7 @@ function HearingAids() {
         eyebrow="Hearing technology"
         title="Hear more of what matters"
         lede="Modern hearing technology, carefully selected and professionally fitted around your hearing, lifestyle and individual needs."
-        image="/images/hearing-aid.jpg"
+        image="/images/hearing-aid-consultation-female.jpg"
         imageAlt="Modern hearing aid technology"
       />
 
@@ -253,7 +253,7 @@ function HearingAids() {
             </div>
 
             <FramedImage
-              src="/images/hearing-aid-female-consultation.jpg"
+              src="/images/hearing-aid-consultation-female.jpg"
               alt="Aurikear audiologist discussing hearing aid options with a patient"
               className="aspect-wide rounded-2xl"
             />
@@ -262,7 +262,7 @@ function HearingAids() {
           {/* PHONAK */}
           <div className="mt-8 grid items-center gap-10 rounded-3xl border border-border bg-bg p-7 md:grid-cols-2 md:gap-14 md:p-12">
             <FramedImage
-              src="/images/hearing-aid-consultation.jpg"
+              src="/images/hearing-aid-consultation-male.jpg"
               alt="Audiologist discussing hearing aid options with a patient"
               className="aspect-wide rounded-2xl md:order-1"
             />

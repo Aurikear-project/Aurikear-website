@@ -36,7 +36,7 @@ function Paediatric() {
         eyebrow="Children's hearing"
         title="Paediatric audiology"
         lede="Specialist hearing assessments for babies, toddlers and children — delivered with expertise, patience and a child-centred approach."
-        image="/images/aurikear-paediatric-audiology-clinician.jpg"
+        image="/images/paediatric-hearing-assessment.jpg"
         imageAlt="Paediatric hearing assessment in a calm, child-friendly setting"
       />
 

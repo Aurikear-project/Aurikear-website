@@ -36,7 +36,7 @@ function Musicians() {
         eyebrow="Hearing protection"
         title="Custom musician ear plugs"
         lede="Your hearing is your instrument. Protect it without compromising a single note."
-        image="/images/musician-earplugs.jpg"
+        image="/images/musician-violinist-earplugs.jpg"
         imageAlt="Musician wearing custom hearing protection while playing violin"
       />
 
@@ -86,7 +86,7 @@ function Musicians() {
 
           {/* Consultation image */}
           <FramedImage
-            src="/images/musician-consultation.jpg"
+            src="/images/musician-earplug-fitting.jpg"
             alt="Audiologist fitting custom hearing protection for a musician"
             className="aspect-wide rounded-2xl"
           />

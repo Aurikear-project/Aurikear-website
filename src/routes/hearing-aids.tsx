@@ -1,12 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
+  AudioLines,
   BatteryCharging,
   Bluetooth,
+  CalendarCheck,
+  ClipboardCheck,
   Ear,
+  HeartHandshake,
   RefreshCw,
   ShieldCheck,
   Sparkles,
+  UserRound,
 } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
@@ -69,26 +74,32 @@ const hearingAidTypes = [
 
 const includedServices = [
   {
+    icon: ClipboardCheck,
     title: "Comprehensive assessment",
     body: "A full diagnostic hearing evaluation before any recommendation is made, helping us understand your hearing and listening needs.",
   },
   {
+    icon: UserRound,
     title: "Personalised recommendation",
     body: "We consider your hearing, lifestyle, listening environments, dexterity, cosmetic preferences, connectivity needs and budget.",
   },
   {
+    icon: AudioLines,
     title: "Real-ear measurement",
     body: "Where clinically appropriate, your fitting can be verified using real-ear measurement to assess the sound delivered in your individual ear.",
   },
   {
+    icon: Ear,
     title: "Custom ear moulds",
     body: "Where appropriate, bespoke ear moulds can be made to provide a secure, comfortable and acoustically appropriate fit.",
   },
   {
+    icon: CalendarCheck,
     title: "Structured aftercare",
     body: "Follow-up appointments allow us to review your experience and fine-tune your hearing aids as you adapt to them.",
   },
   {
+    icon: HeartHandshake,
     title: "Ongoing support",
     body: "Continued advice, cleaning, checks and adjustments help keep your hearing aids working effectively.",
   },
@@ -117,7 +128,7 @@ function HearingAids() {
         title="Hear more of what matters"
         lede="Modern hearing technology, carefully selected and professionally fitted around your hearing, lifestyle and individual needs."
         image="/images/hearing-aid.jpg"
-        imageAlt="A modern receiver-in-the-ear hearing aid"
+        imageAlt="Modern hearing aid technology"
       />
 
       <Section>
@@ -170,10 +181,14 @@ function HearingAids() {
                   className="group rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
                 >
                   <div className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary-deep">
-                    <Icon className="size-5" />
+                    <Icon
+                      className="size-5"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
                   </div>
 
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-mid">
+                  <p className="mt-5 text-xs font-bold uppercase tracking-wider text-primary-light">
                     {item.short}
                   </p>
 
@@ -233,13 +248,13 @@ function HearingAids() {
                 className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
               >
                 Explore Oticon hearing aids
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4" aria-hidden="true" />
               </a>
             </div>
 
             <FramedImage
-              src="/images/hearing-aid.jpg"
-              alt="Modern hearing aid technology available from Aurikear"
+              src="/images/hearing-aid-female-consultation.jpg"
+              alt="Aurikear audiologist discussing hearing aid options with a patient"
               className="aspect-wide rounded-2xl"
             />
           </div>
@@ -248,7 +263,7 @@ function HearingAids() {
           <div className="mt-8 grid items-center gap-10 rounded-3xl border border-border bg-bg p-7 md:grid-cols-2 md:gap-14 md:p-12">
             <FramedImage
               src="/images/hearing-aid-consultation.jpg"
-              alt="Audiologist discussing hearing aid options with an older patient"
+              alt="Audiologist discussing hearing aid options with a patient"
               className="aspect-wide rounded-2xl md:order-1"
             />
 
@@ -278,7 +293,7 @@ function HearingAids() {
                 className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
               >
                 Explore Phonak hearing aids
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4" aria-hidden="true" />
               </a>
 
               <p className="mt-4 text-xs text-mid">
@@ -313,7 +328,7 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* INCLUDED SERVICE */}
+        {/* COMPLETE HEARING AID SERVICE */}
         <div className="mt-24">
           <Eyebrow>Your care</Eyebrow>
 
@@ -328,18 +343,32 @@ function HearingAids() {
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {includedServices.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-              >
-                <h3 className="font-bold text-primary-deep">{item.title}</h3>
+            {includedServices.map((item) => {
+              const Icon = item.icon;
 
-                <p className="mt-2 text-sm leading-relaxed text-mid">
-                  {item.body}
-                </p>
-              </article>
-            ))}
+              return (
+                <article
+                  key={item.title}
+                  className="group rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary-deep">
+                    <Icon
+                      className="size-5"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
+                  </span>
+
+                  <h3 className="mt-4 font-bold text-primary-deep">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-mid">
+                    {item.body}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
 
@@ -376,21 +405,24 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* FINAL CTA */}
         <div className="mt-12 rounded-2xl bg-primary-deep px-6 py-12 text-center text-white md:px-12">
+          <Eyebrow className="text-sky">Your hearing matters</Eyebrow>
+
           <h2 className="font-display text-3xl font-bold">
-            Let's find the right hearing solution for you
+            Ready to hear more clearly?
           </h2>
 
-          <p className="mx-auto mt-3 max-w-lg text-foam/80">
-            Arrange a comprehensive hearing assessment and discuss the hearing
-            technology that best suits your individual needs.
+          <p className="mx-auto mt-3 max-w-xl text-foam/80">
+            Arrange a comprehensive hearing assessment and we'll help you
+            understand which hearing technology best suits your hearing,
+            lifestyle and listening needs.
           </p>
 
           <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
-              Contact us
-              <ArrowRight className="size-4" />
+              Arrange a hearing assessment
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>
@@ -398,3 +430,5 @@ function HearingAids() {
     </main>
   );
 }
+
+export default HearingAids;

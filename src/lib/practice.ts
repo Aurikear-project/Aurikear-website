@@ -24,7 +24,9 @@ export const navLinks = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/paediatric", label: "Paediatric" },
+  { to: "/hearing-aids", label: "Hearing aids" },
   { to: "/musicians", label: "Musician plugs" },
+  { to: "/swim-moulds", label: "Swim moulds" },
 ] as const;
 
 export const stats = [
@@ -70,8 +72,8 @@ export const services = [
       "Real-ear measurement verification",
       "Ongoing aftercare and fine-tuning appointments",
     ],
-    href: "/contact",
-    to: "/contact" as const,
+    href: "/hearing-aids",
+    to: "/hearing-aids" as const,
     image: "/images/hearing-aid.jpg",
     imageAlt: "A modern receiver-in-canal hearing aid in a patient's hand",
     icon: "ear",
@@ -129,8 +131,8 @@ export const services = [
       "Suitable for children and adults",
       "Available in a range of colours",
     ],
-    href: "/contact",
-    to: "/contact" as const,
+    href: "/swim-moulds",
+    to: "/swim-moulds" as const,
     image: "/images/swim-moulds.jpg",
     imageAlt: "Custom swim moulds ear protection",
     icon: "droplets",

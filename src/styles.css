@@ -91,7 +91,14 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
+
+    /*
+     * Keep route changes immediate rather than smoothly
+     * scrolling back to the top of the page.
+     * This creates a calmer navigation experience,
+     * particularly on mobile.
+     */
+    scroll-behavior: auto;
 
     /*
      * 17px gives Aurikear a slightly more generous

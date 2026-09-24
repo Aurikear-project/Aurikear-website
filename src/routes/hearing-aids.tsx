@@ -38,37 +38,43 @@ const hearingAidTypes = [
     icon: Ear,
     title: "Receiver-in-the-ear",
     short: "RITE / RIC",
-    body: "Small and discreet, with the main hearing aid sitting behind the ear and a fine wire connecting to a receiver in the ear. A popular combination of comfort, discretion and advanced technology.",
+    body:
+      "Small and discreet, with the main hearing aid sitting behind the ear and a fine wire connecting to a receiver in the ear. A popular combination of comfort, discretion and advanced technology.",
   },
   {
     icon: ShieldCheck,
     title: "Behind-the-ear",
     short: "BTE",
-    body: "Reliable and versatile hearing aids suitable for a wide range of hearing losses, including people who require more powerful amplification.",
+    body:
+      "Reliable and versatile hearing aids suitable for a wide range of hearing losses, including people who require more powerful amplification.",
   },
   {
     icon: Sparkles,
     title: "Custom in-the-ear",
     short: "ITE / ITC / CIC",
-    body: "Individually made to fit your ear. Different sizes and styles are available depending on your hearing, dexterity, features and cosmetic preferences.",
+    body:
+      "Individually made to fit your ear. Different sizes and styles are available depending on your hearing, dexterity, features and cosmetic preferences.",
   },
   {
     icon: BatteryCharging,
     title: "Rechargeable",
     short: "Simple everyday charging",
-    body: "Convenient rechargeable technology allows many hearing aids to be charged overnight, reducing the need to handle and replace small batteries.",
+    body:
+      "Convenient rechargeable technology allows many hearing aids to be charged overnight, reducing the need to handle and replace small batteries.",
   },
   {
     icon: RefreshCw,
     title: "CROS solutions",
     short: "For single-sided hearing loss",
-    body: "For people whose hearing cannot be aided in one ear, CROS technology can transmit sound from that side to the better-hearing ear.",
+    body:
+      "For people whose hearing cannot be aided in one ear, CROS technology can transmit sound from that side to the better-hearing ear.",
   },
   {
     icon: Bluetooth,
     title: "Connected hearing",
     short: "Calls, music & more",
-    body: "Many modern hearing aids offer wireless connectivity for compatible phones and other devices, helping hearing technology fit naturally into everyday life.",
+    body:
+      "Many modern hearing aids offer wireless connectivity for compatible phones and other devices, helping hearing technology fit naturally into everyday life.",
   },
 ];
 
@@ -76,59 +82,67 @@ const includedServices = [
   {
     icon: ClipboardCheck,
     title: "Comprehensive assessment",
-    body: "A full diagnostic hearing evaluation before any recommendation is made, helping us understand your hearing and listening needs.",
+    body:
+      "A full diagnostic hearing evaluation before any recommendation is made, helping us understand your hearing and listening needs.",
   },
   {
     icon: UserRound,
     title: "Personalised recommendation",
-    body: "We consider your hearing, lifestyle, listening environments, dexterity, cosmetic preferences, connectivity needs and budget.",
+    body:
+      "We consider your hearing, lifestyle, listening environments, dexterity, cosmetic preferences, connectivity needs and budget.",
   },
   {
     icon: AudioLines,
     title: "Real-ear measurement",
-    body: "Where clinically appropriate, your fitting can be verified using real-ear measurement to assess the sound delivered in your individual ear.",
+    body:
+      "Where clinically appropriate, your fitting can be verified using real-ear measurement to assess the sound delivered in your individual ear.",
   },
   {
     icon: Ear,
     title: "Custom ear moulds",
-    body: "Where appropriate, bespoke ear moulds can be made to provide a secure, comfortable and acoustically appropriate fit.",
+    body:
+      "Where appropriate, bespoke ear moulds can be made to provide a secure, comfortable and acoustically appropriate fit.",
   },
   {
     icon: CalendarCheck,
     title: "Structured aftercare",
-    body: "Follow-up appointments allow us to review your experience and fine-tune your hearing aids as you adapt to them.",
+    body:
+      "Follow-up appointments allow us to review your experience and fine-tune your hearing aids as you adapt to them.",
   },
   {
     icon: HeartHandshake,
     title: "Ongoing support",
-    body: "Continued advice, cleaning, checks and adjustments help keep your hearing aids working effectively.",
+    body:
+      "Continued advice, cleaning, checks and adjustments help keep your hearing aids working effectively.",
   },
 ];
 
 const techLevels = [
   {
     level: "Essential",
-    desc: "Designed for people whose listening needs are generally centred around quieter environments and everyday conversation.",
+    desc:
+      "Designed for people whose listening needs are generally centred around quieter environments and everyday conversation.",
   },
   {
     level: "Advanced",
-    desc: "Additional support for people who regularly encounter group conversations, restaurants and more varied listening environments.",
+    desc:
+      "Additional support for people who regularly encounter group conversations, restaurants and more varied listening environments.",
   },
   {
     level: "Premium",
-    desc: "The manufacturers' most advanced technology for people seeking maximum support across complex and changing listening environments.",
+    desc:
+      "The manufacturers' most advanced technology for people seeking maximum support across complex and changing listening environments.",
   },
 ];
 
 function HearingAids() {
   return (
     <main>
+      {/* Clean service hero */}
       <PageHero
         eyebrow="Hearing technology"
         title="Hear more of what matters"
         lede="Modern hearing technology, carefully selected and professionally fitted around your hearing, lifestyle and individual needs."
-        image="/images/hearing-aid-consultation-female.jpg"
-        imageAlt="Modern hearing aid technology"
       />
 
       <Section>

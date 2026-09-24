@@ -31,22 +31,26 @@ const suitableFor = [
   {
     icon: PersonStanding,
     title: "Regular swimmers",
-    body: "Custom swim moulds can help reduce repeated water exposure and provide comfortable ear protection for regular swimming.",
+    body:
+      "Custom swim moulds can help reduce repeated water exposure and provide comfortable ear protection for regular swimming.",
   },
   {
     icon: Baby,
     title: "Children with grommets",
-    body: "Custom swim moulds can provide additional water protection for children with grommets or ventilation tubes where water precautions have been recommended.",
+    body:
+      "Custom swim moulds can provide additional water protection for children with grommets or ventilation tubes where water precautions have been recommended.",
   },
   {
     icon: HeartPulse,
     title: "Post-surgery patients",
-    body: "Where water protection has been recommended following ear surgery, custom swim moulds can help protect the ear during recovery.",
+    body:
+      "Where water protection has been recommended following ear surgery, custom swim moulds can help protect the ear during recovery.",
   },
   {
     icon: Waves,
     title: "Water sports",
-    body: "A practical option for surfers, triathletes, open-water swimmers and others who spend extended periods in the water.",
+    body:
+      "A practical option for surfers, triathletes, open-water swimmers and others who spend extended periods in the water.",
   },
 ];
 
@@ -64,12 +68,11 @@ const features = [
 function SwimMoulds() {
   return (
     <main>
+      {/* Clean service hero */}
       <PageHero
         eyebrow="Water protection"
         title="Custom swim moulds"
         lede="Individually made ear protection for swimmers of all ages — designed for a comfortable, secure fit and to help keep water out."
-        image="/images/swimmer-wearing-swim-moulds.jpg"
-        imageAlt="Swimmer wearing custom ear protection"
       />
 
       <Section>
@@ -203,3 +206,5 @@ function SwimMoulds() {
     </main>
   );
 }
+
+export default SwimMoulds;

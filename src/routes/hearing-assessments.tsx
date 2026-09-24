@@ -82,12 +82,11 @@ const appointmentDetails = [
 function HearingAssessments() {
   return (
     <main>
+      {/* Clean service hero */}
       <PageHero
         eyebrow="Adult hearing"
         title="Adult hearing assessments"
         lede="Understand your hearing with a thorough clinical assessment, clear results and personalised recommendations."
-        image="/images/hearing-assessment-clinical-equipment.jpg"
-        imageAlt="Adult hearing assessment with a clinical audiologist"
       />
 
       <Section>

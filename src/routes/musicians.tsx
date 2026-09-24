@@ -32,12 +32,11 @@ const benefits = [
 function Musicians() {
   return (
     <main>
+      {/* Clean service hero */}
       <PageHero
         eyebrow="Hearing protection"
         title="Custom musician ear plugs"
         lede="Your hearing is your instrument. Protect it without compromising a single note."
-        image="/images/musician-violinist-earplugs.jpg"
-        imageAlt="Musician wearing custom hearing protection while playing violin"
       />
 
       <Section>

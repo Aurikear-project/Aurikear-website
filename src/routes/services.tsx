@@ -126,7 +126,7 @@ export function ServicesPage() {
             return (
               <article
                 key={service.slug}
-                className="grid gap-6 py-8 md:grid-cols-[1.1fr_1.4fr_auto] md:items-center md:gap-10 md:py-10"
+                className="grid gap-6 py-8 md:grid-cols-[1.1fr_1.4fr_0.9fr] md:items-center md:gap-10 md:py-10"
               >
                 {/* Service */}
                 <div className="flex items-start gap-4">
@@ -178,7 +178,7 @@ export function ServicesPage() {
                     {guidance.action}
 
                     <ArrowRight
-                      className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                      className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
                       aria-hidden="true"
                     />
                   </Link>

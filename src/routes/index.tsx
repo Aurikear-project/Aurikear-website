@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  GraduationCap,
+  HeartHandshake,
+  Microscope,
+  BadgeCheck,
+} from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
@@ -137,39 +143,47 @@ function Home() {
               recommendations throughout.
             </p>
 
-            <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {[
-                {
-                  icon: "🎓",
-                  text: "First Class BSc & PhD, UCL",
-                },
-                {
-                  icon: "👶",
-                  text: "Newborn, child & adult care",
-                },
-                {
-                  icon: "🔬",
-                  text: "Published auditory research",
-                },
-                {
-                  icon: "✓",
-                  text: "HCPC registered audiologist",
-                },
-              ].map((q) => (
-                <li
-                  key={q.text}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
-                >
-                  <span className="mt-0.5 text-xl leading-none">
-                    {q.icon}
-                  </span>
+<ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+  {[
+    {
+      icon: GraduationCap,
+      text: "First Class BSc & PhD, UCL",
+    },
+    {
+      icon: HeartHandshake,
+      text: "Newborn, child & adult care",
+    },
+    {
+      icon: Microscope,
+      text: "Published auditory research",
+    },
+    {
+      icon: BadgeCheck,
+      text: "HCPC registered audiologist",
+    },
+  ].map((q) => {
+    const Icon = q.icon;
 
-                  <span className="text-sm font-semibold leading-snug text-mid">
-                    {q.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
+    return (
+      <li
+        key={q.text}
+        className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
+      >
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
+          <Icon
+            className="size-5"
+            strokeWidth={1.8}
+            aria-hidden="true"
+          />
+        </span>
+
+        <span className="text-sm font-semibold leading-snug text-mid">
+          {q.text}
+        </span>
+      </li>
+    );
+  })}
+</ul>
 
             <Button asChild className="mt-9">
               <Link to="/about">

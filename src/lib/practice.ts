@@ -2,12 +2,18 @@ export const practice = {
   name: "auriKear",
   legalName: "Aurikear",
   tagline: "Hear for good",
-  headline: "Expert hearing care you can trust",
-  lede: "Aurikear delivers research-led audiology for newborns, children, and adults. With 15+ years' clinical experience and a UCL PhD, we combine scientific rigour with warm, personalised care.",
+
+  headline: "Hear more of what matters",
+
+  lede:
+    "Expert, personalised hearing care for babies, children and adults — combining clinical expertise with technology and care tailored to you.",
+
   phone: "020 7946 0184",
   phoneHref: "tel:+442079460184",
+
   email: "hello@aurikear.co.uk",
   emailHref: "mailto:hello@aurikear.co.uk",
+
   addressLines: [
     "Nuffield Health Brentwood Hospital",
     "Nuffield Health The Holly Hospital",
@@ -15,6 +21,7 @@ export const practice = {
     "Spire Hartswood Hospital",
     "Spire London East Hospital",
   ],
+
   founded: "2009",
   registration: "HCPC registered audiologist",
 } as const;
@@ -40,11 +47,17 @@ export const stats = [
 export const services = [
   {
     slug: "assessments",
-    title: "Audiology assessments",
-    eyebrow: "Diagnostic",
+
+    title: "Hearing assessments",
+
+    eyebrow: "Your hearing",
+
     summary:
-      "Comprehensive diagnostic hearing tests for all ages using calibrated clinical equipment in a calm, professional setting.",
-    body: "A thorough hearing assessment is the foundation of all hearing healthcare. Using calibrated audiological equipment in a sound-treated environment, we conduct a comprehensive diagnostic evaluation across all frequencies.",
+      "Understand your hearing with a comprehensive assessment, carried out using specialist clinical equipment in a calm and comfortable setting.",
+
+    body:
+      "A thorough hearing assessment is the foundation of good hearing care. Using calibrated audiological equipment in a sound-treated environment, we carry out a comprehensive evaluation of your hearing and explain the results clearly.",
+
     bullets: [
       "Pure tone audiometry (air and bone conduction)",
       "Speech audiometry and speech-in-noise testing",
@@ -52,19 +65,31 @@ export const services = [
       "Detailed written report and clear recommendations",
       "Suitable for children and adults",
     ],
+
     href: "/contact",
     to: "/contact" as const,
+
     image: "/images/diagnostic.jpg",
-    imageAlt: "Diagnostic audiology booth with headphones and console",
+
+    imageAlt:
+      "Clinical audiology equipment used during a hearing assessment",
+
     icon: "waves",
   },
+
   {
     slug: "hearing-aids",
+
     title: "Hearing aids",
-    eyebrow: "Amplification",
+
+    eyebrow: "Hearing technology",
+
     summary:
-      "Independent fitting and aftercare for the latest digital hearing aids, selected for your lifestyle and hearing profile.",
-    body: "Modern hearing aids are sophisticated digital devices that can transform daily life. We provide independent, unbiased advice on the most suitable technology for your degree of hearing loss, lifestyle, and budget.",
+      "Personalised hearing technology, professionally selected and fitted around your hearing, lifestyle and individual needs.",
+
+    body:
+      "Modern hearing aids are sophisticated digital devices designed to make listening easier and communication more natural. We provide independent advice on the technology most appropriate for your hearing, lifestyle and budget.",
+
     bullets: [
       "Independent audiological assessment",
       "Access to leading hearing aid brands",
@@ -72,38 +97,62 @@ export const services = [
       "Real-ear measurement verification",
       "Ongoing aftercare and fine-tuning appointments",
     ],
+
     href: "/hearing-aids",
     to: "/hearing-aids" as const,
+
     image: "/images/hearing-aid.jpg",
-    imageAlt: "A modern receiver-in-canal hearing aid in a patient's hand",
+
+    imageAlt:
+      "Modern receiver-in-canal hearing aid",
+
     icon: "ear",
   },
+
   {
     slug: "musician-plugs",
-    title: "Musician ear plugs",
-    eyebrow: "Protection",
+
+    title: "Musician earplugs",
+
+    eyebrow: "Hearing protection",
+
     summary:
-      "Custom-moulded ear protection engineered for musicians — preserving nuance while safeguarding hearing for the long term.",
-    body: "Standard foam earplugs block high frequencies more than low, creating a muffled, unnatural sound. Custom musician ear plugs use precision acoustic filters that reduce all frequencies equally — so music sounds as it should, just quieter and safer.",
+      "Custom-made hearing protection designed to protect your hearing while preserving the music and sound you love.",
+
+    body:
+      "Standard foam earplugs can make music sound muffled and unnatural. Custom musician earplugs use specialist acoustic filters to reduce sound more evenly across frequencies, helping music remain clear while reducing exposure.",
+
     bullets: [
       "Ear impression and custom moulding",
       "Choice of acoustic filter attenuation levels",
-      "Suitable for musicians, engineers, and concert-goers",
-      "Long-lasting, comfortable, and washable",
+      "Suitable for musicians, engineers and concert-goers",
+      "Long-lasting, comfortable and washable",
     ],
+
     href: "/musicians",
     to: "/musicians" as const,
+
     image: "/images/musician-earplugs.jpg",
-    imageAlt: "Friends talking closely at an outdoor cafe table",
+
+    imageAlt:
+      "Musician wearing custom hearing protection while performing",
+
     icon: "music",
   },
+
   {
     slug: "paediatric",
-    title: "Paediatric audiology",
+
+    title: "Children's hearing",
+
     eyebrow: "Children & families",
+
     summary:
-      "Specialist care for newborns and children using visual reinforcement audiometry, play audiometry, and glue ear monitoring.",
-    body: "Children require specialist audiological techniques adapted to their age and developmental stage. Our audiologist has extensive experience assessing hearing in children from birth through to adolescence.",
+      "Specialist, child-friendly hearing assessments carefully adapted to your child's age, development and individual needs.",
+
+    body:
+      "Children need hearing assessments that are carefully adapted to their age and developmental stage. Our approach is calm, engaging and child-focused, with specialist techniques used from infancy through to adolescence.",
+
     bullets: [
       "Newborn hearing screening follow-up",
       "Visual reinforcement audiometry (VRA)",
@@ -111,30 +160,47 @@ export const services = [
       "Glue ear assessment and monitoring",
       "School-age hearing assessment",
     ],
+
     href: "/paediatric",
     to: "/paediatric" as const,
+
     image: "/images/waiting-room%20(2).jpg",
-    imageAlt: "A child and audiologist using a playful hearing assessment table",
+
+    imageAlt:
+      "Child taking part in a specialist hearing assessment",
+
     icon: "baby",
   },
+
   {
     slug: "swim-moulds",
+
     title: "Swim moulds",
-    eyebrow: "Protection",
+
+    eyebrow: "Water protection",
+
     summary:
-      "Custom-fit waterproof ear moulds to prevent water ingress — for regular swimmers, post-surgery patients, and children with grommets.",
-    body: "Custom-moulded swim plugs provide a precise, comfortable seal to prevent water from entering the ear canal — essential for regular swimmers, those recovering from ear surgery, or patients with grommets.",
+      "Comfortable, custom-made ear protection for children and adults who want to keep water out of their ears.",
+
+    body:
+      "Custom swim moulds are individually made to provide a comfortable seal that helps prevent water entering the ear canal. They are suitable for regular swimmers and may also be appropriate for people who need additional ear protection around water.",
+
     bullets: [
-      "Precise ear impressions for a perfect fit",
+      "Precise ear impressions for an individual fit",
       "Floats in water — easy to retrieve",
       "Soft, hypoallergenic silicone material",
       "Suitable for children and adults",
       "Available in a range of colours",
     ],
+
     href: "/swim-moulds",
     to: "/swim-moulds" as const,
+
     image: "/images/swim-moulds.jpg",
-    imageAlt: "Custom swim moulds ear protection",
+
+    imageAlt:
+      "Swimmer wearing custom-made swim moulds",
+
     icon: "droplets",
   },
 ] as const;

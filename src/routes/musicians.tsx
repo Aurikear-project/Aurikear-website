@@ -84,9 +84,10 @@ function Musicians() {
             </ul>
           </div>
 
+          {/* Consultation image */}
           <FramedImage
-            src="/images/musician-earplugs.jpg"
-            alt="Musician wearing custom hearing protection while playing violin"
+            src="/images/musician-consultation.jpg"
+            alt="Audiologist fitting custom hearing protection for a musician"
             className="aspect-wide rounded-2xl"
           />
         </div>
@@ -95,7 +96,7 @@ function Musicians() {
         <div className="mt-16">
           <Eyebrow>Who they're for</Eyebrow>
 
-          <h2 className="font-display text-title font-bold">
+          <h2 className="max-w-3xl font-display text-title font-bold">
             Hearing protection for people who depend on sound
           </h2>
 

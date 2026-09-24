@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
+
+import { FramedImage } from "@/components/framed-image";
 import { ServiceIcon } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
 import { Eyebrow, Section } from "@/components/section";
@@ -32,41 +34,51 @@ const expect = [
 function Paediatric() {
   return (
     <main>
+      {/* Hero */}
       <PageHero
         eyebrow="Children's hearing"
         title="Paediatric audiology"
         lede="Specialist hearing assessments for babies, toddlers and children — delivered with expertise, patience and a child-centred approach."
-        image="/images/paediatric-hearing-assessment.jpg"
-        imageAlt="Paediatric hearing assessment in a calm, child-friendly setting"
       />
 
       <Section>
-        {/* Reassurance for parents */}
-        <div className="rounded-2xl border border-border bg-sky-pale p-6 md:p-8">
-          <Eyebrow>For parents & carers</Eyebrow>
+        {/* Introduction */}
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div>
+            <Eyebrow>For parents & carers</Eyebrow>
 
-          <h2 className="mt-2 font-display text-2xl font-bold text-primary-deep">
-            A calm and reassuring experience
-          </h2>
+            <h2 className="font-display text-title font-bold">
+              A calm and reassuring experience
+            </h2>
 
-          <p className="mt-3 max-w-3xl leading-relaxed text-mid">
-            If you have concerns about your child's hearing, an assessment can
-            help you understand what they are hearing and whether any further
-            support is needed. We provide a calm, welcoming environment and
-            adapt each appointment to your child's age, development and
-            individual needs.
-          </p>
+            <p className="mt-4 leading-relaxed text-mid">
+              If you have concerns about your child's hearing, an assessment can
+              help you understand what they are hearing and whether any further
+              support is needed.
+            </p>
 
-          <p className="mt-3 max-w-3xl leading-relaxed text-mid">
-            Hearing assessments are non-invasive and designed to be as
-            comfortable and engaging as possible. We'll explain what we're
-            doing throughout the appointment and give you plenty of opportunity
-            to ask questions.
-          </p>
+            <p className="mt-3 leading-relaxed text-mid">
+              We provide a calm, welcoming environment and adapt each
+              appointment to your child's age, development and individual
+              needs. Hearing assessments are non-invasive and designed to be as
+              comfortable and engaging as possible.
+            </p>
+
+            <p className="mt-3 leading-relaxed text-mid">
+              We'll explain what we're doing throughout the appointment and
+              give you plenty of opportunity to ask questions.
+            </p>
+          </div>
+
+          <FramedImage
+            src="/images/paediatric-hearing-assessment.jpg"
+            alt="Child taking part in a paediatric hearing assessment"
+            className="aspect-wide rounded-2xl"
+          />
         </div>
 
         {/* Assessment by age */}
-        <div className="mt-16">
+        <div className="mt-20">
           <Eyebrow>Assessment by age</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
@@ -85,7 +97,7 @@ function Paediatric() {
                 key={card.title}
                 className="rounded-2xl border border-border bg-sky-pale p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
-                <span className="mx-auto flex size-12 items-center justify-center rounded-xl bg-paper text-primary">
+                <span className="mx-auto flex size-12 items-center justify-center rounded-xl bg-white text-primary shadow-border">
                   <ServiceIcon name={card.icon} />
                 </span>
 
@@ -93,7 +105,7 @@ function Paediatric() {
                   {card.title}
                 </h3>
 
-                <p className="text-xs font-semibold text-muted">
+                <p className="mt-1 text-xs font-semibold text-muted">
                   {card.age}
                 </p>
 
@@ -154,7 +166,13 @@ function Paediatric() {
                   key={item}
                   className="flex items-start gap-3 border-b border-border py-3 text-sm text-mid last:border-0"
                 >
-                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
+                    <Check
+                      className="size-3.5"
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    />
+                  </span>
 
                   <span>{item}</span>
                 </li>

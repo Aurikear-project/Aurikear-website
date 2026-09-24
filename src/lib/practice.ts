@@ -66,8 +66,8 @@ export const services = [
       "Suitable for children and adults",
     ],
 
-    href: "/contact",
-    to: "/contact" as const,
+href: "/hearing-assessments",
+to: "/hearing-assessments" as const,
 
     image: "/images/diagnostic.jpg",
 

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
 @theme {
   /* ── Colours ── */
   --color-bg:            #f7fbfc;
@@ -20,10 +21,21 @@
   --color-gold:          #c9963a;
 
   /* ── Typography ── */
-  --font-sans:    "Nunito", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
---font-display: "DM Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    "Nunito",
+    "Segoe UI",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
 
-  /* ── Type scale — slightly larger for readability ── */
+  --font-display:
+    "DM Sans",
+    "Segoe UI",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  /* ── Type scale ── */
   --text-display: clamp(2.5rem, 1.4rem + 4.5vw, 4rem);
   --text-title:   clamp(1.8rem, 1.2rem + 2.2vw, 2.75rem);
   --text-lede:    clamp(1.08rem, 1rem + 0.4vw, 1.2rem);
@@ -37,15 +49,17 @@
   --radius-2xl: 2rem;
   --radius-3xl: 2.5rem;
 
-  /* ── Shadows — softer, more premium ── */
+  /* ── Shadows ── */
   --shadow-border:
     0px 0px 0px 1px rgba(12, 90, 114, 0.07),
     0px 1px 3px -1px rgba(12, 90, 114, 0.07),
     0px 3px 8px 0px rgba(12, 90, 114, 0.04);
+
   --shadow-lift:
     0px 0px 0px 1px rgba(12, 90, 114, 0.08),
     0px 16px 48px -12px rgba(12, 90, 114, 0.18),
     0px 4px 16px -4px rgba(12, 90, 114, 0.1);
+
   --shadow-card:
     0px 2px 4px rgba(12, 90, 114, 0.04),
     0px 8px 24px rgba(12, 90, 114, 0.06);
@@ -56,7 +70,7 @@
   --aspect-wide:     4 / 3;
 
   /* ── Easing ── */
-  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* ── Spacing scale ── */
@@ -78,25 +92,43 @@
     line-height: 1.7;
   }
 
-  h1, h2, h3, h4 {
+  /*
+   * Display typography
+   * DM Sans keeps Aurikear modern, clean and approachable.
+   */
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     text-wrap: balance;
-    letter-spacing: -0.025em;
-    line-height: 1.12;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
     color: var(--color-ink);
   }
 
-  h1 { font-weight: 700; }
-  h2 { font-weight: 700; }
-  h3 { font-weight: 600; }
-  h4 { font-weight: 600; }
+  h1 {
+    font-weight: 600;
+  }
+
+  h2 {
+    font-weight: 600;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 600;
+  }
 
   p {
     text-wrap: pretty;
     line-height: 1.75;
   }
 
-  /* Smooth focus rings */
+  /* Accessible keyboard focus */
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
@@ -109,21 +141,42 @@
   }
 
   img.framed {
-    outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent);
+    outline: 1px solid
+      color-mix(in oklab, var(--color-ink) 8%, transparent);
     outline-offset: -1px;
   }
 
-  /* Smooth image rendering */
   img {
     image-rendering: auto;
   }
 }
 
-/* ── Scroll-triggered fade-in animations ── */
+/*
+ * ─────────────────────────────────────────────
+ * DISPLAY HEADING WEIGHTS
+ * ─────────────────────────────────────────────
+ *
+ * A number of Aurikear components currently use
+ * "font-display font-bold".
+ *
+ * This keeps those headings at the softer DM Sans
+ * 600 weight without requiring every page to be
+ * edited individually.
+ */
+
+@layer utilities {
+  .font-display.font-bold {
+    font-weight: 600;
+  }
+}
+
+/* ── Scroll-triggered animations ── */
+
 @layer utilities {
   .animate-fade-up {
     opacity: 0;
     transform: translateY(20px);
+
     transition:
       opacity 0.65s var(--ease-out),
       transform 0.65s var(--ease-out);
@@ -144,7 +197,8 @@
   }
 }
 
-/* ── Card hover transitions ── */
+/* ── Card interactions ── */
+
 @layer components {
   .card-hover {
     transition:
@@ -158,7 +212,7 @@
     box-shadow: var(--shadow-lift);
   }
 
-  /* Premium button base */
+  /* Premium button interaction */
   .btn-base {
     transition:
       transform 0.2s var(--ease-spring),
@@ -172,11 +226,12 @@
   }
 
   .btn-base:active {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
-/* ── Reduced motion ── */
+/* ── Reduced motion accessibility ── */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -191,7 +246,8 @@
   }
 }
 
-/* ── Utility classes ── */
+/* ── Aurikear utility classes ── */
+
 @utility font-display {
   font-family: var(--font-display);
 }

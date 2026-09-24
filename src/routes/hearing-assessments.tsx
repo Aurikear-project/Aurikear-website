@@ -17,11 +17,11 @@ export const Route = createFileRoute("/hearing-assessments")({
   component: HearingAssessments,
   head: () => ({
     meta: [
-      { title: "Hearing Assessments – Aurikear" },
+      { title: "Adult Hearing Assessments – Aurikear" },
       {
         name: "description",
         content:
-          "Comprehensive hearing assessments for adults using specialist clinical equipment, with clear explanation of your results and recommendations.",
+          "Comprehensive adult hearing assessments using specialist clinical equipment, with clear explanation of your results and personalised recommendations.",
       },
     ],
   }),
@@ -31,22 +31,26 @@ const assessmentSteps = [
   {
     icon: MessageCircle,
     title: "Understanding your hearing",
-    body: "We begin by discussing your hearing, any changes you have noticed, your medical and hearing history, and the situations in which you find listening difficult.",
+    body:
+      "We begin by discussing your hearing, any changes you have noticed, your medical and hearing history, and the situations in which you find listening difficult.",
   },
   {
     icon: Ear,
     title: "Clinical examination",
-    body: "Your ears are examined before testing so that we can identify anything that may affect your hearing or the assessment.",
+    body:
+      "Your ears are examined before testing so that we can identify anything that may affect your hearing or the assessment.",
   },
   {
     icon: Gauge,
     title: "Hearing tests",
-    body: "Using calibrated audiological equipment, we assess your hearing across different frequencies and use additional tests where clinically appropriate.",
+    body:
+      "Using calibrated audiological equipment, we assess your hearing across different frequencies and use additional tests where clinically appropriate.",
   },
   {
     icon: FileText,
     title: "Results & next steps",
-    body: "Your results are explained clearly, with time to ask questions. We then discuss appropriate recommendations and any further care that may be helpful.",
+    body:
+      "Your results are explained clearly, with time to ask questions. We then discuss appropriate recommendations and any further care that may be helpful.",
   },
 ];
 
@@ -68,15 +72,22 @@ const reasons = [
   "You would simply like a clearer understanding of your hearing",
 ];
 
+const appointmentDetails = [
+  "Approximately 60 minutes",
+  "Full diagnostic hearing assessment",
+  "Results explained during your appointment",
+  "Written report and recommendations",
+];
+
 function HearingAssessments() {
   return (
     <main>
       <PageHero
-        eyebrow="Your hearing"
-        title="Comprehensive hearing assessments"
+        eyebrow="Adult hearing"
+        title="Adult hearing assessments"
         lede="Understand your hearing with a thorough clinical assessment, clear results and personalised recommendations."
         image="/images/diagnostic.jpg"
-        imageAlt="Clinical audiology equipment used during a hearing assessment"
+        imageAlt="Adult hearing assessment with a clinical audiologist"
       />
 
       <Section>
@@ -110,12 +121,12 @@ function HearingAssessments() {
 
           <FramedImage
             src="/images/diagnostic.jpg"
-            alt="Specialist equipment used for a clinical hearing assessment"
+            alt="Audiologist carrying out an adult hearing assessment"
             className="aspect-wide rounded-2xl"
           />
         </div>
 
-        {/* What happens */}
+        {/* What to expect */}
         <div className="mt-16">
           <Eyebrow>What to expect</Eyebrow>
 
@@ -138,9 +149,9 @@ function HearingAssessments() {
                   key={step.title}
                   className="rounded-2xl border border-border bg-sky-pale p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-white text-primary shadow-border">
                     <Icon
-                      className="size-5"
+                      className="size-6"
                       strokeWidth={1.8}
                       aria-hidden="true"
                     />
@@ -244,13 +255,27 @@ function HearingAssessments() {
               </p>
 
               <p className="mt-2 font-display text-2xl font-bold text-primary-deep">
-                Comprehensive Hearing Assessment
+                Adult hearing assessment
               </p>
 
-              <p className="mt-2 text-sm leading-relaxed text-mid">
-                Allow approximately 60 minutes for a comprehensive assessment
-                and discussion of your results.
-              </p>
+              <ul className="mt-5 space-y-3">
+                {appointmentDetails.map((detail) => (
+                  <li
+                    key={detail}
+                    className="flex items-start gap-3 text-sm text-mid"
+                  >
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-sky-pale text-primary">
+                      <Check
+                        className="size-3"
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
+                    </span>
+
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -264,7 +289,7 @@ function HearingAssessments() {
           </h2>
 
           <p className="mx-auto mt-3 max-w-lg text-foam/80">
-            Arrange a comprehensive hearing assessment and receive a clear,
+            Arrange an adult hearing assessment and receive a clear,
             evidence-based explanation of your hearing and the next steps
             available to you.
           </p>

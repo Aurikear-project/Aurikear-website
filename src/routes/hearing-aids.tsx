@@ -145,7 +145,7 @@ function HearingAids() {
           <p className="mt-4 max-w-2xl leading-relaxed text-mid">Hearing aids are available at different technology levels. Rather than choosing on specifications alone, we'll help you understand which features are likely to provide meaningful benefit in the places you spend your time.</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {techLevels.map((item) => (
-              <div key={item.level} className="rounded-xl border border-border bg-white p-5 shadow-border">
+              <div key={item.level} className="rounded-xl border border-border bg-white p-5 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                 <p className="font-display text-lg font-semibold text-primary-deep">{item.level}</p>
                 <p className="mt-2 text-sm leading-relaxed text-mid">{item.desc}</p>
               </div>

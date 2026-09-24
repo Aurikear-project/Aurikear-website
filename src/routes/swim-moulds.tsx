@@ -118,9 +118,7 @@ function SwimMoulds() {
               "Much more effective than generic plugs",
               "Quick appointment — impressions take under 15 minutes",
             ].map((feature) => (
-              <li
-                key={feature}
-                className="flex items-start gap-3 rounded-xl bg-white border border-border p-4 shadow-border"
+              <li key={feature} className="flex items-start gap-3 rounded-xl bg-white border border-border p-4 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               >
                 <span className="mt-0.5 text-primary font-bold">✓</span>
                 <span className="text-sm text-mid leading-relaxed">

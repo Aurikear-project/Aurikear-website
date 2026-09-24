@@ -58,10 +58,7 @@ function Musicians() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {musicianAudiences.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-2xl border border-border bg-bg p-6"
-            >
+<article key={card.title} className="rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <span className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary">
                 <ServiceIcon name={card.icon} />
               </span>

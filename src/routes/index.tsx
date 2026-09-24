@@ -6,15 +6,11 @@ import {
   Microscope,
   BadgeCheck,
 } from "lucide-react";
+
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
-import {
-  practice,
-  services,
-  stats,
-  testimonials,
-} from "@/lib/practice";
+import { practice, services, stats } from "@/lib/practice";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -31,6 +27,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  // Keep the four strongest headline credentials on the homepage.
+  // This also prevents the fifth statistic from wrapping onto its own row.
+  const homepageStats = stats.filter(
+    (stat) => stat.label.toLowerCase() !== "ages treated",
+  );
+
   return (
     <main>
       {/* Hero */}
@@ -44,11 +46,18 @@ function Home() {
 
       {/* Stats band */}
       <div className="border-y border-white/10 bg-primary-deep">
-        <div className="mx-auto flex max-w-5xl flex-wrap justify-center divide-x divide-white/15">
-          {stats.map((s) => (
+        <div className="mx-auto grid max-w-4xl grid-cols-2 md:grid-cols-4">
+          {homepageStats.map((s, index) => (
             <div
               key={s.label}
-              className="flex flex-col items-center px-10 py-8 text-white"
+              className={[
+                "flex flex-col items-center px-6 py-8 text-center text-white md:px-8",
+                index > 0 ? "md:border-l md:border-white/15" : "",
+                index % 2 === 1 ? "border-l border-white/15 md:border-l" : "",
+                index >= 2
+                  ? "border-t border-white/15 md:border-t-0"
+                  : "",
+              ].join(" ")}
             >
               <span className="font-display text-4xl font-semibold tracking-tight">
                 {s.value}
@@ -143,47 +152,47 @@ function Home() {
               recommendations throughout.
             </p>
 
-<ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-  {[
-    {
-      icon: GraduationCap,
-      text: "First Class BSc & PhD, UCL",
-    },
-    {
-      icon: HeartHandshake,
-      text: "Newborn, child & adult care",
-    },
-    {
-      icon: Microscope,
-      text: "Published auditory research",
-    },
-    {
-      icon: BadgeCheck,
-      text: "HCPC registered audiologist",
-    },
-  ].map((q) => {
-    const Icon = q.icon;
+            <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {[
+                {
+                  icon: GraduationCap,
+                  text: "First Class BSc & PhD, UCL",
+                },
+                {
+                  icon: HeartHandshake,
+                  text: "Newborn, child & adult care",
+                },
+                {
+                  icon: Microscope,
+                  text: "Published auditory research",
+                },
+                {
+                  icon: BadgeCheck,
+                  text: "HCPC registered audiologist",
+                },
+              ].map((q) => {
+                const Icon = q.icon;
 
-    return (
-      <li
-        key={q.text}
-        className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
-      >
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
-          <Icon
-            className="size-5"
-            strokeWidth={1.8}
-            aria-hidden="true"
-          />
-        </span>
+                return (
+                  <li
+                    key={q.text}
+                    className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
+                  >
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
+                      <Icon
+                        className="size-5"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </span>
 
-        <span className="text-sm font-semibold leading-snug text-mid">
-          {q.text}
-        </span>
-      </li>
-    );
-  })}
-</ul>
+                    <span className="text-sm font-semibold leading-snug text-mid">
+                      {q.text}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
 
             <Button asChild className="mt-9">
               <Link to="/about">
@@ -225,13 +234,19 @@ function Home() {
             </p>
 
             <h2 className="mt-2 font-display text-xl font-semibold text-ink">
-              Using private medical insurance?
+              Using private medical insurance for your hearing care?
             </h2>
 
             <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-mid">
-              Aurikear works with a range of leading health insurers.
-              Please contact us if you would like to check your cover before
-              arranging an appointment.
+              Aurikear works with a range of leading health insurers. Please{" "}
+              <Link
+                to="/contact"
+                className="font-semibold text-primary-deep underline decoration-primary-deep/30 underline-offset-2 transition-colors hover:text-primary"
+              >
+                contact us
+              </Link>{" "}
+              if you would like to check your cover before arranging an
+              appointment.
             </p>
           </div>
 
@@ -276,59 +291,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* Testimonials */}
-      <Section>
-        <div className="text-center">
-          <Eyebrow>Patient stories</Eyebrow>
-
-          <h2 className="mt-2 font-display text-title font-semibold">
-            Trusted by families &amp; professionals
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-mid">
-            Personal hearing care built around clinical expertise, clear
-            communication and the needs of every individual.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="relative rounded-2xl border border-border bg-white p-7 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-            >
-              <span className="absolute right-6 top-5 select-none font-display text-6xl leading-none text-sky">
-                "
-              </span>
-
-              <div className="mb-4 text-sm tracking-widest text-amber-400">
-                ★★★★★
-              </div>
-
-              <p className="relative z-10 text-sm leading-relaxed text-mid">
-                {t.quote}
-              </p>
-
-              <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white shadow-border">
-                  {t.initials}
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold text-ink">
-                    {t.name}
-                  </p>
-
-                  <p className="mt-0.5 text-xs text-muted">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       {/* Final CTA */}
       <div className="relative overflow-hidden bg-primary-deep py-20 text-center text-white">

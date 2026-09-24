@@ -101,10 +101,10 @@ to: "/hearing-assessments" as const,
     href: "/hearing-aids",
     to: "/hearing-aids" as const,
 
-    image: "/images/hearing-aid.jpg",
+image: "/images/hearing-aid-female-consultation.jpg",
 
-    imageAlt:
-      "Modern receiver-in-canal hearing aid",
+imageAlt:
+  "Audiologist discussing hearing aid options with a patient",
 
     icon: "ear",
   },

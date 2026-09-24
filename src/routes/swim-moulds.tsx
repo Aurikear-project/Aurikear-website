@@ -101,34 +101,38 @@ function SwimMoulds() {
           </div>
         </div>
 
-        {/* Features */}
-        <div className="mt-16 rounded-2xl bg-sky-pale border border-border p-8 md:p-12">
-          <Eyebrow>Features</Eyebrow>
-          <h2 className="font-display text-title font-bold">
-            What makes our swim moulds different
-          </h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              "Precision ear impressions for a perfect, watertight fit",
-              "Soft, hypoallergenic medical-grade silicone",
-              "Floats in water — easy to find if dropped",
-              "Available in a wide range of colours",
-              "Suitable for children and adults of all ages",
-              "Long-lasting and easy to clean",
-              "Much more effective than generic plugs",
-              "Quick appointment — impressions take under 15 minutes",
-            ].map((feature) => (
-              <li key={feature} className="flex items-start gap-3 rounded-xl bg-white border border-border p-4 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-              >
-                <span className="mt-0.5 text-primary font-bold">✓</span>
-                <span className="text-sm text-mid leading-relaxed">
-                  {feature}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+{/* Features */}
+<div className="mt-16 rounded-2xl bg-sky-pale border border-border p-8 md:p-12">
+  <Eyebrow>Features</Eyebrow>
 
+  <h2 className="font-display text-title font-bold">
+    What makes our swim moulds different
+  </h2>
+
+  <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+    {[
+      "Precision ear impressions for a perfect, watertight fit",
+      "Soft, hypoallergenic medical-grade silicone",
+      "Floats in water — easy to find if dropped",
+      "Available in a wide range of colours",
+      "Suitable for children and adults of all ages",
+      "Long-lasting and easy to clean",
+      "Much more effective than generic plugs",
+      "Quick appointment — impressions take under 15 minutes",
+    ].map((feature) => (
+      <li
+        key={feature}
+        className="flex items-start gap-3 rounded-xl border border-border bg-white p-4 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+      >
+        <span className="mt-0.5 font-bold text-primary">✓</span>
+
+        <span className="text-sm leading-relaxed text-mid">
+          {feature}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
         {/* CTA */}
         <div className="mt-12 rounded-2xl bg-primary-deep px-6 py-12 text-center text-white md:px-12">
           <h2 className="font-display text-3xl font-bold">

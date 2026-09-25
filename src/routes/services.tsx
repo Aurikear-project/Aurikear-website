@@ -14,7 +14,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore Aurikear's clinical audiology services, including adult hearing assessments, hearing aids, paediatric audiology, musician earplugs and custom swim moulds.",
+          "Explore Aurikear's clinical audiology services, including adult hearing assessments, paediatric audiology, hearing aids, musician earplugs and custom swim moulds.",
       },
     ],
   }),
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/services")({
 
 const serviceGuidance = {
   assessments: {
+    title: "Adult hearing assessments",
     question: "Concerned about your hearing?",
     helpsWith: [
       "Changes in hearing",
@@ -33,17 +34,19 @@ const serviceGuidance = {
   },
 
   paediatric: {
+    title: "Paediatric audiology",
     question: "Concerned about your child's hearing?",
     helpsWith: [
       "Hearing concerns in babies and children",
       "Glue ear assessment and monitoring",
       "Age-appropriate hearing testing",
     ],
-    action: "Explore children's hearing",
+    action: "Explore paediatric audiology",
     to: "/paediatric" as const,
   },
 
   "hearing-aids": {
+    title: "Hearing aids",
     question: "Finding it harder to hear clearly?",
     helpsWith: [
       "Hearing loss where amplification may help",
@@ -55,6 +58,7 @@ const serviceGuidance = {
   },
 
   "musician-plugs": {
+    title: "Musician earplugs",
     question: "Need to protect your hearing around music?",
     helpsWith: [
       "Musicians and performers",
@@ -66,6 +70,7 @@ const serviceGuidance = {
   },
 
   "swim-moulds": {
+    title: "Swim moulds",
     question: "Need to keep water out of your ears?",
     helpsWith: [
       "Regular swimming",
@@ -77,7 +82,19 @@ const serviceGuidance = {
   },
 } as const;
 
+const serviceOrder = [
+  "assessments",
+  "paediatric",
+  "hearing-aids",
+  "musician-plugs",
+  "swim-moulds",
+] as const;
+
 export function ServicesPage() {
+  const orderedServices = serviceOrder
+    .map((slug) => services.find((service) => service.slug === slug))
+    .filter((service) => service !== undefined);
+
   return (
     <main>
       {/* Header */}
@@ -115,7 +132,7 @@ export function ServicesPage() {
 
         {/* Service guide */}
         <div className="mx-auto mt-12 max-w-5xl divide-y divide-border border-y border-border">
-          {services.map((service) => {
+          {orderedServices.map((service) => {
             const guidance =
               serviceGuidance[
                 service.slug as keyof typeof serviceGuidance
@@ -139,8 +156,13 @@ export function ServicesPage() {
                       {service.eyebrow}
                     </p>
 
-                    <h2 className="mt-1 font-display text-xl font-bold text-primary-deep">
-                      {service.title}
+                    <h2 className="mt-1 font-display text-xl font-bold">
+                      <Link
+                        to={guidance.to}
+                        className="text-primary-deep transition-colors hover:text-primary"
+                      >
+                        {guidance.title}
+                      </Link>
                     </h2>
 
                     <p className="mt-2 text-sm font-semibold text-ink">
@@ -206,7 +228,7 @@ export function ServicesPage() {
           <Button asChild className="mt-7">
             <Link to="/contact">
               View clinic locations
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>

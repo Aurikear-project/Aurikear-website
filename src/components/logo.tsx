@@ -1,28 +1,44 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
+/*
+ * Aurikear ear mark
+ *
+ * Kept as SVG rather than an image so the logo remains
+ * perfectly sharp at every screen size.
+ */
 function Mark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 30 34"
+      viewBox="0 0 34 40"
       fill="none"
       aria-hidden="true"
-      className={cn("h-[1.15em] w-[1em]", className)}
+      className={cn("h-[1.22em] w-[1.04em]", className)}
     >
+      {/* Outer ear curve */}
       <path
-        d="M6 30 C6 30, 26 23, 22 5"
+        d="M7 36C14 33 23 27 27 18C30 11 28 5 23 3"
         stroke="currentColor"
-        strokeWidth="2.6"
+        strokeWidth="3"
         strokeLinecap="round"
-        className="opacity-40"
+        className="opacity-45"
       />
+
+      {/* Inner ear curve */}
       <path
-        d="M10 28 C10 28, 22 21, 18 8"
+        d="M11 32C17 29 22 24 23 18C24 13 22 9 18 8"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+
+      {/* Inner cochlear detail */}
+      <path
+        d="M17 20C19 18 20 16 19 14"
         stroke="currentColor"
         strokeWidth="2.2"
         strokeLinecap="round"
       />
-      <circle cx="19.5" cy="6.5" r="2.2" fill="currentColor" />
     </svg>
   );
 }
@@ -40,23 +56,34 @@ export function Logo({
     <Link
       to="/"
       className={cn(
-        "group flex flex-col no-underline",
+        "group inline-flex flex-col no-underline",
         inverted ? "text-foam" : "text-primary-deep",
         className,
       )}
       aria-label="Aurikear home"
     >
-      <span className="flex items-end">
-        <span className="font-display text-2xl leading-none font-bold tracking-tight">
-          auriKear
+      {/* Wordmark */}
+      <span className="flex items-center">
+        <span className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em]">
+          auri
+          <span className="text-[1.08em] font-bold">K</span>
+          ear
         </span>
-        <Mark className={cn("mb-0.5 ml-1.5", inverted ? "text-sky" : "text-primary-light")} />
+
+        <Mark
+          className={cn(
+            "ml-1.5",
+            inverted ? "text-sky" : "text-primary-light",
+          )}
+        />
       </span>
+
+      {/* Tagline */}
       {stacked ? (
         <span
           className={cn(
-            "mt-0.5 text-xs leading-none italic",
-            inverted ? "text-foam/50" : "text-primary-light",
+            "mt-1 pl-[0.15em] text-[0.62rem] font-medium leading-none tracking-[0.08em]",
+            inverted ? "text-foam/60" : "text-primary-light",
           )}
         >
           Hear for good

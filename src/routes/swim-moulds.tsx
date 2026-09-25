@@ -14,15 +14,73 @@ import { PageHero } from "@/components/page-hero";
 import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/swim-moulds`;
+
+const PAGE_TITLE =
+  "Custom Swim Moulds & Swimming Earplugs | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Custom swim moulds and swimming earplugs for children and adults, professionally fitted from precise ear impressions to help protect the ears from water.";
+
 export const Route = createFileRoute("/swim-moulds")({
   component: SwimMoulds,
+
   head: () => ({
     meta: [
-      { title: "Swim Moulds – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Custom swim moulds for children and adults, professionally fitted from precise ear impressions to help protect the ears from water.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -101,7 +159,14 @@ function SwimMoulds() {
         eyebrow="Water protection"
         title="Custom swim moulds"
         lede="Individually made ear protection for swimmers of all ages — designed for a comfortable, secure fit and to help keep water out."
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </PageHero>
 
       <Section>
         {/* Why custom? */}
@@ -114,10 +179,11 @@ function SwimMoulds() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-mid">
-              Unlike generic earplugs, custom swim moulds are individually made
-              from an impression of your ear. Your ear impressions are taken
-              professionally by an experienced audiologist, allowing your
-              moulds to be made for a comfortable and secure fit.
+              Unlike generic swimming earplugs, custom swim moulds are
+              individually made from an impression of your ear. Your ear
+              impressions are taken professionally by an experienced
+              audiologist, allowing your moulds to be made for a comfortable
+              and secure fit.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
@@ -130,17 +196,17 @@ function SwimMoulds() {
 
           <FramedImage
             src="/images/swimmer-wearing-swim-moulds.jpg"
-            alt="Swimmer wearing custom ear protection"
+            alt="Swimmer wearing custom swimming earplugs and swim moulds"
             className="aspect-wide rounded-2xl"
           />
         </div>
 
         {/* Who they're for */}
         <div className="mt-16">
-          <Eyebrow>Who they're for</Eyebrow>
+          <Eyebrow>Who they&apos;re for</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
-            Suitable for all ages and needs
+            Swimming ear protection for children and adults
           </h2>
 
           <p className="mt-3 max-w-2xl leading-relaxed text-mid">
@@ -184,7 +250,7 @@ function SwimMoulds() {
           <Eyebrow>Features</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
-            What makes our swim moulds different
+            What makes our custom swim moulds different
           </h2>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -220,7 +286,7 @@ function SwimMoulds() {
 
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
               Custom swim moulds start with understanding how you plan to use
-              them. We'll then take the impressions needed for moulds made
+              them. We&apos;ll then take the impressions needed for moulds made
               specifically for your ears.
             </p>
           </div>
@@ -266,8 +332,8 @@ function SwimMoulds() {
 
             <p className="mt-1 text-sm leading-relaxed text-mid">
               Because each mould is made from your own ear impressions, the fit
-              is individual to you. We'll also explain how to insert, remove and
-              care for your swim moulds.
+              is individual to you. We&apos;ll also explain how to insert,
+              remove and care for your swim moulds.
             </p>
           </div>
         </div>
@@ -282,7 +348,7 @@ function SwimMoulds() {
 
           <p className="mx-auto mt-3 max-w-lg text-foam/80">
             Ear impressions are quick and straightforward. Arrange an
-            appointment and we'll take the impressions needed for your
+            appointment and we&apos;ll take the impressions needed for your
             individually made swim moulds.
           </p>
 

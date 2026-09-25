@@ -6,15 +6,72 @@ import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/practice";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/services`;
+
+const PAGE_TITLE = "Private Audiology & Hearing Services | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Explore Aurikear's private audiology services for adults and children, including hearing assessments, paediatric audiology, hearing aids, musician earplugs and custom swim moulds.";
+
 export const Route = createFileRoute("/services")({
   component: ServicesPage,
+
   head: () => ({
     meta: [
-      { title: "Clinical Services – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Explore Aurikear's clinical audiology services, including adult hearing assessments, paediatric audiology, hearing aids, musician earplugs and custom swim moulds.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -70,14 +127,14 @@ const serviceGuidance = {
   },
 
   "swim-moulds": {
-    title: "Swim moulds",
+    title: "Custom swim moulds",
     question: "Need to keep water out of your ears?",
     helpsWith: [
       "Regular swimming",
       "Children who need water protection",
       "Custom-fit protection around water",
     ],
-    action: "Explore swim moulds",
+    action: "Explore custom swim moulds",
     to: "/swim-moulds" as const,
   },
 } as const;
@@ -100,16 +157,16 @@ export function ServicesPage() {
       {/* Header */}
       <section className="border-b border-border bg-sky-pale/50 py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
-          <Eyebrow>Clinical services</Eyebrow>
+          <Eyebrow>Clinical audiology services</Eyebrow>
 
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
-            How can we help?
+            Hearing care for adults and children
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-mid md:text-lg">
             From understanding a hearing concern to hearing technology and
-            specialist ear protection, our services are tailored to your
-            individual needs.
+            specialist ear protection, Aurikear provides private audiology
+            services tailored to your individual needs.
           </p>
         </div>
       </section>
@@ -120,13 +177,14 @@ export function ServicesPage() {
           <Eyebrow>Find the right service</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
-            Hearing care for every stage of life
+            Start with what you need help with
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            You don't need to know which test, treatment or service you need
-            before getting in touch. The guide below can help you understand
-            which area of our hearing care may be most relevant to you.
+            You don&apos;t need to know which hearing test, technology or
+            service you need before getting in touch. Explore the options below
+            to understand which area of Aurikear&apos;s hearing care may be most
+            relevant to you or your child.
           </p>
         </div>
 
@@ -210,24 +268,24 @@ export function ServicesPage() {
           })}
         </div>
 
-        {/* Clinic guidance */}
+        {/* Booking guidance */}
         <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-border bg-sky-pale px-6 py-10 text-center md:px-12 md:py-12">
-          <Eyebrow>Not sure where to start?</Eyebrow>
+          <Eyebrow>Appointments</Eyebrow>
 
           <h2 className="mt-2 font-display text-2xl font-bold text-primary-deep md:text-3xl">
-            Find the right place for your appointment
+            Find the right clinic for your appointment
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-mid">
-            If you're unsure which clinic is appropriate, review the services
-            above and our clinic locations. Appointment types vary between
-            hospitals, and the hospital booking team can help arrange the
-            appropriate appointment.
+            Aurikear provides audiology services at selected Nuffield Health
+            and Spire hospital locations. Services vary between hospitals, so
+            check our clinic page to find the location most appropriate for
+            your appointment.
           </p>
 
           <Button asChild className="mt-7">
             <Link to="/contact">
-              View clinic locations
+              View clinics &amp; appointments
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>

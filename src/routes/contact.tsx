@@ -9,6 +9,7 @@ import {
 
 import { Eyebrow, Section } from "@/components/section";
 import { clinics } from "@/lib/practice";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -28,7 +29,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Page header */}
-      <section className="border-b border-border bg-sky-pale/50 py-16 md:py-24">
+      <section className="border-b border-border bg-sky-pale/50 py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
           <Eyebrow>Appointments & locations</Eyebrow>
 
@@ -62,109 +63,136 @@ export default function ContactPage() {
         </div>
 
         {/* Clinic cards */}
-        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-          {clinics.map((clinic) => (
-            <article
-              key={clinic.id}
-              className="flex flex-col rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-            >
-              {/* Hospital type */}
-              <div className="flex items-center gap-2 text-primary">
-                <Building2
-                  className="size-4"
-                  strokeWidth={1.8}
-                  aria-hidden="true"
-                />
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+          {clinics.map((clinic) => {
+            const isLondonEast = clinic.id === "london-east";
 
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  {clinic.type}
-                </span>
-              </div>
+            return (
+              <article
+                key={clinic.id}
+                className={cn(
+                  "flex flex-col rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift",
+                  isLondonEast && "md:col-span-2 md:p-8",
+                )}
+              >
+                <div
+                  className={cn(
+                    isLondonEast &&
+                      "md:grid md:grid-cols-[1fr_1.15fr] md:gap-12",
+                  )}
+                >
+                  {/* Clinic details */}
+                  <div>
+                    {/* Hospital type */}
+                    <div className="flex items-center gap-2 text-primary">
+                      <Building2
+                        className="size-4"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
 
-              {/* Hospital name */}
-              <h2 className="mt-3 font-display text-xl font-bold text-primary-deep">
-                {clinic.name}
-              </h2>
-
-              {/* Address */}
-              <div className="mt-4 flex items-start gap-3">
-                <MapPin
-                  className="mt-1 size-4 shrink-0 text-primary"
-                  strokeWidth={1.8}
-                  aria-hidden="true"
-                />
-
-                <p className="text-sm leading-relaxed text-mid">
-                  {clinic.address}
-                  <br />
-                  {clinic.town}
-                  <br />
-                  {clinic.postcode}
-                </p>
-              </div>
-
-              {/* Services */}
-              <div className="mt-6 rounded-xl bg-sky-pale p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-primary-light">
-                  Services available
-                </p>
-
-                <ul className="mt-3 space-y-2.5">
-                  {clinic.services.map((service) => (
-                    <li
-                      key={service}
-                      className="flex items-start gap-2.5 text-sm leading-relaxed text-mid"
-                    >
-                      <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-md bg-white text-primary">
-                        <Check
-                          className="size-3"
-                          strokeWidth={2}
-                          aria-hidden="true"
-                        />
+                      <span className="text-xs font-bold uppercase tracking-wider">
+                        {clinic.type}
                       </span>
+                    </div>
 
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    {/* Hospital name */}
+                    <h2 className="mt-3 font-display text-xl font-bold text-primary-deep">
+                      {clinic.name}
+                    </h2>
 
-              {/* Contact actions */}
-              <div className="mt-auto flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
-                <a
-                  href={clinic.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-deep px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    {/* Address */}
+                    <div className="mt-4 flex items-start gap-3">
+                      <MapPin
+                        className="mt-1 size-4 shrink-0 text-primary"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+
+                      <p className="text-sm leading-relaxed text-mid">
+                        {clinic.address}
+                        <br />
+                        {clinic.town}
+                        <br />
+                        {clinic.postcode}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Services */}
+                  <div
+                    className={cn(
+                      "mt-6 rounded-xl bg-sky-pale p-4",
+                      isLondonEast && "md:mt-0 md:p-5",
+                    )}
+                  >
+                    <p className="text-xs font-bold uppercase tracking-wider text-primary-light">
+                      Services available
+                    </p>
+
+                    <ul className="mt-3 space-y-2.5">
+                      {clinic.services.map((service) => (
+                        <li
+                          key={service}
+                          className="flex items-start gap-2.5 text-sm leading-relaxed text-mid"
+                        >
+                          <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-md bg-white text-primary">
+                            <Check
+                              className="size-3"
+                              strokeWidth={2}
+                              aria-hidden="true"
+                            />
+                          </span>
+
+                          <span>{service}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Contact actions */}
+                <div
+                  className={cn(
+                    "mt-auto flex flex-col gap-3 border-t border-border pt-6 sm:flex-row",
+                    isLondonEast && "md:mt-6",
+                  )}
                 >
-                  <Phone
-                    className="size-4"
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
+                  <a
+                    href={clinic.phoneHref}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-deep px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  >
+                    <Phone
+                      className="size-4"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
 
-                  {clinic.phone}
-                </a>
+                    {clinic.phone}
+                  </a>
 
-                <a
-                  href={clinic.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-primary-deep transition-colors hover:bg-sky-pale"
-                >
-                  Hospital website
+                  <a
+                    href={clinic.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-primary-deep transition-colors hover:bg-sky-pale"
+                  >
+                    Hospital website
 
-                  <ArrowUpRight
-                    className="size-4"
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
-                </a>
-              </div>
-            </article>
-          ))}
+                    <ArrowUpRight
+                      className="size-4"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         {/* Paediatric guidance */}
-        <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-border bg-sky-pale px-6 py-10 md:px-12 md:py-12">
+        <div className="mx-auto mt-12 max-w-4xl rounded-3xl border border-border bg-sky-pale px-6 py-9 md:px-12 md:py-10">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Children's appointments</Eyebrow>
 
@@ -184,22 +212,13 @@ export default function ContactPage() {
               assessments for children aged 8 months to 4 years and hearing
               assessments for children with complex needs.
             </p>
+
+            <p className="mt-4 text-sm leading-relaxed text-mid">
+              When contacting the hospital, let the booking team know the type
+              of audiology appointment you require so they can arrange the
+              appropriate appointment.
+            </p>
           </div>
-        </div>
-
-        {/* Booking reminder */}
-        <div className="mx-auto mt-12 max-w-3xl text-center">
-          <Eyebrow>Before you call</Eyebrow>
-
-          <h2 className="font-display text-2xl font-bold text-primary-deep">
-            Tell the hospital which appointment you need
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            When contacting the hospital, let the booking team know the type of
-            audiology appointment you require so they can help arrange the
-            appropriate appointment.
-          </p>
         </div>
       </Section>
     </main>

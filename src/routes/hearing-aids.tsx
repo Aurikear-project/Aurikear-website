@@ -4,14 +4,12 @@ import {
   AudioLines,
   BatteryCharging,
   Bluetooth,
-  CalendarCheck,
-  ClipboardCheck,
+  Check,
   Ear,
   HeartHandshake,
   RefreshCw,
   ShieldCheck,
   Sparkles,
-  UserRound,
 } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
@@ -78,42 +76,42 @@ const hearingAidTypes = [
   },
 ];
 
-const includedServices = [
+const hearingAidJourney = [
   {
-    icon: ClipboardCheck,
-    title: "Comprehensive assessment",
+    number: "01",
+    title: "Hearing assessment",
     body:
-      "A full diagnostic hearing evaluation before any recommendation is made, helping us understand your hearing and listening needs.",
+      "We begin with a comprehensive diagnostic hearing assessment to understand your hearing and identify where you may be experiencing difficulty.",
   },
   {
-    icon: UserRound,
-    title: "Personalised recommendation",
+    number: "02",
+    title: "Discuss your needs",
     body:
-      "We consider your hearing, lifestyle, listening environments, dexterity, cosmetic preferences, connectivity needs and budget.",
+      "We take time to understand your lifestyle, listening environments, priorities, dexterity, cosmetic preferences, connectivity needs and budget.",
   },
   {
-    icon: AudioLines,
-    title: "Real-ear measurement",
+    number: "03",
+    title: "Choose your technology",
     body:
-      "Where clinically appropriate, your fitting can be verified using real-ear measurement to assess the sound delivered in your individual ear.",
+      "We'll explain the hearing aid styles and technology that may be appropriate for you, helping you make an informed choice without expecting you to choose from a catalogue.",
   },
   {
-    icon: Ear,
-    title: "Custom ear moulds",
+    number: "04",
+    title: "Professional fitting",
     body:
-      "Where appropriate, bespoke ear moulds can be made to provide a secure, comfortable and acoustically appropriate fit.",
+      "Your hearing aids are fitted and programmed around your hearing. Where appropriate, custom ear moulds can be made for a secure, comfortable and acoustically suitable fit.",
   },
   {
-    icon: CalendarCheck,
-    title: "Structured aftercare",
+    number: "05",
+    title: "Real-ear verification",
     body:
-      "Follow-up appointments allow us to review your experience and fine-tune your hearing aids as you adapt to them.",
+      "Where clinically appropriate, real-ear measurement can be used to assess the sound delivered in your individual ear and help verify your fitting.",
   },
   {
-    icon: HeartHandshake,
-    title: "Ongoing support",
+    number: "06",
+    title: "Ongoing aftercare",
     body:
-      "Continued advice, cleaning, checks and adjustments help keep your hearing aids working effectively.",
+      "Follow-up appointments, fine-tuning, advice, cleaning and ongoing adjustments help you adapt to your hearing aids and keep them working effectively.",
   },
 ];
 
@@ -138,12 +136,19 @@ const techLevels = [
 function HearingAids() {
   return (
     <main>
-      {/* Clean service hero */}
+      {/* HERO */}
       <PageHero
         eyebrow="Hearing technology"
         title="Hear more of what matters"
         lede="Modern hearing technology, carefully selected and professionally fitted around your hearing, lifestyle and individual needs."
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </PageHero>
 
       <Section>
         {/* INTRODUCTION */}
@@ -162,17 +167,17 @@ function HearingAids() {
           </p>
 
           <p className="mt-4 leading-relaxed text-mid">
-            At Aurikear, we offer advanced hearing technology from Oticon and
-            Phonak. Following a comprehensive hearing assessment, we'll explain
-            the options that are most appropriate for you and help you make an
-            informed choice.
+            At Aurikear, we work with advanced hearing technology from Oticon
+            and Phonak. Following a comprehensive hearing assessment, we'll
+            explain the options that are most appropriate for you and help you
+            make an informed choice.
           </p>
         </div>
 
         {/* HEARING AID STYLES */}
         <div className="mt-20">
           <div className="max-w-2xl">
-            <Eyebrow>Styles & solutions</Eyebrow>
+            <Eyebrow>Styles &amp; solutions</Eyebrow>
 
             <h2 className="font-display text-title font-bold">
               Find the style that suits you
@@ -245,24 +250,29 @@ function HearingAids() {
               </h3>
 
               <p className="mt-4 leading-relaxed text-mid">
-                Aurikear offers the Oticon hearing aid range, with solutions
-                including discreet receiver-in-the-ear devices, custom hearing
-                aids and behind-the-ear technology.
+                Aurikear works with Oticon hearing technology, including
+                discreet receiver-in-the-ear devices, custom hearing aids and
+                behind-the-ear solutions.
               </p>
 
               <p className="mt-3 leading-relaxed text-mid">
-                We'll help you understand which Oticon technology and style is
-                appropriate for your hearing, listening needs and preferences.
+                Rather than choosing a device based on specifications alone,
+                we'll help you understand which Oticon technology and style may
+                be appropriate for your hearing, listening needs and
+                preferences.
               </p>
 
               <a
                 href="https://www.oticon.co.uk/products/hearing-aids"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
+                className="group mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
               >
                 Explore Oticon hearing aids
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight
+                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </a>
             </div>
 
@@ -289,25 +299,28 @@ function HearingAids() {
               </h3>
 
               <p className="mt-4 leading-relaxed text-mid">
-                Aurikear offers a wide range of Phonak hearing aids, including
-                receiver-in-the-ear, custom, power, paediatric and CROS
-                solutions.
+                Aurikear works with a wide range of Phonak hearing technology,
+                including receiver-in-the-ear, custom, power, paediatric and
+                CROS solutions.
               </p>
 
               <p className="mt-3 leading-relaxed text-mid">
                 From conversations at home to challenging listening
-                environments, we'll explore the Phonak options that best match
-                your individual hearing needs.
+                environments, we'll explore the Phonak options that may best
+                match your individual hearing needs and everyday life.
               </p>
 
               <a
                 href="https://www.phonak.com/en-uk/hearing-devices/hearing-aids"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
+                className="group mt-6 inline-flex items-center gap-2 font-semibold text-primary-deep hover:underline"
               >
                 Explore Phonak hearing aids
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight
+                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </a>
 
               <p className="mt-4 text-xs text-mid">
@@ -342,47 +355,59 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* COMPLETE HEARING AID SERVICE */}
+        {/* HEARING AID JOURNEY */}
         <div className="mt-24">
-          <Eyebrow>Your care</Eyebrow>
+          <div className="max-w-3xl">
+            <Eyebrow>Your care</Eyebrow>
 
-          <h2 className="font-display text-title font-bold">
-            A complete hearing aid service
-          </h2>
+            <h2 className="font-display text-title font-bold">
+              Your hearing aid journey
+            </h2>
 
-          <p className="mt-4 max-w-2xl leading-relaxed text-mid">
-            Choosing the technology is only one part of successful hearing
-            care. Professional fitting, verification and ongoing support are
-            central to the Aurikear approach.
-          </p>
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
+              Choosing the technology is only one part of successful hearing
+              care. From your first assessment through to fitting and ongoing
+              support, we'll guide you through each stage.
+            </p>
+          </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {includedServices.map((item) => {
-              const Icon = item.icon;
+          <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
+            {hearingAidJourney.map((item, index) => (
+              <article
+                key={item.number}
+                className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-fg">
+                  {item.number}
+                </div>
 
-              return (
-                <article
-                  key={item.title}
-                  className="group rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-                >
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary-deep">
-                    <Icon
-                      className="size-5"
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <h3 className="mt-4 font-bold text-primary-deep">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-primary-deep">
                     {item.title}
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-mid">
                     {item.body}
                   </p>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 flex items-start gap-3 rounded-2xl bg-sky-pale px-5 py-5">
+            <HeartHandshake
+              className="mt-0.5 size-5 shrink-0 text-primary"
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+
+            <p className="text-sm leading-relaxed text-mid">
+              <span className="font-bold text-primary-deep">
+                Support doesn't end at the fitting.
+              </span>{" "}
+              Hearing needs can change over time, so ongoing review and
+              adjustment remain an important part of your hearing care.
+            </p>
           </div>
         </div>
 
@@ -417,6 +442,23 @@ function HearingAids() {
               </div>
             ))}
           </div>
+
+          <div className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-white/70 px-5 py-4">
+            <Check
+              className="mt-0.5 size-5 shrink-0 text-primary"
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+
+            <p className="text-sm leading-relaxed text-mid">
+              <span className="font-bold text-primary-deep">
+                Technology level isn't the same as suitability.
+              </span>{" "}
+              The right choice depends on your hearing, listening environments,
+              lifestyle and the features that are likely to provide meaningful
+              benefit for you.
+            </p>
+          </div>
         </div>
 
         {/* FINAL CTA */}
@@ -424,18 +466,18 @@ function HearingAids() {
           <Eyebrow className="text-sky">Your hearing matters</Eyebrow>
 
           <h2 className="font-display text-3xl font-bold">
-            Ready to hear more clearly?
+            Ready to find the right hearing solution?
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-foam/80">
-            Arrange a comprehensive hearing assessment and we'll help you
-            understand which hearing technology best suits your hearing,
-            lifestyle and listening needs.
+            Whether you're concerned about your hearing or already considering
+            hearing aids, we'll help you understand your options and choose
+            technology suited to your hearing, lifestyle and individual needs.
           </p>
 
           <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
-              Arrange a hearing assessment
+              Arrange an appointment
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>

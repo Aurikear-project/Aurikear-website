@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BadgeCheck,
+  GraduationCap,
+  Microscope,
+} from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
@@ -19,6 +25,25 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
+
+const credentials = [
+  {
+    icon: BadgeCheck,
+    title: "HCPC registered",
+  },
+  {
+    icon: GraduationCap,
+    title: "First Class BSc, UCL",
+  },
+  {
+    icon: Microscope,
+    title: "PhD, UCL",
+  },
+  {
+    icon: Award,
+    title: "15+ years",
+  },
+];
 
 function Home() {
   return (
@@ -78,8 +103,8 @@ function Home() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            Choose the area most relevant to you, or explore all of our
-            clinical services if you&apos;re not sure where to start.
+            Choose the area most relevant to you, or view all our services if
+            you&apos;re not sure where to start.
           </p>
         </div>
 
@@ -143,12 +168,14 @@ function Home() {
 
       {/* Compact audiologist introduction */}
       <Section tone="off">
-        <div className="mx-auto grid max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto] md:gap-12">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
             <Eyebrow>Your audiologist</Eyebrow>
 
             <h2 className="mt-2 max-w-2xl font-display text-title font-semibold">
-              Specialist audiology. Personal care.
+              Specialist audiology.
+              <br />
+              Personal care.
             </h2>
 
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
@@ -159,7 +186,7 @@ function Home() {
 
             <Link
               to="/about"
-              className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+              className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
             >
               Meet your audiologist
 
@@ -170,14 +197,30 @@ function Home() {
             </Link>
           </div>
 
-          <div className="hidden md:flex">
-            <div className="flex size-28 items-center justify-center rounded-full border border-border bg-white shadow-border">
-              <BadgeCheck
-                className="size-11 text-primary"
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
-            </div>
+          {/* Credentials */}
+          <div className="grid gap-3 sm:grid-cols-2">
+            {credentials.map((credential) => {
+              const Icon = credential.icon;
+
+              return (
+                <div
+                  key={credential.title}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
+                >
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
+                    <Icon
+                      className="size-4.5"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
+                  </span>
+
+                  <span className="text-sm font-semibold leading-snug text-primary-deep">
+                    {credential.title}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Section>
@@ -213,6 +256,7 @@ function Home() {
             </Link>
           </div>
 
+          {/* Insurer logos */}
           <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
             {[
               {

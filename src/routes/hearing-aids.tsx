@@ -16,15 +16,73 @@ import { PageHero } from "@/components/page-hero";
 import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/hearing-aids`;
+
+const PAGE_TITLE =
+  "Private Hearing Aids & Audiologist Fittings | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Private hearing aid assessment, fitting and aftercare with an HCPC-registered audiologist. Oticon and Phonak hearing aids, real-ear verification and personalised support.";
+
 export const Route = createFileRoute("/hearing-aids")({
   component: HearingAids,
+
   head: () => ({
     meta: [
-      { title: "Hearing Aids – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Personalised hearing aid fitting from Aurikear. Explore advanced Oticon and Phonak hearing aids with expert fitting, real-ear measurement and ongoing aftercare.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -167,7 +225,7 @@ function HearingAids() {
 
           <p className="mt-4 leading-relaxed text-mid">
             At Aurikear, we work with advanced hearing technology from Oticon
-            and Phonak. Following a comprehensive hearing assessment, we'll
+            and Phonak. Following a comprehensive hearing assessment, we&apos;ll
             explain the options that are most appropriate for you and help you
             make an informed choice.
           </p>
@@ -256,8 +314,8 @@ function HearingAids() {
 
               <p className="mt-3 leading-relaxed text-mid">
                 Rather than choosing a device based on specifications alone,
-                we'll help you understand which Oticon technology and style may
-                be appropriate for your hearing, listening needs and
+                we&apos;ll help you understand which Oticon technology and style
+                may be appropriate for your hearing, listening needs and
                 preferences.
               </p>
 
@@ -305,7 +363,7 @@ function HearingAids() {
 
               <p className="mt-3 leading-relaxed text-mid">
                 From conversations at home to challenging listening
-                environments, we'll explore the Phonak options that may best
+                environments, we&apos;ll explore the Phonak options that may best
                 match your individual hearing needs and everyday life.
               </p>
 
@@ -341,15 +399,15 @@ function HearingAids() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-foam/80">
-              The best hearing aid isn't simply the newest or most expensive
-              device. It's one that is appropriate for your hearing, your
-              lifestyle and the situations that matter to you.
+              The best hearing aid isn&apos;t simply the newest or most
+              expensive device. It&apos;s one that is appropriate for your
+              hearing, your lifestyle and the situations that matter to you.
             </p>
 
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-foam/80">
-              We'll explain your options clearly and recommend technology based
-              on your individual assessment rather than expecting you to choose
-              from a catalogue.
+              We&apos;ll explain your options clearly and recommend technology
+              based on your individual assessment rather than expecting you to
+              choose from a catalogue.
             </p>
           </div>
         </div>
@@ -366,7 +424,7 @@ function HearingAids() {
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
               Choosing the technology is only one part of successful hearing
               care. From your first assessment through to fitting and ongoing
-              support, we'll guide you through each stage.
+              support, we&apos;ll guide you through each stage.
             </p>
           </div>
 
@@ -402,7 +460,7 @@ function HearingAids() {
 
             <p className="text-sm leading-relaxed text-mid">
               <span className="font-bold text-primary-deep">
-                Support doesn't end at the fitting.
+                Support doesn&apos;t end at the fitting.
               </span>{" "}
               Hearing needs can change over time, so ongoing review and
               adjustment remain an important part of your hearing care.
@@ -420,7 +478,7 @@ function HearingAids() {
 
           <p className="mt-4 max-w-2xl leading-relaxed text-mid">
             Hearing aids are available at different technology levels. Rather
-            than choosing on specifications alone, we'll help you understand
+            than choosing on specifications alone, we&apos;ll help you understand
             which features are likely to provide meaningful benefit in the
             places you spend your time.
           </p>
@@ -452,7 +510,7 @@ function HearingAids() {
 
             <p className="text-sm leading-relaxed text-mid">
               <span className="font-bold text-primary-deep">
-                More advanced doesn't always mean more appropriate.
+                More advanced doesn&apos;t always mean more appropriate.
               </span>{" "}
               The right technology depends on your hearing, listening
               environments, lifestyle and the features that are likely to
@@ -470,9 +528,10 @@ function HearingAids() {
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-foam/80">
-            Whether you're concerned about your hearing or already considering
-            hearing aids, we'll help you understand your options and choose
-            technology suited to your hearing, lifestyle and individual needs.
+            Whether you&apos;re concerned about your hearing or already
+            considering hearing aids, we&apos;ll help you understand your options
+            and choose technology suited to your hearing, lifestyle and
+            individual needs.
           </p>
 
           <Button asChild variant="foam" className="mt-7">

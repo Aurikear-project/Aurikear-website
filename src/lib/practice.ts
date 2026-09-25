@@ -204,46 +204,6 @@ export const services = [
   },
 ] as const;
 
-export const bookingServices = [
-  {
-    id: "hearing-test",
-    title: "Comprehensive Hearing Assessment",
-    duration: "60 mins",
-  },
-  {
-    id: "earwax-removal",
-    title: "Earwax Removal (Micro-suction)",
-    duration: "30 mins",
-  },
-  {
-    id: "hearing-aid-consultation",
-    title: "Hearing Aid Consultation & Fitting",
-    duration: "60 mins",
-  },
-  {
-    id: "paediatric-hearing",
-    title: "Paediatric Audiology",
-    duration: "60 mins",
-  },
-  {
-    id: "tinnitus-consultation",
-    title: "Tinnitus Assessment & Management",
-    duration: "60 mins",
-  },
-  {
-    id: "custom-ear-protection",
-    title: "Custom Ear Protection Impressions",
-    duration: "30 mins",
-  },
-] as const;
-
-export const timePreferences = [
-  { id: "morning", label: "Monday – Friday morning" },
-  { id: "afternoon", label: "Monday – Friday afternoon" },
-  { id: "saturday", label: "Saturday morning" },
-  { id: "flexible", label: "Flexible / No preference" },
-] as const;
-
 export const qualifications = [
   {
     label: "Qualification",

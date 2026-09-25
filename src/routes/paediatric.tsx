@@ -8,15 +8,73 @@ import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { paediatricAges } from "@/lib/practice";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/paediatric`;
+
+const PAGE_TITLE =
+  "Private Paediatric Audiologist & Children's Hearing Tests | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Private children's hearing tests and paediatric audiology from 8 months onwards, including age-appropriate hearing assessment, glue ear monitoring and complex-needs care.";
+
 export const Route = createFileRoute("/paediatric")({
   component: Paediatric,
+
   head: () => ({
     meta: [
-      { title: "Paediatric Audiology & Children's Hearing – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Specialist paediatric hearing assessments for children from 8 months onwards, including visual reinforcement audiometry, play audiometry, glue ear monitoring and assessments for children with complex needs.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -83,21 +141,21 @@ function Paediatric() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-mid">
-              If you have concerns about your child's hearing, an assessment
-              can help you understand what they are hearing and whether any
-              further support is needed.
+              If you have concerns about your child&apos;s hearing, an
+              assessment can help you understand what they are hearing and
+              whether any further support is needed.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
               We provide a calm, welcoming environment and adapt each
-              appointment to your child's age, development and individual
+              appointment to your child&apos;s age, development and individual
               needs. Hearing assessments are non-invasive and designed to be as
               comfortable and engaging as possible.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
-              We'll explain what we're doing throughout the appointment and
-              give you plenty of opportunity to ask questions.
+              We&apos;ll explain what we&apos;re doing throughout the
+              appointment and give you plenty of opportunity to ask questions.
             </p>
           </div>
 
@@ -117,9 +175,10 @@ function Paediatric() {
           </h2>
 
           <p className="mt-3 max-w-2xl leading-relaxed text-mid">
-            Children's hearing is assessed differently depending on their age
-            and developmental stage. We select the most appropriate techniques
-            for your child and adapt the assessment around their responses.
+            Children&apos;s hearing is assessed differently depending on their
+            age and developmental stage. We select the most appropriate
+            techniques for your child and adapt the assessment around their
+            responses.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -154,15 +213,15 @@ function Paediatric() {
             <Eyebrow>Specialist services</Eyebrow>
 
             <h2 className="font-display text-title font-bold">
-              Specialist children's hearing care
+              Specialist children&apos;s hearing care
             </h2>
 
             <div className="mt-4 space-y-3 leading-relaxed text-mid">
               <p>
-                Children's hearing can change as they grow, and difficulties
-                are not always obvious. We provide age-appropriate hearing
-                assessments for a wide range of concerns, from routine hearing
-                checks to ongoing monitoring.
+                Children&apos;s hearing can change as they grow, and
+                difficulties are not always obvious. We provide age-appropriate
+                hearing assessments for a wide range of concerns, from routine
+                hearing checks to ongoing monitoring.
               </p>
 
               <p>
@@ -186,13 +245,13 @@ function Paediatric() {
             <Eyebrow>What to expect</Eyebrow>
 
             <h2 className="font-display text-title font-bold">
-              Your child's appointment
+              Your child&apos;s appointment
             </h2>
 
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
-              Every appointment is shaped around your child. We'll take time to
-              understand your concerns before selecting the most appropriate
-              tests for their age and developmental stage.
+              Every appointment is shaped around your child. We&apos;ll take
+              time to understand your concerns before selecting the most
+              appropriate tests for their age and developmental stage.
             </p>
           </div>
 
@@ -226,12 +285,12 @@ function Paediatric() {
             <Eyebrow>Clinic availability</Eyebrow>
 
             <h2 className="font-display text-title font-bold">
-              Where children's appointments are available
+              Where children&apos;s appointments are available
             </h2>
 
             <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-mid">
-              The hospital location for your child's assessment depends on
-              their age and individual needs.
+              The hospital location for your child&apos;s assessment depends
+              on their age and individual needs.
             </p>
           </div>
 
@@ -279,7 +338,7 @@ function Paediatric() {
               </h3>
 
               <p className="mt-2 text-sm leading-relaxed text-mid">
-                Children's hearing assessments are available at Nuffield
+                Children&apos;s hearing assessments are available at Nuffield
                 Health Brentwood Hospital, Nuffield Health The Holly Hospital,
                 Spire Cambridge Lea Hospital and Spire Hartswood Hospital.
               </p>
@@ -327,16 +386,16 @@ function Paediatric() {
 
         {/* Final CTA */}
         <div className="mt-16 rounded-2xl bg-primary-deep px-6 py-12 text-center text-foam md:px-12">
-          <Eyebrow className="text-sky">We're here to help</Eyebrow>
+          <Eyebrow className="text-sky">We&apos;re here to help</Eyebrow>
 
           <h2 className="font-display text-3xl font-bold text-foam">
-            Concerned about your child's hearing?
+            Concerned about your child&apos;s hearing?
           </h2>
 
           <p className="mx-auto mt-3 max-w-lg text-foam/80">
-            Whether you've noticed a change, received a referral or simply want
-            reassurance, we're here to help you understand your child's
-            hearing.
+            Whether you&apos;ve noticed a change, received a referral or simply
+            want reassurance, we&apos;re here to help you understand your
+            child&apos;s hearing.
           </p>
 
           <Button asChild variant="foam" className="mt-7">

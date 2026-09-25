@@ -53,19 +53,72 @@ function NotFound() {
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { charSet: "utf-8" },
+      {
+        charSet: "utf-8",
+      },
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
+
+      // Default title
       {
-        title: `${APP_NAME} – Hear for good`,
+        title: `${APP_NAME} – Private Audiology`,
       },
+
+      // Default description
       {
         name: "description",
         content:
-          "Research-led private audiology for babies, children and adults. HCPC-registered, UCL-trained expertise in hearing assessments, hearing aids and specialist ear protection.",
+          "Private audiology for babies, children and adults. HCPC-registered, UCL-trained expertise in hearing assessments, hearing aids and specialist ear protection.",
       },
+
+      // Search engine instructions
+      {
+        name: "robots",
+        content:
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+
+      // Default Open Graph metadata
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: APP_NAME,
+      },
+      {
+        property: "og:title",
+        content: "Aurikear – Private Audiology",
+      },
+      {
+        property: "og:description",
+        content:
+          "Private audiology for babies, children and adults, including hearing assessments, hearing aids and specialist ear protection.",
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Default social sharing metadata
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: "Aurikear – Private Audiology",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Private audiology for babies, children and adults, including hearing assessments, hearing aids and specialist ear protection.",
+      },
+
+      // Browser theme colour
       {
         name: "theme-color",
         content: "#0c5a72",
@@ -73,23 +126,43 @@ export const Route = createRootRoute({
     ],
 
     links: [
+      // Favicon
       {
         rel: "icon",
         type: "image/svg+xml",
         href: "/favicon.svg",
       },
+
+      // Main stylesheet
       {
         rel: "stylesheet",
         href: appCss,
       },
+
+      // Google Fonts connection optimisation
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+
+      // Fonts
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap",
       },
+
+      // PWA manifest
       {
         rel: "manifest",
         href: "/__grok/manifest.webmanifest",
       },
+
+      // Apple touch icon
       {
         rel: "apple-touch-icon",
         href: "/__grok/icon-180.png",
@@ -108,6 +181,7 @@ function Root() {
       <head>
         <HeadContent />
 
+        {/* Site-wide structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

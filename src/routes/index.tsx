@@ -12,15 +12,72 @@ import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { practice, services, stats } from "@/lib/practice";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+
+const PAGE_TITLE =
+  "Private Audiologist for Adults & Children | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Private audiology for babies, children and adults. HCPC-registered, UCL-trained expertise in hearing assessments, hearing aids and specialist ear protection.";
+
 export const Route = createFileRoute("/")({
   component: Home,
+
   head: () => ({
     meta: [
-      { title: "Aurikear – Hear for Good" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Independent audiology for babies, children and adults. Specialist hearing assessments, hearing aids and custom hearing protection from an HCPC-registered, UCL-trained audiologist.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: SITE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: SITE_URL,
       },
     ],
   }),

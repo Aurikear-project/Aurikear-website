@@ -3,8 +3,11 @@ import {
   ArrowRight,
   Baby,
   Check,
+  Ear,
   HeartPulse,
+  MessageCircle,
   PersonStanding,
+  ShieldCheck,
   Waves,
 } from "lucide-react";
 
@@ -65,6 +68,37 @@ const features = [
   "Quick and straightforward ear impression appointment",
 ];
 
+const appointmentSteps = [
+  {
+    number: "01",
+    icon: MessageCircle,
+    title: "Discuss your needs",
+    body:
+      "We'll talk about who the moulds are for, how they'll be used and any relevant ear history or water protection needs.",
+  },
+  {
+    number: "02",
+    icon: Ear,
+    title: "Check your ears",
+    body:
+      "Your ears are examined before impressions are taken to make sure it is appropriate to proceed.",
+  },
+  {
+    number: "03",
+    icon: Waves,
+    title: "Ear impressions",
+    body:
+      "Detailed impressions are taken so your swim moulds can be individually manufactured to fit your ears.",
+  },
+  {
+    number: "04",
+    icon: ShieldCheck,
+    title: "Your custom moulds",
+    body:
+      "Your finished swim moulds are supplied with guidance on fitting, removal, cleaning and care.",
+  },
+];
+
 function SwimMoulds() {
   return (
     <main>
@@ -86,10 +120,10 @@ function SwimMoulds() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-mid">
-              Unlike generic earplugs, custom swim moulds are made from a
-              precise impression of your individual ear. Your ear impressions
-              are taken professionally by an experienced audiologist, allowing
-              your moulds to be made for a comfortable and secure fit.
+              Unlike generic earplugs, custom swim moulds are individually made
+              from an impression of your ear. Your ear impressions are taken
+              professionally by an experienced audiologist, allowing your
+              moulds to be made for a comfortable and secure fit.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
@@ -179,6 +213,79 @@ function SwimMoulds() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Appointment process */}
+        <div className="mt-16">
+          <Eyebrow>Your appointment</Eyebrow>
+
+          <h2 className="font-display text-title font-bold">
+            From ear impression to custom fit
+          </h2>
+
+          <p className="mt-3 max-w-2xl leading-relaxed text-mid">
+            Custom swim moulds start with understanding how you plan to use
+            them. We'll then take the measurements needed for moulds made
+            specifically for your ears.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {appointmentSteps.map((step) => {
+              const Icon = step.icon;
+
+              return (
+                <article
+                  key={step.number}
+                  className="relative rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="flex size-11 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+                      <Icon
+                        className="size-5"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </span>
+
+                    <span className="text-xs font-bold tracking-wider text-primary-light">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 font-bold text-primary-deep">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-mid">
+                    {step.body}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Reassurance */}
+        <div className="mt-8 flex items-start gap-4 rounded-2xl border border-border bg-sky-pale px-6 py-5 md:px-8">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+            <ShieldCheck
+              className="size-5"
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+          </span>
+
+          <div>
+            <h3 className="font-bold text-primary-deep">
+              Made around your individual ears
+            </h3>
+
+            <p className="mt-1 text-sm leading-relaxed text-mid">
+              Because each mould is made from your own ear impressions, the fit
+              is individual to you. We'll also explain how to insert, remove and
+              care for your swim moulds.
+            </p>
+          </div>
         </div>
 
         {/* CTA */}

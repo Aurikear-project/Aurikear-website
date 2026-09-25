@@ -82,9 +82,9 @@ export function Logo({
       {stacked ? (
         <span
           className={cn(
-            "mt-1 pl-[0.15em] text-[0.62rem] font-medium leading-none tracking-[0.08em]",
-            inverted ? "text-foam/60" : "text-primary-light",
-          )}
+  "mt-0.5 pl-[0.12em] text-[0.64rem] font-medium leading-none tracking-[0.06em]",
+  inverted ? "text-foam/65" : "text-primary-light",
+)}
         >
           Hear for good
         </span>

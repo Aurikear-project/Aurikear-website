@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+
 import {
   ArrowRight,
   GraduationCap,
@@ -114,7 +115,7 @@ function Home() {
                 </p>
 
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary">
-                  Learn more
+                  Explore {svc.title}
                   <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </span>
               </div>
@@ -233,16 +234,18 @@ function Home() {
             </h2>
 
             <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-mid">
-              Aurikear works with a range of leading health insurers. Please{" "}
-              <Link
-                to="/contact"
-                className="font-semibold text-primary-deep underline decoration-primary-deep/30 underline-offset-2 transition-colors hover:text-primary"
-              >
-                contact us
-              </Link>{" "}
-              if you would like to check your cover before arranging an
-              appointment.
+              Aurikear works with a range of leading health insurers. Cover and
+              authorisation requirements can vary, so please check with your
+              insurer and the hospital when arranging your appointment.
             </p>
+
+            <Link
+              to="/contact"
+              className="group mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+            >
+              View clinic locations
+              <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-8">
@@ -309,7 +312,7 @@ function Home() {
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Button asChild variant="secondary" size="lg">
               <Link to="/contact">
-                Contact us
+                Arrange an appointment
                 <ArrowRight className="size-4" />
               </Link>
             </Button>

@@ -2,10 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
-  Ear,
-  Music,
   ShieldCheck,
-  SlidersHorizontal,
 } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
@@ -60,28 +57,24 @@ const filterLevels = [
 const appointmentSteps = [
   {
     number: "01",
-    icon: Music,
     title: "Discuss your needs",
     body:
       "We'll talk about where and how you use hearing protection, including rehearsals, performances, concerts and professional sound environments.",
   },
   {
     number: "02",
-    icon: Ear,
     title: "Check your ears",
     body:
       "Your ears are examined before impressions are taken to make sure it is appropriate to proceed.",
   },
   {
     number: "03",
-    icon: SlidersHorizontal,
     title: "Ear impressions",
     body:
       "Detailed impressions are taken so your hearing protection can be individually manufactured to fit your ears.",
   },
   {
     number: "04",
-    icon: ShieldCheck,
     title: "Custom protection",
     body:
       "Your finished earplugs are supplied and we'll explain their fit, use, care and the filter options appropriate for your listening needs.",
@@ -260,55 +253,43 @@ function Musicians() {
             <Eyebrow>Your appointment</Eyebrow>
 
             <h2 className="font-display text-title font-bold">
-              From ear impression to custom fit
+              From ear impressions to custom protection
             </h2>
 
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
               Custom hearing protection starts with understanding how you use
               your hearing and where you need protection. We'll then take the
-              measurements needed for hearing protection made specifically for
+              impressions needed for hearing protection made specifically for
               your ears.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {appointmentSteps.map((step) => {
-              const Icon = step.icon;
+          <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
+            {appointmentSteps.map((step) => (
+              <article
+                key={step.number}
+                className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-fg">
+                  {step.number}
+                </div>
 
-              return (
-                <article
-                  key={step.number}
-                  className="rounded-2xl border border-border bg-bg p-6"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary">
-                      <Icon
-                        className="size-5"
-                        strokeWidth={1.8}
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <span className="font-display text-sm font-bold text-primary-light">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-5 font-display text-lg font-bold text-primary-deep">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-primary-deep">
                     {step.title}
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-mid">
                     {step.body}
                   </p>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
         {/* Clinical guidance */}
-        <div className="mt-16 rounded-2xl border border-border bg-sky-pale px-6 py-8 md:px-10">
+        <div className="mt-10 rounded-2xl border border-border bg-sky-pale px-6 py-8 md:px-10">
           <div className="flex flex-col gap-5 md:flex-row md:items-center">
             <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white text-primary shadow-border">
               <ShieldCheck

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
 import { ServiceIcon } from "@/components/icons";
@@ -22,13 +22,37 @@ export const Route = createFileRoute("/paediatric")({
   }),
 });
 
-const appointmentIncludes = [
-  "A calm, child-friendly appointment at your child's pace",
-  "Time to discuss your concerns and your child's hearing history",
-  "Age-appropriate hearing tests selected for your child",
-  "Clear explanation of the results and what they mean",
-  "Time to ask questions and discuss next steps",
-  "Onward referral or monitoring arranged where appropriate",
+const appointmentSteps = [
+  {
+    number: "01",
+    title: "Understand your concerns",
+    body:
+      "We'll take time to discuss your concerns, your child's hearing history and anything you may have noticed at home, nursery or school.",
+  },
+  {
+    number: "02",
+    title: "Choose the right assessment",
+    body:
+      "We'll select age-appropriate hearing tests based on your child's developmental stage and adapt the appointment around their individual needs.",
+  },
+  {
+    number: "03",
+    title: "Assess their hearing",
+    body:
+      "Your child will take part in appropriate, non-invasive hearing tests delivered at their pace and designed to be as comfortable and engaging as possible.",
+  },
+  {
+    number: "04",
+    title: "Explain the results",
+    body:
+      "We'll talk you through the results clearly, explain what they mean for your child's hearing and give you plenty of opportunity to ask questions.",
+  },
+  {
+    number: "05",
+    title: "Agree the next steps",
+    body:
+      "Where appropriate, we'll discuss monitoring, further assessment or onward referral and explain what happens next.",
+  },
 ];
 
 function Paediatric() {
@@ -124,12 +148,12 @@ function Paediatric() {
           </div>
         </div>
 
-        {/* Specialist care / What to expect */}
-        <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-14">
-          <div>
+        {/* Specialist care */}
+        <div className="mt-16">
+          <div className="max-w-3xl">
             <Eyebrow>Specialist services</Eyebrow>
 
-            <h2 className="font-display text-3xl font-bold">
+            <h2 className="font-display text-title font-bold">
               Specialist children's hearing care
             </h2>
 
@@ -154,38 +178,45 @@ function Paediatric() {
               </p>
             </div>
           </div>
+        </div>
 
-          <div>
+        {/* Appointment journey */}
+        <div className="mt-20">
+          <div className="max-w-3xl">
             <Eyebrow>What to expect</Eyebrow>
 
-            <h2 className="font-display text-3xl font-bold">
+            <h2 className="font-display text-title font-bold">
               Your child's appointment
             </h2>
 
-            <p className="mt-4 leading-relaxed text-mid">
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
               Every appointment is shaped around your child. We'll take time to
               understand your concerns before selecting the most appropriate
               tests for their age and developmental stage.
             </p>
+          </div>
 
-            <ul className="mt-5">
-              {appointmentIncludes.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 border-b border-border py-3 text-sm text-mid last:border-0"
-                >
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-sky-pale text-primary">
-                    <Check
-                      className="size-3"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
-                  </span>
+          <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
+            {appointmentSteps.map((step) => (
+              <article
+                key={step.number}
+                className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-fg">
+                  {step.number}
+                </div>
 
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-primary-deep">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-mid">
+                    {step.body}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 

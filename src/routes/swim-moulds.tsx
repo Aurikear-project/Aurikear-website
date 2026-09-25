@@ -3,9 +3,7 @@ import {
   ArrowRight,
   Baby,
   Check,
-  Ear,
   HeartPulse,
-  MessageCircle,
   PersonStanding,
   ShieldCheck,
   Waves,
@@ -71,28 +69,24 @@ const features = [
 const appointmentSteps = [
   {
     number: "01",
-    icon: MessageCircle,
     title: "Discuss your needs",
     body:
       "We'll talk about who the moulds are for, how they'll be used and any relevant ear history or water protection needs.",
   },
   {
     number: "02",
-    icon: Ear,
     title: "Check your ears",
     body:
       "Your ears are examined before impressions are taken to make sure it is appropriate to proceed.",
   },
   {
     number: "03",
-    icon: Waves,
     title: "Ear impressions",
     body:
       "Detailed impressions are taken so your swim moulds can be individually manufactured to fit your ears.",
   },
   {
     number: "04",
-    icon: ShieldCheck,
     title: "Your custom moulds",
     body:
       "Your finished swim moulds are supplied with guidance on fitting, removal, cleaning and care.",
@@ -102,7 +96,7 @@ const appointmentSteps = [
 function SwimMoulds() {
   return (
     <main>
-      {/* Clean service hero */}
+      {/* Hero */}
       <PageHero
         eyebrow="Water protection"
         title="Custom swim moulds"
@@ -215,58 +209,48 @@ function SwimMoulds() {
           </ul>
         </div>
 
-        {/* Appointment process */}
-        <div className="mt-16">
-          <Eyebrow>Your appointment</Eyebrow>
+        {/* Appointment journey */}
+        <div className="mt-20">
+          <div className="max-w-3xl">
+            <Eyebrow>Your appointment</Eyebrow>
 
-          <h2 className="font-display text-title font-bold">
-            From ear impressions to custom fit
-          </h2>
+            <h2 className="font-display text-title font-bold">
+              From ear impressions to custom fit
+            </h2>
 
-          <p className="mt-3 max-w-2xl leading-relaxed text-mid">
-            Custom swim moulds start with understanding how you plan to use
-            them. We'll then take the measurements needed for moulds made
-            specifically for your ears.
-          </p>
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
+              Custom swim moulds start with understanding how you plan to use
+              them. We'll then take the impressions needed for moulds made
+              specifically for your ears.
+            </p>
+          </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {appointmentSteps.map((step) => {
-              const Icon = step.icon;
+          <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
+            {appointmentSteps.map((step) => (
+              <article
+                key={step.number}
+                className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-fg">
+                  {step.number}
+                </div>
 
-              return (
-                <article
-                  key={step.number}
-                  className="relative rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-white text-primary shadow-border">
-                      <Icon
-                        className="size-5"
-                        strokeWidth={1.8}
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <span className="text-xs font-bold tracking-wider text-primary-light">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-5 font-bold text-primary-deep">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-primary-deep">
                     {step.title}
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-mid">
                     {step.body}
                   </p>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
         {/* Reassurance */}
-        <div className="mt-8 flex items-start gap-4 rounded-2xl border border-border bg-sky-pale px-6 py-5 md:px-8">
+        <div className="mt-10 flex items-start gap-4 rounded-2xl border border-border bg-sky-pale px-6 py-5 md:px-8">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white text-primary shadow-border">
             <ShieldCheck
               className="size-5"

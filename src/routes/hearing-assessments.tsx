@@ -1,12 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Check,
-  Ear,
-  FileText,
-  Gauge,
-  MessageCircle,
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
 import { PageHero } from "@/components/page-hero";
@@ -29,25 +22,25 @@ export const Route = createFileRoute("/hearing-assessments")({
 
 const assessmentSteps = [
   {
-    icon: MessageCircle,
+    number: "01",
     title: "Understanding your hearing",
     body:
       "We begin by discussing your hearing, any changes you have noticed, your medical and hearing history, and the situations in which you find listening difficult.",
   },
   {
-    icon: Ear,
+    number: "02",
     title: "Clinical examination",
     body:
       "Your ears are examined before testing so that we can identify anything that may affect your hearing or the assessment.",
   },
   {
-    icon: Gauge,
+    number: "03",
     title: "Hearing tests",
     body:
       "Using calibrated audiological equipment, we assess your hearing across different frequencies and use additional tests where clinically appropriate.",
   },
   {
-    icon: FileText,
+    number: "04",
     title: "Results & next steps",
     body:
       "Your results are explained clearly, with time to ask questions. We then discuss appropriate recommendations and any further care that may be helpful.",
@@ -82,7 +75,7 @@ const appointmentDetails = [
 function HearingAssessments() {
   return (
     <main>
-      {/* Clean service hero */}
+      {/* Hero */}
       <PageHero
         eyebrow="Adult hearing"
         title="Adult hearing assessments"
@@ -91,7 +84,7 @@ function HearingAssessments() {
         <Button asChild variant="foam" className="mt-7">
           <Link to="/contact">
             Arrange an appointment
-            <ArrowRight className="size-4" />
+            <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </Button>
       </PageHero>
@@ -132,47 +125,43 @@ function HearingAssessments() {
           />
         </div>
 
-        {/* What to expect */}
-        <div className="mt-16">
-          <Eyebrow>What to expect</Eyebrow>
+        {/* Assessment journey */}
+        <div className="mt-20">
+          <div className="max-w-3xl">
+            <Eyebrow>What to expect</Eyebrow>
 
-          <h2 className="font-display text-title font-bold">
-            Your hearing assessment, step by step
-          </h2>
+            <h2 className="font-display text-title font-bold">
+              Your hearing assessment, step by step
+            </h2>
 
-          <p className="mt-3 max-w-2xl leading-relaxed text-mid">
-            Your appointment is unhurried and tailored to you. We explain each
-            stage as we go and make sure you have the opportunity to discuss
-            any concerns or questions.
-          </p>
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
+              Your appointment is unhurried and tailored to you. We explain
+              each stage as we go and make sure you have the opportunity to
+              discuss any concerns or questions.
+            </p>
+          </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {assessmentSteps.map((step) => {
-              const Icon = step.icon;
+          <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
+            {assessmentSteps.map((step) => (
+              <article
+                key={step.number}
+                className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-fg">
+                  {step.number}
+                </div>
 
-              return (
-                <article
-                  key={step.title}
-                  className="rounded-2xl border border-border bg-sky-pale p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-xl bg-white text-primary shadow-border">
-                    <Icon
-                      className="size-6"
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <h3 className="mt-4 font-bold text-primary-deep">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-primary-deep">
                     {step.title}
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-mid">
                     {step.body}
                   </p>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
@@ -196,7 +185,10 @@ function HearingAssessments() {
                   key={test}
                   className="flex items-start gap-3 border-b border-border py-3 text-sm text-mid last:border-0"
                 >
-                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <Check
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
                   <span>{test}</span>
                 </li>
               ))}
@@ -223,7 +215,10 @@ function HearingAssessments() {
                   key={reason}
                   className="flex items-start gap-3 border-b border-border py-3 text-sm text-mid last:border-0"
                 >
-                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <Check
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
                   <span>{reason}</span>
                 </li>
               ))}
@@ -303,7 +298,7 @@ function HearingAssessments() {
           <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
               Arrange an appointment
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>
@@ -311,3 +306,5 @@ function HearingAssessments() {
     </main>
   );
 }
+
+export default HearingAssessments;

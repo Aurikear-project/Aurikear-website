@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  AudioLines,
   BatteryCharging,
   Bluetooth,
   Check,
@@ -136,7 +135,7 @@ const techLevels = [
 function HearingAids() {
   return (
     <main>
-      {/* HERO */}
+      {/* Hero */}
       <PageHero
         eyebrow="Hearing technology"
         title="Hear more of what matters"
@@ -151,7 +150,7 @@ function HearingAids() {
       </PageHero>
 
       <Section>
-        {/* INTRODUCTION */}
+        {/* Introduction */}
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Personalised hearing care</Eyebrow>
 
@@ -174,7 +173,7 @@ function HearingAids() {
           </p>
         </div>
 
-        {/* HEARING AID STYLES */}
+        {/* Hearing aid styles */}
         <div className="mt-20">
           <div className="max-w-2xl">
             <Eyebrow>Styles &amp; solutions</Eyebrow>
@@ -224,7 +223,7 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* MANUFACTURERS */}
+        {/* Manufacturers */}
         <div className="mt-24">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Our hearing technology</Eyebrow>
@@ -240,7 +239,7 @@ function HearingAids() {
             </p>
           </div>
 
-          {/* OTICON */}
+          {/* Oticon */}
           <div className="mt-12 grid items-center gap-10 rounded-3xl border border-border bg-sky-pale/50 p-7 md:grid-cols-2 md:gap-14 md:p-12">
             <div>
               <Eyebrow>Oticon</Eyebrow>
@@ -283,7 +282,7 @@ function HearingAids() {
             />
           </div>
 
-          {/* PHONAK */}
+          {/* Phonak */}
           <div className="mt-8 grid items-center gap-10 rounded-3xl border border-border bg-bg p-7 md:grid-cols-2 md:gap-14 md:p-12">
             <FramedImage
               src="/images/hearing-aid-consultation-male.jpg"
@@ -330,7 +329,7 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* PERSONAL APPROACH */}
+        {/* Personal approach */}
         <div className="mt-24 rounded-3xl bg-primary-deep px-7 py-12 text-white md:px-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-foam/70">
@@ -338,7 +337,7 @@ function HearingAids() {
             </p>
 
             <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">
-              The right hearing aid is personal
+              The right hearing solution is personal
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-foam/80">
@@ -355,7 +354,7 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* HEARING AID JOURNEY */}
+        {/* Hearing aid journey */}
         <div className="mt-24">
           <div className="max-w-3xl">
             <Eyebrow>Your care</Eyebrow>
@@ -372,7 +371,7 @@ function HearingAids() {
           </div>
 
           <div className="mt-10 grid gap-x-10 gap-y-0 md:grid-cols-2">
-            {hearingAidJourney.map((item, index) => (
+            {hearingAidJourney.map((item) => (
               <article
                 key={item.number}
                 className="relative flex gap-5 border-b border-border py-7 first:pt-0 md:first:pt-0 md:[&:nth-child(2)]:pt-0"
@@ -411,7 +410,7 @@ function HearingAids() {
           </div>
         </div>
 
-        {/* TECHNOLOGY LEVELS */}
+        {/* Technology levels */}
         <div className="mt-20 rounded-2xl border border-border bg-sky-pale p-8 md:p-12">
           <Eyebrow>Technology levels</Eyebrow>
 
@@ -443,6 +442,7 @@ function HearingAids() {
             ))}
           </div>
 
+          {/* Technology guidance */}
           <div className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-white/70 px-5 py-4">
             <Check
               className="mt-0.5 size-5 shrink-0 text-primary"
@@ -452,16 +452,16 @@ function HearingAids() {
 
             <p className="text-sm leading-relaxed text-mid">
               <span className="font-bold text-primary-deep">
-                Technology level isn't the same as suitability.
+                More advanced doesn't always mean more appropriate.
               </span>{" "}
-              The right choice depends on your hearing, listening environments,
-              lifestyle and the features that are likely to provide meaningful
-              benefit for you.
+              The right technology depends on your hearing, listening
+              environments, lifestyle and the features that are likely to
+              provide meaningful benefit to you.
             </p>
           </div>
         </div>
 
-        {/* FINAL CTA */}
+        {/* Final CTA */}
         <div className="mt-12 rounded-2xl bg-primary-deep px-6 py-12 text-center text-white md:px-12">
           <Eyebrow className="text-sky">Your hearing matters</Eyebrow>
 

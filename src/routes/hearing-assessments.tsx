@@ -6,15 +6,73 @@ import { PageHero } from "@/components/page-hero";
 import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/hearing-assessments`;
+
+const PAGE_TITLE =
+  "Private Hearing Tests & Adult Hearing Assessments | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Private adult hearing tests and comprehensive hearing assessments with an HCPC-registered audiologist. Clear results, clinical testing and personalised recommendations.";
+
 export const Route = createFileRoute("/hearing-assessments")({
   component: HearingAssessments,
+
   head: () => ({
     meta: [
-      { title: "Adult Hearing Assessments – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Comprehensive adult hearing assessments using specialist clinical equipment, with clear explanation of your results and personalised recommendations.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -189,6 +247,7 @@ function HearingAssessments() {
                     className="mt-0.5 size-4 shrink-0 text-primary"
                     aria-hidden="true"
                   />
+
                   <span>{test}</span>
                 </li>
               ))}
@@ -219,6 +278,7 @@ function HearingAssessments() {
                     className="mt-0.5 size-4 shrink-0 text-primary"
                     aria-hidden="true"
                   />
+
                   <span>{reason}</span>
                 </li>
               ))}

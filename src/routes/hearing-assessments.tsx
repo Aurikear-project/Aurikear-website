@@ -87,7 +87,14 @@ function HearingAssessments() {
         eyebrow="Adult hearing"
         title="Adult hearing assessments"
         lede="Understand your hearing with a thorough clinical assessment, clear results and personalised recommendations."
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" />
+          </Link>
+        </Button>
+      </PageHero>
 
       <Section>
         {/* Introduction */}
@@ -295,7 +302,7 @@ function HearingAssessments() {
 
           <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
-              Arrange an assessment
+              Arrange an appointment
               <ArrowRight className="size-4" />
             </Link>
           </Button>

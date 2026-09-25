@@ -85,7 +85,7 @@ function Home() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            From children&apos;s hearing assessments to hearing technology and
+            From paediatric hearing assessments to hearing technology and
             specialist ear protection, we&apos;re here to help you hear,
             communicate and live well.
           </p>

@@ -9,7 +9,7 @@ import {
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteShell } from "@/components/site-shell";
 import { AuthProvider } from "@/lib/auth/provider";
-import { practice } from "@/lib/practice";
+import { jsonLd, practice } from "@/lib/practice";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "Aurikear";
@@ -107,6 +107,13 @@ function Root() {
     <html lang="en-GB" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
       </head>
 
       <body className="bg-bg text-ink">

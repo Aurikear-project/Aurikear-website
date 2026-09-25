@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+
 import {
   ArrowRight,
   Award,
@@ -110,7 +111,7 @@ function Home() {
         eyebrow="HCPC Registered · UCL PhD · 15+ Years' Experience"
         title={practice.headline}
         lede={practice.lede}
-        image="/images/hearing-assessment-clinical-equipment.jpg"
+        image="/images/hearing-assessment-clinical-equipment.webp"
         imageAlt="Audiology equipment used during a professional hearing assessment"
       >
         <Button asChild variant="foam" className="mt-7">

@@ -1,5 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Ear,
+  Music,
+  ShieldCheck,
+  SlidersHorizontal,
+} from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
 import { ServiceIcon } from "@/components/icons";
@@ -12,11 +19,11 @@ export const Route = createFileRoute("/musicians")({
   component: Musicians,
   head: () => ({
     meta: [
-      { title: "Musician ear plugs – Aurikear" },
+      { title: "Musician Earplugs – Aurikear" },
       {
         name: "description",
         content:
-          "Custom musician ear plugs with flat attenuation. Precision filters in 9, 15, and 25 dB. Impressions in under 15 minutes.",
+          "Custom musician earplugs with filtered hearing protection for musicians, performers, sound professionals and music lovers.",
       },
     ],
   }),
@@ -29,15 +36,74 @@ const benefits = [
   "Interchangeable filters for different environments",
 ];
 
+const filterLevels = [
+  {
+    level: "9 dB",
+    title: "Lighter attenuation",
+    body:
+      "For situations where you want a modest reduction in sound while retaining as much environmental and musical detail as possible.",
+  },
+  {
+    level: "15 dB",
+    title: "Moderate attenuation",
+    body:
+      "A versatile option for many rehearsals, performances and amplified music environments where a greater reduction in sound is helpful.",
+  },
+  {
+    level: "25 dB",
+    title: "Higher attenuation",
+    body:
+      "For louder music environments where greater sound reduction may be appropriate while maintaining a more balanced listening experience.",
+  },
+];
+
+const appointmentSteps = [
+  {
+    number: "01",
+    icon: Music,
+    title: "Discuss your needs",
+    body:
+      "We'll talk about where and how you use hearing protection, including rehearsals, performances, concerts and professional sound environments.",
+  },
+  {
+    number: "02",
+    icon: Ear,
+    title: "Check your ears",
+    body:
+      "Your ears are examined before impressions are taken to make sure it is appropriate to proceed.",
+  },
+  {
+    number: "03",
+    icon: SlidersHorizontal,
+    title: "Ear impressions",
+    body:
+      "Detailed impressions are taken so your hearing protection can be individually manufactured to fit your ears.",
+  },
+  {
+    number: "04",
+    icon: ShieldCheck,
+    title: "Custom protection",
+    body:
+      "Your finished earplugs are supplied and we'll explain their fit, use, care and the filter options appropriate for your listening needs.",
+  },
+];
+
 function Musicians() {
   return (
     <main>
-      {/* Clean service hero */}
+      {/* Hero */}
       <PageHero
         eyebrow="Hearing protection"
-        title="Custom musician ear plugs"
+        title="Custom musician earplugs"
         lede="Your hearing is your instrument. Protect it without compromising a single note."
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </PageHero>
 
       <Section>
         {/* Why custom */}
@@ -52,7 +118,7 @@ function Musicians() {
             <p className="mt-4 leading-relaxed text-mid">
               Standard foam earplugs tend to reduce high frequencies more than
               low frequencies, which can make music sound muffled and
-              unnatural. Custom musician ear plugs use precision acoustic
+              unnatural. Custom musician earplugs use precision acoustic
               filters designed to provide a more even reduction across
               frequencies.
             </p>
@@ -83,16 +149,15 @@ function Musicians() {
             </ul>
           </div>
 
-          {/* Consultation image */}
           <FramedImage
             src="/images/musician-earplug-fitting.jpg"
-            alt="Audiologist fitting custom hearing protection for a musician"
+            alt="Audiologist taking an ear impression for custom musician hearing protection"
             className="aspect-wide rounded-2xl"
           />
         </div>
 
         {/* Who they're for */}
-        <div className="mt-16">
+        <div className="mt-20">
           <Eyebrow>Who they're for</Eyebrow>
 
           <h2 className="max-w-3xl font-display text-title font-bold">
@@ -127,26 +192,159 @@ function Musicians() {
           </div>
         </div>
 
+        {/* Filter levels */}
+        <div className="mt-20 rounded-3xl border border-border bg-sky-pale px-6 py-10 md:px-10 md:py-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow>Filtered hearing protection</Eyebrow>
+
+            <h2 className="font-display text-title font-bold">
+              Turn the volume down, not the experience
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
+              Musician earplugs use acoustic filters to reduce sound while
+              preserving a more natural balance across frequencies. Different
+              levels of attenuation can be selected according to your listening
+              environment and individual needs.
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
+            {filterLevels.map((filter) => (
+              <article
+                key={filter.level}
+                className="rounded-2xl border border-border bg-white p-6 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+              >
+                <div className="flex size-12 items-center justify-center rounded-xl bg-sky-pale font-display text-lg font-bold text-primary-deep">
+                  {filter.level}
+                </div>
+
+                <h3 className="mt-5 font-display text-lg font-bold text-primary-deep">
+                  {filter.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-relaxed text-mid">
+                  {filter.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-white/70 px-5 py-4">
+            <Check
+              className="mt-0.5 size-5 shrink-0 text-primary"
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+
+            <p className="text-sm leading-relaxed text-mid">
+              <span className="font-bold text-primary-deep">
+                You don't need to choose a filter before your appointment.
+              </span>{" "}
+              The most appropriate level depends on your sound exposure,
+              listening environment and individual needs. We'll discuss the
+              options with you.
+            </p>
+          </div>
+        </div>
+
+        {/* Appointment journey */}
+        <div className="mt-20">
+          <div className="max-w-3xl">
+            <Eyebrow>Your appointment</Eyebrow>
+
+            <h2 className="font-display text-title font-bold">
+              From ear impression to custom fit
+            </h2>
+
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
+              Custom hearing protection starts with understanding how you use
+              your hearing and where you need protection. We'll then take the
+              measurements needed for hearing protection made specifically for
+              your ears.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {appointmentSteps.map((step) => {
+              const Icon = step.icon;
+
+              return (
+                <article
+                  key={step.number}
+                  className="rounded-2xl border border-border bg-bg p-6"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex size-11 items-center justify-center rounded-xl bg-sky-pale text-primary">
+                      <Icon
+                        className="size-5"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </span>
+
+                    <span className="font-display text-sm font-bold text-primary-light">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 font-display text-lg font-bold text-primary-deep">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-mid">
+                    {step.body}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Clinical guidance */}
+        <div className="mt-16 rounded-2xl border border-border bg-sky-pale px-6 py-8 md:px-10">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center">
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+              <ShieldCheck
+                className="size-6"
+                strokeWidth={1.8}
+                aria-hidden="true"
+              />
+            </span>
+
+            <div>
+              <h2 className="font-display text-xl font-bold text-primary-deep">
+                Hearing protection should suit the way you listen
+              </h2>
+
+              <p className="mt-2 max-w-3xl leading-relaxed text-mid">
+                The appropriate level of protection isn't necessarily the
+                greatest possible attenuation. We'll consider your listening
+                environment and how you use sound to help identify an
+                appropriate option for you.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="mt-16 rounded-2xl bg-primary-deep px-6 py-12 text-center text-foam md:px-12">
-          <Eyebrow className="text-sky">
-            Protect what matters
-          </Eyebrow>
+          <Eyebrow className="text-sky">Protect what matters</Eyebrow>
 
           <h2 className="font-display text-3xl font-bold text-foam">
             Keep enjoying the sound you love
           </h2>
 
           <p className="mx-auto mt-3 max-w-lg text-foam/80">
-            Custom ear protection starts with a quick ear impression
-            appointment. We’ll help you find the right protection for your
-            listening and performance needs.
+            Custom hearing protection starts with an ear impression
+            appointment. We'll help you find protection suited to your
+            listening, performance and individual needs.
           </p>
 
           <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
               Arrange an appointment
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>
@@ -154,3 +352,5 @@ function Musicians() {
     </main>
   );
 }
+
+export default Musicians;

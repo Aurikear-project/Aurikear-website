@@ -84,12 +84,16 @@ function Home() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {services.map((svc) => (
             <Link
               key={svc.slug}
               to={svc.to}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_16px_48px_rgba(26,122,138,0.12)]"
+              className={[
+                "group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_16px_48px_rgba(26,122,138,0.12)]",
+                "lg:col-span-2",
+                svc.slug === "paediatric" ? "lg:col-start-2" : "",
+              ].join(" ")}
             >
               {svc.homeImage && (
                 <div className="h-44 overflow-hidden">
@@ -116,6 +120,7 @@ function Home() {
 
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary">
                   Explore {svc.title}
+
                   <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </span>
               </div>
@@ -244,11 +249,13 @@ function Home() {
               className="group mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
             >
               View clinic locations
+
               <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          {/* Insurer logos */}
+          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
             {[
               {
                 name: "Bupa",
@@ -279,12 +286,16 @@ function Home() {
                 src: "/images/insurers/healix.png",
               },
             ].map((insurer) => (
-              <img
+              <div
                 key={insurer.name}
-                src={insurer.src}
-                alt={insurer.name}
-                className="h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
-              />
+                className="flex h-16 items-center justify-center rounded-xl border border-border bg-white px-4 shadow-border"
+              >
+                <img
+                  src={insurer.src}
+                  alt={insurer.name}
+                  className="max-h-8 max-w-full object-contain grayscale opacity-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                />
+              </div>
             ))}
           </div>
         </div>

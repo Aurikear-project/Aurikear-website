@@ -37,7 +37,14 @@ function Home() {
         lede={practice.lede}
         image="/images/hearing-assessment-clinical-equipment.jpg"
         imageAlt="Audiology equipment used during a professional hearing assessment"
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </PageHero>
 
       {/* Stats */}
       <div className="border-y border-white/10 bg-primary-deep">

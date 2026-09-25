@@ -220,7 +220,7 @@ function SwimMoulds() {
           <Eyebrow>Your appointment</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
-            From ear impression to custom fit
+            From ear impressions to custom fit
           </h2>
 
           <p className="mt-3 max-w-2xl leading-relaxed text-mid">

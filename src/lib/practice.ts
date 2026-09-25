@@ -148,14 +148,14 @@ export const services = [
       "Specialist, child-friendly hearing assessments carefully adapted to your child's age, development and individual needs.",
 
     body:
-      "Children need hearing assessments that are carefully adapted to their age and developmental stage. Our approach is calm, engaging and child-focused, with specialist techniques used from infancy through to adolescence.",
+      "Children need hearing assessments that are carefully adapted to their age and developmental stage. Our approach is calm, engaging and child-focused, with specialist techniques selected according to each child's individual needs.",
 
     bullets: [
-      "Newborn hearing screening follow-up",
       "Visual reinforcement audiometry (VRA)",
       "Play audiometry",
       "Glue ear assessment and monitoring",
       "School-age hearing assessment",
+      "Assessments for children with complex needs",
     ],
 
     href: "/paediatric",
@@ -272,25 +272,29 @@ export const timeline = [
     mark: "09",
     year: "2009",
     title: "First Class BSc Audiology — UCL",
-    desc: "Graduated with First Class Honours, specialising in diagnostic and clinical audiology from one of the world's top programmes.",
+    desc:
+      "Graduated with First Class Honours, specialising in diagnostic and clinical audiology from one of the world's top programmes.",
   },
   {
     mark: "→",
     year: "2009 – present",
     title: "Clinical audiologist — paediatric & adult",
-    desc: "Fifteen years of clinical practice across NHS and private settings, specialising in newborn, paediatric, and adult hearing assessments.",
+    desc:
+      "Fifteen years of clinical practice across NHS and private settings, specialising in newborn, paediatric, and adult hearing assessments.",
   },
   {
     mark: "PhD",
     year: "Postgraduate research",
     title: "PhD — University College London",
-    desc: "Doctoral research on Cortical Auditory Evoked Potentials, contributing peer-reviewed publications to the field of objective hearing assessment.",
+    desc:
+      "Doctoral research on Cortical Auditory Evoked Potentials, contributing peer-reviewed publications to the field of objective hearing assessment.",
   },
   {
     mark: "Now",
     year: "Now",
     title: "Founder, Aurikear",
-    desc: "Bringing together research excellence and clinical expertise to offer hearing care that is unhurried, independent, and evidence-based.",
+    desc:
+      "Bringing together research excellence and clinical expertise to offer hearing care that is unhurried, independent, and evidence-based.",
   },
 ] as const;
 
@@ -307,21 +311,26 @@ export const specialisms = [
 
 export const paediatricAges = [
   {
-    title: "Newborns & infants",
-    age: "Birth – 6 months",
-    body: "Objective testing including automated ABR and OAEs. No active cooperation needed — babies are tested while asleep or drowsy.",
+    title: "Babies & toddlers",
+    age: "8 months – 2 years",
+    body:
+      "Visual reinforcement audiometry uses engaging visual rewards to help young children respond to sounds. Testing is adapted to your child's developmental stage and paced around their responses.",
     icon: "moon",
   },
+
   {
-    title: "Toddlers & pre-schoolers",
-    age: "6 months – 4 years",
-    body: "Visual reinforcement audiometry uses engaging animated rewards to teach young children to respond to sounds — reliable, and paced to them.",
+    title: "Pre-school children",
+    age: "2 – 4 years",
+    body:
+      "Age-appropriate techniques, including visual reinforcement and play-based audiometry, are selected according to your child's development and ability to respond reliably.",
     icon: "toy",
   },
+
   {
     title: "Children & school-age",
     age: "4 years and over",
-    body: "Play audiometry and standard pure-tone testing, adapted to each child's developmental level. Clear, engaging, and always child-paced.",
+    body:
+      "Play audiometry and standard pure-tone testing are adapted to each child's developmental level, providing a clear and child-friendly assessment of their hearing.",
     icon: "backpack",
   },
 ] as const;
@@ -329,22 +338,26 @@ export const paediatricAges = [
 export const musicianAudiences = [
   {
     title: "For musicians",
-    body: "Whether you play in a rock band, a symphony orchestra, or a solo acoustic set, custom plugs protect your hearing night after night. Available in 9 dB, 15 dB, and 25 dB filter options.",
+    body:
+      "Whether you play in a rock band, a symphony orchestra, or a solo acoustic set, custom plugs protect your hearing night after night. Available in 9 dB, 15 dB, and 25 dB filter options.",
     icon: "guitar",
   },
   {
     title: "For sound engineers",
-    body: "Long hours monitoring levels at close range put engineers at serious risk. Custom plugs let you work safely without losing the detail you need.",
+    body:
+      "Long hours monitoring levels at close range put engineers at serious risk. Custom plugs let you work safely without losing the detail you need.",
     icon: "sliders",
   },
   {
     title: "In-ear monitors",
-    body: "Custom in-ear monitor shells combine isolation and sound quality — hear your mix clearly without turning the volume up.",
+    body:
+      "Custom in-ear monitor shells combine isolation and sound quality — hear your mix clearly without turning the volume up.",
     icon: "headphones",
   },
   {
     title: "For music fans",
-    body: "Protect your hearing at festivals and concerts with discreet, comfortable custom plugs that let you enjoy the night without ringing ears the next day.",
+    body:
+      "Protect your hearing at festivals and concerts with discreet, comfortable custom plugs that let you enjoy the night without ringing ears the next day.",
     icon: "spark",
   },
 ] as const;

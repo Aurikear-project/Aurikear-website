@@ -332,7 +332,7 @@ export const jsonLd = {
   alternateName: "auriKear",
   description:
     "Research-led private audiology for babies, children and adults. HCPC registered. UCL-trained.",
-  url: "https://aurikear.co.uk",
+  url: "https://www.aurikear.co.uk/",
   medicalSpecialty: "Audiology",
 };
 

@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Meet Aurikear's HCPC-registered audiologist: First Class BSc and PhD from UCL, 15+ years of paediatric and adult clinical care.",
+          "Meet Aurikear's HCPC-registered audiologist: First Class BSc and PhD from UCL, with 15+ years of paediatric and adult clinical care.",
       },
     ],
   }),
@@ -53,16 +53,15 @@ const credentials = [
 function About() {
   return (
     <main>
+      {/* Clean page hero */}
       <PageHero
         eyebrow="About Aurikear"
         title="Meet your audiologist"
         lede="A passion for hearing science, a commitment to compassionate care, and a research career built at University College London."
-        image="/images/audiologist-portrait.jpg"
-        imageAlt=""
       />
 
       <Section>
-        {/* Introduction */}
+        {/* Biography */}
         <div className="grid items-start gap-10 lg:grid-cols-[360px_1fr] lg:gap-16">
           {/* Portrait and credentials */}
           <div>
@@ -104,9 +103,9 @@ function About() {
             </div>
           </div>
 
-          {/* Biography */}
+          {/* Background */}
           <div>
-            <Eyebrow>Your audiologist</Eyebrow>
+            <Eyebrow>Background &amp; experience</Eyebrow>
 
             <h2 className="max-w-2xl font-display text-title font-bold">
               Dedicated to hearing health — from the first days of life
@@ -122,8 +121,8 @@ function About() {
               </p>
 
               <p>
-                Her clinical experience spans the full spectrum of audiology —
-                from assessing hearing in newborns and supporting children
+                Her clinical experience spans paediatric and adult audiology —
+                from assessing hearing in babies and supporting children
                 through their developmental years, to helping adults understand
                 and manage changes in their hearing.
               </p>
@@ -185,7 +184,7 @@ function About() {
           </h2>
 
           <p className="mt-3 max-w-2xl leading-relaxed text-mid">
-            From newborn hearing and childhood assessments to adult hearing
+            From hearing assessments in babies and children to adult hearing
             care, Aurikear combines specialist clinical experience with an
             individual approach to every patient.
           </p>
@@ -246,7 +245,7 @@ function About() {
 
           <Button asChild className="shrink-0">
             <Link to="/contact">
-              Contact us
+              Arrange an appointment
               <ArrowRight className="size-4" />
             </Link>
           </Button>

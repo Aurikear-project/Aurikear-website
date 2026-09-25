@@ -1,12 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-
-import {
-  ArrowRight,
-  GraduationCap,
-  HeartHandshake,
-  Microscope,
-  BadgeCheck,
-} from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
@@ -46,7 +39,7 @@ function Home() {
         </Button>
       </PageHero>
 
-      {/* Stats */}
+      {/* Credibility stats */}
       <div className="border-y border-white/10 bg-primary-deep">
         <div className="mx-auto grid max-w-4xl grid-cols-2 md:grid-cols-4">
           {stats.map((stat, index) => (
@@ -75,159 +68,115 @@ function Home() {
         </div>
       </div>
 
-      {/* Services */}
+      {/* Service pathways */}
       <Section>
         <div className="text-center">
-          <Eyebrow>What we offer</Eyebrow>
+          <Eyebrow>How can we help?</Eyebrow>
 
           <h2 className="mt-2 font-display text-title font-semibold">
-            Hearing care for every stage of life
+            Find the right hearing care for you
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            From paediatric hearing assessments to hearing technology and
-            specialist ear protection, we&apos;re here to help you hear,
-            communicate and live well.
+            Choose the area most relevant to you, or explore all of our
+            clinical services if you&apos;re not sure where to start.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
-          {services.map((svc) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+          {services.map((service) => (
             <Link
-              key={svc.slug}
-              to={svc.to}
+              key={service.slug}
+              to={service.to}
               className={[
                 "group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_16px_48px_rgba(26,122,138,0.12)]",
                 "lg:col-span-2",
-                svc.slug === "paediatric" ? "lg:col-start-2" : "",
+                service.slug === "paediatric" ? "lg:col-start-2" : "",
               ].join(" ")}
             >
-              {svc.homeImage && (
-                <div className="h-44 overflow-hidden">
+              {service.homeImage && (
+                <div className="h-40 overflow-hidden">
                   <img
-                    src={svc.homeImage}
-                    alt={svc.imageAlt}
+                    src={service.homeImage}
+                    alt={service.imageAlt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               )}
 
-              <div className="flex flex-1 flex-col p-6">
-                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary-light">
-                  {svc.eyebrow}
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-light">
+                  {service.eyebrow}
                 </p>
 
-                <h3 className="font-display text-lg font-semibold text-ink transition-colors duration-200 group-hover:text-primary">
-                  {svc.title}
+                <h3 className="mt-1.5 font-display text-lg font-semibold text-ink transition-colors duration-200 group-hover:text-primary">
+                  {service.title}
                 </h3>
 
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-mid">
-                  {svc.summary}
-                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-primary">
+                  Explore
 
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary">
-                  Explore {svc.title}
-
-                  <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                  <ArrowRight
+                    className="size-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
                 </span>
               </div>
             </Link>
           ))}
         </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            to="/services"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+          >
+            View all clinical services
+
+            <ArrowRight
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
       </Section>
 
-      {/* About */}
+      {/* Compact audiologist introduction */}
       <Section tone="off">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto] md:gap-12">
           <div>
-            <Eyebrow>Meet your audiologist</Eyebrow>
+            <Eyebrow>Your audiologist</Eyebrow>
 
-            <h2 className="mt-2 font-display text-title font-semibold">
-              Research-led expertise,
-              <br />
-              compassionate care
+            <h2 className="mt-2 max-w-2xl font-display text-title font-semibold">
+              Specialist audiology. Personal care.
             </h2>
 
-            <p className="mt-5 text-base leading-relaxed text-mid">
-              With a First Class BSc and PhD from UCL, our audiologist brings
-              over 15 years of clinical experience to every patient — from
-              babies and children through to adults seeking hearing support,
-              hearing technology or specialist ear protection.
+            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
+              Aurikear is led by an HCPC-registered audiologist with a First
+              Class BSc and PhD from University College London and more than 15
+              years of clinical experience.
             </p>
 
-            <p className="mt-4 text-base leading-relaxed text-mid">
-              Every appointment is personal, unhurried and guided by your
-              individual needs, with clear explanations and evidence-based
-              recommendations throughout.
-            </p>
+            <Link
+              to="/about"
+              className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+            >
+              Meet your audiologist
 
-            <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {[
-                {
-                  icon: GraduationCap,
-                  text: "First Class BSc & PhD, UCL",
-                },
-                {
-                  icon: HeartHandshake,
-                  text: "Newborn, child & adult care",
-                },
-                {
-                  icon: Microscope,
-                  text: "Published auditory research",
-                },
-                {
-                  icon: BadgeCheck,
-                  text: "HCPC registered audiologist",
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <li
-                    key={item.text}
-                    className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
-                  >
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
-                      <Icon
-                        className="size-5"
-                        strokeWidth={1.8}
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <span className="text-sm font-semibold leading-snug text-mid">
-                      {item.text}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <Button asChild className="mt-9">
-              <Link to="/about">
-                Meet your audiologist
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+              <ArrowRight
+                className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
           </div>
 
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-lift">
-              <img
-                src="/images/audiologist-portrait.jpg"
-                alt="Aurikear clinical audiologist"
-                className="h-full w-full object-cover"
+          <div className="hidden md:flex">
+            <div className="flex size-28 items-center justify-center rounded-full border border-border bg-white shadow-border">
+              <BadgeCheck
+                className="size-11 text-primary"
+                strokeWidth={1.5}
+                aria-hidden="true"
               />
-            </div>
-
-            <div className="absolute -bottom-5 -left-5 rounded-2xl bg-primary-deep px-5 py-4 text-white shadow-lift">
-              <p className="font-display text-2xl font-semibold leading-none text-white">
-                PhD
-              </p>
-
-              <p className="mt-1 text-xs text-white/75">
-                UCL Auditory Research
-              </p>
             </div>
           </div>
         </div>
@@ -257,11 +206,13 @@ function Home() {
             >
               View clinic locations
 
-              <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight
+                className="size-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </Link>
           </div>
 
-          {/* Insurer logos */}
           <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
             {[
               {
@@ -314,9 +265,7 @@ function Home() {
         <div className="pointer-events-none absolute -bottom-16 -left-16 size-48 rounded-full bg-white/5" />
 
         <div className="relative mx-auto max-w-2xl px-4">
-          <Eyebrow className="text-sky/80">
-            Take the first step
-          </Eyebrow>
+          <Eyebrow className="text-sky/80">Take the first step</Eyebrow>
 
           <h2 className="mt-2 font-display text-title font-semibold !text-white">
             Ready to hear more of what matters?
@@ -331,7 +280,7 @@ function Home() {
             <Button asChild variant="secondary" size="lg">
               <Link to="/contact">
                 Arrange an appointment
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </Button>
           </div>

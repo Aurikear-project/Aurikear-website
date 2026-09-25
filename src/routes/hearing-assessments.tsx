@@ -86,7 +86,7 @@ function HearingAssessments() {
       <PageHero
         eyebrow="Adult hearing"
         title="Adult hearing assessments"
-        lede="Understand your hearing with a thorough clinical assessment, clear results and personalised recommendations."
+        lede="Understand your hearing with a thorough clinical assessment, clear results and guidance on the appropriate next steps."
       >
         <Button asChild variant="foam" className="mt-7">
           <Link to="/contact">

@@ -70,12 +70,12 @@ export function Logo({
           ear
         </span>
 
-        <Mark
-          className={cn(
-            "ml-1.5",
-            inverted ? "text-sky" : "text-primary-light",
-          )}
-        />
+<Mark
+  className={cn(
+    "ml-0.5",
+    inverted ? "text-sky" : "text-primary-light",
+  )}
+/>
       </span>
 
       {/* Tagline */}

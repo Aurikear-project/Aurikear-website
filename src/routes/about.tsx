@@ -53,12 +53,19 @@ const credentials = [
 function About() {
   return (
     <main>
-      {/* Clean page hero */}
+      {/* Hero */}
       <PageHero
         eyebrow="About Aurikear"
         title="Meet your audiologist"
         lede="A passion for hearing science, a commitment to compassionate care, and a research career built at University College London."
-      />
+      >
+        <Button asChild variant="foam" className="mt-7">
+          <Link to="/contact">
+            Arrange an appointment
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </PageHero>
 
       <Section>
         {/* Biography */}
@@ -190,24 +197,31 @@ function About() {
           </p>
 
           <ul className="mt-7 grid max-w-4xl gap-3 sm:grid-cols-2">
-            {specialisms.map((specialism) => (
-              <li
-                key={specialism}
-                className="flex items-center gap-3 rounded-xl border border-border bg-sky-pale px-4 py-4"
-              >
-                <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white text-primary shadow-border">
-                  <BadgeCheck
-                    className="size-4"
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
-                </span>
+            {specialisms.map((specialism) => {
+              const displayName =
+                specialism === "Hearing loss assessment"
+                  ? "Adult hearing assessments"
+                  : specialism;
 
-                <span className="text-sm font-semibold text-primary-deep">
-                  {specialism}
-                </span>
-              </li>
-            ))}
+              return (
+                <li
+                  key={specialism}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-sky-pale px-4 py-4"
+                >
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white text-primary shadow-border">
+                    <BadgeCheck
+                      className="size-4"
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                    />
+                  </span>
+
+                  <span className="text-sm font-semibold text-primary-deep">
+                    {displayName}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -230,23 +244,25 @@ function About() {
           </blockquote>
         </div>
 
-        {/* CTA */}
-        <div className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-border bg-white p-6 md:flex-row md:items-center md:p-8">
-          <div>
-            <h2 className="font-display text-2xl font-bold">
-              Ready to talk about your hearing?
-            </h2>
+        {/* Final CTA */}
+        <div className="mt-16 rounded-2xl bg-primary-deep px-6 py-12 text-center text-white md:px-12">
+          <Eyebrow className="text-sky">
+            Take the first step
+          </Eyebrow>
 
-            <p className="mt-2 max-w-2xl text-mid">
-              Get in touch to discuss your needs or arrange an appointment at
-              one of our hospital clinics.
-            </p>
-          </div>
+          <h2 className="font-display text-3xl font-bold text-white">
+            Ready to talk about your hearing?
+          </h2>
 
-          <Button asChild className="shrink-0">
+          <p className="mx-auto mt-3 max-w-lg leading-relaxed text-foam/80">
+            Get in touch to discuss your needs or arrange an appointment at one
+            of our hospital clinics.
+          </p>
+
+          <Button asChild variant="foam" className="mt-7">
             <Link to="/contact">
               Arrange an appointment
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>

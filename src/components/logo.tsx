@@ -79,16 +79,16 @@ export function Logo({
       </span>
 
       {/* Tagline */}
-      {stacked ? (
-        <span
-          className={cn(
-  "mt-0.5 pl-[0.12em] text-[0.64rem] font-medium leading-none tracking-[0.06em]",
-  inverted ? "text-foam/65" : "text-primary-light",
-)}
-        >
-          Hear for good
-        </span>
-      ) : null}
+{stacked ? (
+<span
+  className={cn(
+    "-mt-[2px] pl-[0.1em] text-[0.64rem] font-medium leading-none tracking-[0.04em]",
+    inverted ? "text-foam/65" : "text-primary-light",
+  )}
+>
+  Hear for good
+</span>
+) : null}
     </Link>
   );
 }

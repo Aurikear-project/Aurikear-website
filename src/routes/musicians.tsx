@@ -12,15 +12,73 @@ import { Eyebrow, Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { musicianAudiences } from "@/lib/practice";
 
+const SITE_URL = "https://www.aurikear.co.uk";
+const PAGE_URL = `${SITE_URL}/musicians`;
+
+const PAGE_TITLE =
+  "Custom Musician Earplugs & Hearing Protection | Aurikear";
+
+const PAGE_DESCRIPTION =
+  "Custom musician earplugs and filtered hearing protection for musicians, performers and music professionals, with professional ear impressions and personalised filter selection.";
+
 export const Route = createFileRoute("/musicians")({
   component: Musicians,
+
   head: () => ({
     meta: [
-      { title: "Musician Earplugs – Aurikear" },
+      {
+        title: PAGE_TITLE,
+      },
       {
         name: "description",
-        content:
-          "Custom musician earplugs with filtered hearing protection for musicians, performers, sound professionals and music lovers.",
+        content: PAGE_DESCRIPTION,
+      },
+
+      // Open Graph
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Aurikear",
+      },
+      {
+        property: "og:title",
+        content: PAGE_TITLE,
+      },
+      {
+        property: "og:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        property: "og:url",
+        content: PAGE_URL,
+      },
+      {
+        property: "og:locale",
+        content: "en_GB",
+      },
+
+      // Social sharing
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+    ],
+
+    links: [
+      {
+        rel: "canonical",
+        href: PAGE_URL,
       },
     ],
   }),
@@ -151,7 +209,7 @@ function Musicians() {
 
         {/* Who they're for */}
         <div className="mt-20">
-          <Eyebrow>Who they're for</Eyebrow>
+          <Eyebrow>Who they&apos;re for</Eyebrow>
 
           <h2 className="max-w-3xl font-display text-title font-bold">
             Hearing protection for people who depend on sound
@@ -238,10 +296,10 @@ function Musicians() {
 
             <p className="text-sm leading-relaxed text-mid">
               <span className="font-bold text-primary-deep">
-                You don't need to choose a filter before your appointment.
+                You don&apos;t need to choose a filter before your appointment.
               </span>{" "}
               The most appropriate level depends on your sound exposure,
-              listening environment and individual needs. We'll discuss the
+              listening environment and individual needs. We&apos;ll discuss the
               options with you.
             </p>
           </div>
@@ -258,9 +316,9 @@ function Musicians() {
 
             <p className="mt-4 max-w-2xl leading-relaxed text-mid">
               Custom hearing protection starts with understanding how you use
-              your hearing and where you need protection. We'll then take the
-              impressions needed for hearing protection made specifically for
-              your ears.
+              your hearing and where you need protection. We&apos;ll then take
+              the impressions needed for hearing protection made specifically
+              for your ears.
             </p>
           </div>
 
@@ -305,9 +363,9 @@ function Musicians() {
               </h2>
 
               <p className="mt-2 max-w-3xl leading-relaxed text-mid">
-                The appropriate level of protection isn't necessarily the
-                greatest possible attenuation. We'll consider your listening
-                environment and how you use sound to help identify an
+                The appropriate level of protection isn&apos;t necessarily the
+                greatest possible attenuation. We&apos;ll consider your
+                listening environment and how you use sound to help identify an
                 appropriate option for you.
               </p>
             </div>
@@ -324,7 +382,7 @@ function Musicians() {
 
           <p className="mx-auto mt-3 max-w-lg text-foam/80">
             Custom hearing protection starts with an ear impression
-            appointment. We'll help you find protection suited to your
+            appointment. We&apos;ll help you find protection suited to your
             listening, performance and individual needs.
           </p>
 

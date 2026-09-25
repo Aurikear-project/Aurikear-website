@@ -369,7 +369,12 @@ export const clinics = [
     postcode: "CM15 8EH",
     phone: "01277 695695",
     phoneHref: "tel:+441277695695",
-    services: "Children & school-age audiology",
+    services: [
+      "Adult hearing assessments",
+      "Hearing aids",
+      "Custom ear moulds",
+      "Children's hearing assessments from age 4+",
+    ],
     website: "https://www.nuffieldhealth.com/hospitals/brentwood",
   },
   {
@@ -381,7 +386,12 @@ export const clinics = [
     postcode: "IG9 5HX",
     phone: "020 8505 3311",
     phoneHref: "tel:+442085053311",
-    services: "Children & school-age audiology",
+    services: [
+      "Adult hearing assessments",
+      "Hearing aids",
+      "Custom ear moulds",
+      "Children's hearing assessments from age 4+",
+    ],
     website: "https://www.nuffieldhealth.com/hospitals/the-holly-hospital",
   },
   {
@@ -393,7 +403,12 @@ export const clinics = [
     postcode: "CB24 9EL",
     phone: "01223 266900",
     phoneHref: "tel:+441223266900",
-    services: "Children & school-age audiology",
+    services: [
+      "Adult hearing assessments",
+      "Hearing aids",
+      "Custom ear moulds",
+      "Children's hearing assessments from age 4+",
+    ],
     website:
       "https://www.spirehealthcare.com/spire-cambridge-lea-hospital/",
   },
@@ -406,7 +421,12 @@ export const clinics = [
     postcode: "CM13 3LE",
     phone: "01277 232525",
     phoneHref: "tel:+441277232525",
-    services: "Children & school-age audiology",
+    services: [
+      "Adult hearing assessments",
+      "Hearing aids",
+      "Custom ear moulds",
+      "Children's hearing assessments from age 4+",
+    ],
     website:
       "https://www.spirehealthcare.com/spire-hartswood-hospital/",
   },
@@ -419,7 +439,10 @@ export const clinics = [
     postcode: "IG4 5PZ",
     phone: "020 8551 1100",
     phoneHref: "tel:+442085511100",
-    services: "Toddler, pre-school, children & school-age audiology",
+    services: [
+      "Paediatric hearing assessments from 8 months to 4 years",
+      "Hearing assessments for children with complex needs",
+    ],
     website:
       "https://www.spirehealthcare.com/spire-london-east-hospital/",
   },

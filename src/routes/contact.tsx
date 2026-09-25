@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   Building2,
   Check,
+  Mail,
   MapPin,
   Phone,
 } from "lucide-react";
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Find Aurikear clinic locations and hospital contact details for adult and paediatric audiology appointments, hearing aids and custom ear moulds.",
+          "Find Aurikear clinic locations and hospital contact details for adult hearing assessments, paediatric audiology, hearing aids, musician earplugs and custom swim moulds.",
       },
     ],
   }),
@@ -31,7 +32,7 @@ export default function ContactPage() {
       {/* Page header */}
       <section className="border-b border-border bg-sky-pale/50 py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
-          <Eyebrow>Appointments & locations</Eyebrow>
+          <Eyebrow>Appointments &amp; locations</Eyebrow>
 
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
             Arrange an appointment
@@ -39,8 +40,9 @@ export default function ContactPage() {
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-mid md:text-lg">
             Aurikear provides specialist audiology services at a number of
-            private hospital locations. Choose the clinic most appropriate for
-            you and contact the hospital directly to arrange your appointment.
+            private hospital locations. Select a clinic that offers the service
+            you need, then contact the hospital directly to arrange your
+            appointment.
           </p>
         </div>
       </section>
@@ -51,19 +53,56 @@ export default function ContactPage() {
           <Eyebrow>How to book</Eyebrow>
 
           <h2 className="font-display text-title font-bold">
-            Choose your preferred clinic
+            Choose a clinic for your appointment
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            Online booking through Aurikear is not currently available.
-            Appointment types vary between locations, so check the services
-            listed below and then contact the hospital directly using the
-            telephone number provided.
+            Appointment types vary between locations. Check the services
+            available at each hospital below, then contact the hospital
+            directly using the telephone number provided.
+          </p>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            If you're unsure which type of appointment or clinic is right for
+            you, contact Aurikear and we'll help point you in the right
+            direction.
           </p>
         </div>
 
+        {/* Paediatric quick guidance */}
+        <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-border bg-sky-pale px-6 py-6 md:px-8">
+          <div className="grid gap-4 md:grid-cols-[auto_1fr] md:items-start md:gap-5">
+            <span className="flex size-10 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+              <Building2
+                className="size-5"
+                strokeWidth={1.8}
+                aria-hidden="true"
+              />
+            </span>
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-light">
+                Booking for a child?
+              </p>
+
+              <h3 className="mt-1 font-display text-lg font-bold text-primary-deep">
+                Clinic availability depends on your child's age
+              </h3>
+
+              <p className="mt-2 max-w-4xl text-sm leading-relaxed text-mid">
+                Children aged 4 years and over can be seen at Nuffield Health
+                Brentwood Hospital, Nuffield Health The Holly Hospital, Spire
+                Cambridge Lea Hospital and Spire Hartswood Hospital. Spire
+                London East Hospital provides paediatric hearing assessments
+                for children aged 8 months to 4 years and hearing assessments
+                for children with complex needs.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Clinic cards */}
-        <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
           {clinics.map((clinic) => {
             const isLondonEast = clinic.id === "london-east";
 
@@ -191,7 +230,7 @@ export default function ContactPage() {
           })}
         </div>
 
-        {/* Paediatric guidance */}
+        {/* Detailed paediatric guidance */}
         <div className="mx-auto mt-12 max-w-4xl rounded-3xl border border-border bg-sky-pale px-6 py-9 md:px-12 md:py-10">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Children's appointments</Eyebrow>
@@ -201,10 +240,11 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-mid">
-              For children aged 4 years and over, appointments are available
-              at Nuffield Health Brentwood Hospital, Nuffield Health The Holly
-              Hospital, Spire Cambridge Lea Hospital and Spire Hartswood
-              Hospital.
+              The appropriate clinic depends on your child's age and individual
+              needs. For children aged 4 years and over, appointments are
+              available at Nuffield Health Brentwood Hospital, Nuffield Health
+              The Holly Hospital, Spire Cambridge Lea Hospital and Spire
+              Hartswood Hospital.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
@@ -214,11 +254,41 @@ export default function ContactPage() {
             </p>
 
             <p className="mt-4 text-sm leading-relaxed text-mid">
-              When contacting the hospital, let the booking team know the type
-              of audiology appointment you require so they can arrange the
-              appropriate appointment.
+              When contacting the hospital, let the booking team know your
+              child's age and the type of audiology appointment required so
+              they can arrange the appropriate appointment.
             </p>
           </div>
+        </div>
+
+        {/* Unsure what to book */}
+        <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border bg-white p-6 md:flex md:items-center md:justify-between md:gap-10 md:p-8">
+          <div>
+            <Eyebrow>Need some guidance?</Eyebrow>
+
+            <h2 className="mt-1 font-display text-2xl font-bold text-primary-deep">
+              Not sure what to book?
+            </h2>
+
+            <p className="mt-2 max-w-2xl leading-relaxed text-mid">
+              If you're unsure which type of hearing appointment you need or
+              which clinic is appropriate, contact Aurikear and we'll help
+              point you in the right direction.
+            </p>
+          </div>
+
+          <a
+            href="mailto:aurikear@gmail.com"
+            className="mt-5 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-primary-deep px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 md:mt-0"
+          >
+            <Mail
+              className="size-4"
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+
+            Email Aurikear
+          </a>
         </div>
       </Section>
     </main>

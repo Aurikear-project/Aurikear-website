@@ -171,24 +171,30 @@ function Musicians() {
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {musicianAudiences.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-              >
-                <span className="flex size-11 items-center justify-center rounded-xl bg-white text-primary shadow-border">
-                  <ServiceIcon name={card.icon} />
-                </span>
+            {musicianAudiences.map((card) => {
+              const isIemCard = card.title === "In-ear monitors";
 
-                <h3 className="mt-4 font-bold text-primary-deep">
-                  {card.title}
-                </h3>
+              return (
+                <article
+                  key={card.title}
+                  className="rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-white text-primary shadow-border">
+                    <ServiceIcon name={card.icon} />
+                  </span>
 
-                <p className="mt-2 text-sm leading-relaxed text-mid">
-                  {card.body}
-                </p>
-              </article>
-            ))}
+                  <h3 className="mt-4 font-bold text-primary-deep">
+                    {isIemCard ? "For in-ear monitor users" : card.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-mid">
+                    {isIemCard
+                      ? "Accurate ear impressions can be taken for custom in-ear monitors, helping provide the manufacturer with the detailed impression required for an individual fit."
+                      : card.body}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
 
@@ -215,7 +221,7 @@ function Musicians() {
                 key={filter.level}
                 className="rounded-2xl border border-border bg-white p-6 shadow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-sky-pale font-display text-lg font-bold text-primary-deep">
+                <div className="inline-flex min-w-12 items-center justify-center whitespace-nowrap rounded-xl bg-sky-pale px-3 py-3 font-display text-lg font-bold text-primary-deep">
                   {filter.level}
                 </div>
 

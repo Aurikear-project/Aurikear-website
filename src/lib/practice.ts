@@ -24,6 +24,7 @@ export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/hearing-assessments", label: "Adult hearing" },
   { to: "/paediatric", label: "Paediatric" },
   { to: "/hearing-aids", label: "Hearing aids" },
   { to: "/musicians", label: "Musician plugs" },

@@ -1,9 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Check,
-  MapPin,
-} from "lucide-react";
+import { ArrowRight, Check, MapPin } from "lucide-react";
 
 import { FramedImage } from "@/components/framed-image";
 import { ServiceIcon } from "@/components/icons";
@@ -20,7 +16,7 @@ export const Route = createFileRoute("/paediatric")({
       {
         name: "description",
         content:
-          "Specialist paediatric hearing assessments for babies and children, including visual reinforcement audiometry, play audiometry, glue ear monitoring and assessments for children with complex needs.",
+          "Specialist paediatric hearing assessments for children from 8 months onwards, including visual reinforcement audiometry, play audiometry, glue ear monitoring and assessments for children with complex needs.",
       },
     ],
   }),
@@ -38,11 +34,11 @@ const appointmentIncludes = [
 function Paediatric() {
   return (
     <main>
-      {/* Clean service hero */}
+      {/* Hero */}
       <PageHero
         eyebrow="Children's hearing"
         title="Paediatric audiology"
-        lede="Specialist hearing assessments for babies, toddlers and children — delivered with expertise, patience and a child-centred approach."
+        lede="Specialist hearing assessments for children from 8 months onwards — delivered with expertise, patience and a child-centred approach."
       >
         <Button asChild variant="foam" className="mt-7">
           <Link to="/contact">
@@ -71,8 +67,8 @@ function Paediatric() {
             <p className="mt-3 leading-relaxed text-mid">
               We provide a calm, welcoming environment and adapt each
               appointment to your child's age, development and individual
-              needs. Hearing assessments are non-invasive and designed to be
-              as comfortable and engaging as possible.
+              needs. Hearing assessments are non-invasive and designed to be as
+              comfortable and engaging as possible.
             </p>
 
             <p className="mt-3 leading-relaxed text-mid">
@@ -128,7 +124,7 @@ function Paediatric() {
           </div>
         </div>
 
-        {/* Specialist services and appointment */}
+        {/* Specialist care / What to expect */}
         <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-14">
           <div>
             <Eyebrow>Specialist services</Eyebrow>
@@ -167,8 +163,8 @@ function Paediatric() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-mid">
-              Every appointment is shaped around your child. We'll take time
-              to understand your concerns before selecting the most appropriate
+              Every appointment is shaped around your child. We'll take time to
+              understand your concerns before selecting the most appropriate
               tests for their age and developmental stage.
             </p>
 
@@ -194,7 +190,7 @@ function Paediatric() {
         </div>
 
         {/* Clinic availability */}
-        <div className="mt-16 rounded-2xl border border-border bg-sky-pale p-8 md:p-12">
+        <div className="mt-16 rounded-2xl border border-border bg-sky-pale px-6 py-9 md:px-10 md:py-10">
           <div className="mx-auto max-w-3xl text-center">
             <Eyebrow>Clinic availability</Eyebrow>
 
@@ -202,14 +198,15 @@ function Paediatric() {
               Where children's appointments are available
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
+            <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-mid">
               The hospital location for your child's assessment depends on
               their age and individual needs.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <div className="rounded-xl border border-border bg-white p-6 shadow-border">
+          <div className="mt-7 grid gap-4 md:grid-cols-3">
+            {/* 8 months to 4 years */}
+            <div className="rounded-xl border border-border bg-white p-5 shadow-border">
               <span className="flex size-10 items-center justify-center rounded-xl bg-sky-pale text-primary">
                 <MapPin
                   className="size-5"
@@ -232,7 +229,8 @@ function Paediatric() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-border bg-white p-6 shadow-border">
+            {/* 4 years and over */}
+            <div className="rounded-xl border border-border bg-white p-5 shadow-border">
               <span className="flex size-10 items-center justify-center rounded-xl bg-sky-pale text-primary">
                 <MapPin
                   className="size-5"
@@ -256,7 +254,8 @@ function Paediatric() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-border bg-white p-6 shadow-border">
+            {/* Complex needs */}
+            <div className="rounded-xl border border-border bg-white p-5 shadow-border">
               <span className="flex size-10 items-center justify-center rounded-xl bg-sky-pale text-primary">
                 <MapPin
                   className="size-5"
@@ -280,8 +279,13 @@ function Paediatric() {
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Button asChild variant="outline">
+          {/* Clinic locations button */}
+          <div className="text-center">
+            <Button
+              asChild
+              variant="outline"
+              className="mt-8 rounded-full bg-white px-6 text-primary-deep shadow-border hover:bg-white/80"
+            >
               <Link to="/contact">
                 View clinic locations
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -290,7 +294,7 @@ function Paediatric() {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* Final CTA */}
         <div className="mt-16 rounded-2xl bg-primary-deep px-6 py-12 text-center text-foam md:px-12">
           <Eyebrow className="text-sky">We're here to help</Eyebrow>
 
@@ -315,3 +319,5 @@ function Paediatric() {
     </main>
   );
 }
+
+export default Paediatric;

@@ -42,7 +42,7 @@ export const services = [
   {
     slug: "assessments",
 
-    title: "Hearing assessments",
+    title: "Adult hearing assessments",
 
     eyebrow: "Your hearing",
 
@@ -57,7 +57,7 @@ export const services = [
       "Speech audiometry and speech-in-noise testing",
       "Tympanometry and acoustic reflex testing",
       "Detailed written report and clear recommendations",
-      "Suitable for children and adults",
+      "Suitable for adults",
     ],
 
     href: "/hearing-assessments",
@@ -140,7 +140,7 @@ export const services = [
   {
     slug: "paediatric",
 
-    title: "Children's hearing",
+    title: "Paediatric audiology",
 
     eyebrow: "Children & families",
 
@@ -342,18 +342,21 @@ export const musicianAudiences = [
       "Whether you play in a rock band, a symphony orchestra, or a solo acoustic set, custom plugs protect your hearing night after night. Available in 9 dB, 15 dB, and 25 dB filter options.",
     icon: "guitar",
   },
+
   {
     title: "For sound engineers",
     body:
       "Long hours monitoring levels at close range put engineers at serious risk. Custom plugs let you work safely without losing the detail you need.",
     icon: "sliders",
   },
+
   {
     title: "In-ear monitors",
     body:
       "Custom in-ear monitor shells combine isolation and sound quality — hear your mix clearly without turning the volume up.",
     icon: "headphones",
   },
+
   {
     title: "For music fans",
     body:
@@ -385,12 +388,14 @@ export const clinics = [
     phoneHref: "tel:+441277695695",
     services: [
       "Adult hearing assessments",
+      "Paediatric audiology — age 4+",
       "Hearing aids",
-      "Custom ear moulds",
-      "Children's hearing assessments from age 4+",
+      "Musician earplugs",
+      "Swim moulds",
     ],
     website: "https://www.nuffieldhealth.com/hospitals/brentwood",
   },
+
   {
     id: "holly",
     name: "Nuffield Health The Holly Hospital",
@@ -402,12 +407,15 @@ export const clinics = [
     phoneHref: "tel:+442085053311",
     services: [
       "Adult hearing assessments",
+      "Paediatric audiology — age 4+",
       "Hearing aids",
-      "Custom ear moulds",
-      "Children's hearing assessments from age 4+",
+      "Musician earplugs",
+      "Swim moulds",
     ],
-    website: "https://www.nuffieldhealth.com/hospitals/the-holly-hospital",
+    website:
+      "https://www.nuffieldhealth.com/hospitals/the-holly-hospital",
   },
+
   {
     id: "cambridge-lea",
     name: "Spire Cambridge Lea Hospital",
@@ -419,13 +427,15 @@ export const clinics = [
     phoneHref: "tel:+441223266900",
     services: [
       "Adult hearing assessments",
+      "Paediatric audiology — age 4+",
       "Hearing aids",
-      "Custom ear moulds",
-      "Children's hearing assessments from age 4+",
+      "Musician earplugs",
+      "Swim moulds",
     ],
     website:
       "https://www.spirehealthcare.com/spire-cambridge-lea-hospital/",
   },
+
   {
     id: "hartswood",
     name: "Spire Hartswood Hospital",
@@ -437,13 +447,15 @@ export const clinics = [
     phoneHref: "tel:+441277232525",
     services: [
       "Adult hearing assessments",
+      "Paediatric audiology — age 4+",
       "Hearing aids",
-      "Custom ear moulds",
-      "Children's hearing assessments from age 4+",
+      "Musician earplugs",
+      "Swim moulds",
     ],
     website:
       "https://www.spirehealthcare.com/spire-hartswood-hospital/",
   },
+
   {
     id: "london-east",
     name: "Spire London East Hospital",
@@ -454,8 +466,8 @@ export const clinics = [
     phone: "020 8551 1100",
     phoneHref: "tel:+442085511100",
     services: [
-      "Paediatric hearing assessments from 8 months to 4 years",
-      "Hearing assessments for children with complex needs",
+      "Paediatric audiology — 8 months to 4 years",
+      "Paediatric audiology for children with complex needs",
     ],
     website:
       "https://www.spirehealthcare.com/spire-london-east-hospital/",

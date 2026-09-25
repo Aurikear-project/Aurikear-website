@@ -14,7 +14,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore Aurikear's clinical audiology services, including hearing assessments, hearing aids, paediatric audiology, musician earplugs and custom swim moulds.",
+          "Explore Aurikear's clinical audiology services, including adult hearing assessments, hearing aids, paediatric audiology, musician earplugs and custom swim moulds.",
       },
     ],
   }),
@@ -28,8 +28,8 @@ const serviceGuidance = {
       "Difficulty following conversation",
       "Baseline or diagnostic hearing assessment",
     ],
-    action: "Contact us about an assessment",
-    to: "/contact" as const,
+    action: "Explore adult hearing assessments",
+    to: "/hearing-assessments" as const,
   },
 
   paediatric: {
@@ -188,23 +188,24 @@ export function ServicesPage() {
           })}
         </div>
 
-        {/* Not sure */}
+        {/* Clinic guidance */}
         <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-border bg-sky-pale px-6 py-10 text-center md:px-12 md:py-12">
           <Eyebrow>Not sure where to start?</Eyebrow>
 
           <h2 className="mt-2 font-display text-2xl font-bold text-primary-deep md:text-3xl">
-            Tell us what you're concerned about
+            Find the right place for your appointment
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-mid">
-            You don't need to choose a service yourself. Tell us a little about
-            your hearing concern, or your child's hearing, and we can help guide
-            you towards the appropriate next step.
+            If you're unsure which clinic is appropriate, review the services
+            above and our clinic locations. Appointment types vary between
+            hospitals, and the hospital booking team can help arrange the
+            appropriate appointment.
           </p>
 
           <Button asChild className="mt-7">
             <Link to="/contact">
-              Contact us
+              View clinic locations
               <ArrowRight className="size-4" />
             </Link>
           </Button>

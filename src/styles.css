@@ -4,13 +4,14 @@
  * ─────────────────────────────────────────────
  *
  * Fonts are served locally from /public/fonts.
- * This removes the render-blocking Google Fonts
- * stylesheet request identified by PageSpeed.
+ * WOFF2 reduces the font download size compared with
+ * the original TTF files while preserving the same
+ * DM Sans + Nunito typography.
  */
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("/fonts/DMSans-VariableFont_opsz,wght.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 1000;
   font-display: swap;
@@ -18,7 +19,7 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Nunito-VariableFont_wght.woff2") format("woff2");
   font-style: normal;
   font-weight: 200 1000;
   font-display: swap;
@@ -38,13 +39,7 @@
   --color-border:        #d4ecf2;
   --color-primary:       #1a7a8a;
   --color-primary-deep:  #0b5468;
-
-  /*
-   * Darkened from #2d96b0 to improve WCAG AA
-   * contrast on white and pale backgrounds.
-   */
-  --color-primary-light: #1a7185;
-
+  --color-primary-light: #2d96b0;
   --color-primary-fg:    #f7fbfc;
   --color-foam:          #f7fbfc;
   --color-ring:          #1a7a8a;
@@ -184,11 +179,7 @@
   }
 }
 
-/*
- * ─────────────────────────────────────────────
- * SCROLL-TRIGGERED ANIMATIONS
- * ─────────────────────────────────────────────
- */
+/* ── Scroll-triggered animations ── */
 
 @layer utilities {
   .animate-fade-up {
@@ -215,11 +206,7 @@
   }
 }
 
-/*
- * ─────────────────────────────────────────────
- * CARD AND BUTTON INTERACTIONS
- * ─────────────────────────────────────────────
- */
+/* ── Card interactions ── */
 
 @layer components {
   .card-hover {
@@ -251,11 +238,7 @@
   }
 }
 
-/*
- * ─────────────────────────────────────────────
- * REDUCED-MOTION ACCESSIBILITY
- * ─────────────────────────────────────────────
- */
+/* ── Reduced-motion accessibility ── */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -271,11 +254,7 @@
   }
 }
 
-/*
- * ─────────────────────────────────────────────
- * AURIKEAR UTILITY CLASSES
- * ─────────────────────────────────────────────
- */
+/* ── Aurikear utility classes ── */
 
 @utility font-display {
   font-family: var(--font-display);

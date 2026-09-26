@@ -21,6 +21,15 @@ const PAGE_TITLE =
 const PAGE_DESCRIPTION =
   "Private audiology for babies, children and adults. HCPC-registered, UCL-trained expertise in hearing assessments, hearing aids and specialist ear protection.";
 
+const HERO_IMAGE =
+  "/images/hearing-assessment-clinical-equipment.webp";
+
+const HERO_IMAGE_640 =
+  "/images/hearing-assessment-clinical-equipment-640.webp";
+
+const HERO_IMAGE_960 =
+  "/images/hearing-assessment-clinical-equipment-960.webp";
+
 export const Route = createFileRoute("/")({
   component: Home,
 
@@ -80,6 +89,21 @@ export const Route = createFileRoute("/")({
         rel: "canonical",
         href: SITE_URL,
       },
+
+      /*
+       * Preload the homepage LCP image.
+       *
+       * imagesrcset/imagesizes allow the browser to preload
+       * the same responsive source that the hero will use.
+       */
+      {
+        rel: "preload",
+        as: "image",
+        href: HERO_IMAGE_960,
+        imageSrcSet: `${HERO_IMAGE_640} 640w, ${HERO_IMAGE_960} 960w, ${HERO_IMAGE} 1600w`,
+        imageSizes: "100vw",
+        fetchPriority: "high",
+      },
     ],
   }),
 });
@@ -104,20 +128,15 @@ const credentials = [
 ];
 
 /*
- * Convert:
- *
- * /images/homepage-hearing-aids.webp
- *
- * into:
- *
- * /images/homepage-hearing-aids-400.webp
- *
- * This lets the browser download the smaller image on
- * mobile while retaining the 800px original for larger
- * screens.
+ * Generate the responsive service-card filenames from
+ * the original 800px WebP path.
  */
-function getSmallImage(image: string) {
+function getServiceImage400(image: string) {
   return image.replace(/\.webp$/i, "-400.webp");
+}
+
+function getServiceImage640(image: string) {
+  return image.replace(/\.webp$/i, "-640.webp");
 }
 
 function Home() {
@@ -128,7 +147,9 @@ function Home() {
         eyebrow="HCPC Registered · UCL PhD · 15+ Years' Experience"
         title={practice.headline}
         lede={practice.lede}
-        image="/images/hearing-assessment-clinical-equipment.webp"
+        image={HERO_IMAGE_960}
+        imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE_960} 960w, ${HERO_IMAGE} 1600w`}
+        imageSizes="100vw"
         imageAlt="Audiology equipment used during a professional hearing assessment"
       >
         <Button asChild variant="foam" className="mt-7">
@@ -197,9 +218,13 @@ function Home() {
               {service.homeImage && (
                 <div className="h-40 overflow-hidden">
                   <img
-                    src={getSmallImage(service.homeImage)}
-                    srcSet={`${getSmallImage(service.homeImage)} 400w, ${service.homeImage} 800w`}
-                    sizes="(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"
+                    src={getServiceImage400(service.homeImage)}
+                    srcSet={[
+                      `${getServiceImage400(service.homeImage)} 400w`,
+                      `${getServiceImage640(service.homeImage)} 640w`,
+                      `${service.homeImage} 800w`,
+                    ].join(", ")}
+                    sizes="(min-width: 1024px) 368px, (min-width: 640px) calc(50vw - 32px), calc(100vw - 40px)"
                     alt={service.imageAlt}
                     width={800}
                     height={533}

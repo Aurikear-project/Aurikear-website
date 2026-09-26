@@ -133,6 +133,28 @@ export const Route = createRootRoute({
         href: "/favicon.svg",
       },
 
+      /*
+       * Preload the two locally hosted WOFF2 fonts.
+       *
+       * This allows the browser to discover the font
+       * resources immediately rather than waiting for
+       * the stylesheet to be downloaded and parsed.
+       */
+      {
+        rel: "preload",
+        href: "/fonts/DMSans-VariableFont_opsz,wght.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/Nunito-VariableFont_wght.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+
       // Main stylesheet
       {
         rel: "stylesheet",
@@ -140,7 +162,7 @@ export const Route = createRootRoute({
       },
 
       /*
-       * The homepage hero preload now lives in
+       * The homepage hero preload lives in
        * src/routes/index.tsx.
        *
        * This prevents the homepage hero from being
@@ -153,7 +175,7 @@ export const Route = createRootRoute({
        * via @font-face declarations in styles.css.
        *
        * No Google Fonts stylesheet or preconnects
-       * are required here.
+       * are required.
        */
 
       // PWA manifest

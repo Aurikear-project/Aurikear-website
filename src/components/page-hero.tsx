@@ -30,7 +30,7 @@ export function PageHero({
           sizes={imageSizes}
           alt={imageAlt ?? ""}
           width={960}
-          height={1252}
+          height={540}
           className="absolute inset-0 size-full object-cover opacity-35"
           loading="eager"
           fetchPriority="high"

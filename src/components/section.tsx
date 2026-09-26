@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 
 const tones = {
   paper: "bg-paper text-ink",
-  off:   "bg-bg text-ink",
-  teal:  "bg-primary-deep text-foam",
-  ink:   "bg-ink text-foam",
+  off: "bg-bg text-ink",
+  teal: "bg-primary-deep text-foam",
+  ink: "bg-ink text-foam",
 } as const;
 
 export function Section({
@@ -41,7 +41,7 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "mb-3 text-xs font-bold tracking-[0.16em] text-primary-light uppercase",
+        "mb-3 text-xs font-bold tracking-[0.16em] text-primary uppercase",
         className,
       )}
     >

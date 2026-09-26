@@ -140,20 +140,13 @@ export const Route = createRootRoute({
       },
 
       /*
-       * Preload the homepage hero image.
+       * The homepage hero preload now lives in
+       * src/routes/index.tsx.
        *
-       * PageSpeed identifies this image as the
-       * Largest Contentful Paint (LCP) resource.
-       * Preloading allows the browser to start
-       * fetching it earlier.
+       * This prevents the homepage hero from being
+       * unnecessarily preloaded on every route and
+       * allows the homepage to use a responsive preload.
        */
-      {
-        rel: "preload",
-        as: "image",
-        href: "/images/hearing-assessment-clinical-equipment.webp",
-        type: "image/webp",
-        fetchPriority: "high",
-      },
 
       /*
        * Fonts are served locally from /public/fonts

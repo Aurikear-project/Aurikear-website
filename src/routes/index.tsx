@@ -227,7 +227,7 @@ function Home() {
                     sizes="(min-width: 1024px) 368px, (min-width: 640px) calc(50vw - 32px), calc(100vw - 40px)"
                     alt={service.imageAlt}
                     width={800}
-                    height={533}
+                    height={370}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

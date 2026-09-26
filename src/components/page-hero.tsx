@@ -7,6 +7,8 @@ export function PageHero({
   title,
   lede,
   image,
+  imageSrcSet,
+  imageSizes,
   imageAlt,
   children,
 }: {
@@ -14,6 +16,8 @@ export function PageHero({
   title: ReactNode;
   lede: string;
   image?: string;
+  imageSrcSet?: string;
+  imageSizes?: string;
   imageAlt?: string;
   children?: ReactNode;
 }) {
@@ -22,9 +26,11 @@ export function PageHero({
       {image ? (
         <img
           src={image}
+          srcSet={imageSrcSet}
+          sizes={imageSizes}
           alt={imageAlt ?? ""}
-          width={691}
-          height={901}
+          width={960}
+          height={1252}
           className="absolute inset-0 size-full object-cover opacity-35"
           loading="eager"
           fetchPriority="high"

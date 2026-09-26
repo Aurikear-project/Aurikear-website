@@ -143,7 +143,8 @@ function Home() {
                 {stat.value}
               </span>
 
-              <span className="mt-1.5 text-xs font-medium uppercase tracking-widest opacity-60">
+              {/* Accessibility: stronger contrast */}
+              <span className="mt-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
                 {stat.label}
               </span>
             </div>
@@ -192,7 +193,8 @@ function Home() {
               )}
 
               <div className="flex flex-1 flex-col p-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary-light">
+                {/* Accessibility: darker label */}
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-deep">
                   {service.eyebrow}
                 </p>
 
@@ -291,7 +293,8 @@ function Home() {
       <div className="border-y border-border bg-sky-pale py-10">
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-7 text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
+            {/* Accessibility: darker heading */}
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-deep">
               Private medical insurance
             </p>
 
@@ -375,7 +378,10 @@ function Home() {
         <div className="pointer-events-none absolute -bottom-16 -left-16 size-48 rounded-full bg-white/5" />
 
         <div className="relative mx-auto max-w-2xl px-4">
-          <Eyebrow className="text-sky/80">Take the first step</Eyebrow>
+          {/* Accessibility: full white instead of low-opacity sky */}
+          <Eyebrow className="text-white">
+            Take the first step
+          </Eyebrow>
 
           <h2 className="mt-2 font-display text-title font-semibold !text-white">
             Ready to hear more of what matters?

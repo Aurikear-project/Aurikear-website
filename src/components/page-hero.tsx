@@ -28,7 +28,7 @@ export function PageHero({
           className="absolute inset-0 size-full object-cover opacity-35"
           loading="eager"
           fetchPriority="high"
-          decoding="sync"
+          decoding="async"
         />
       ) : null}
 

@@ -23,10 +23,12 @@ export function PageHero({
         <img
           src={image}
           alt={imageAlt ?? ""}
+          width={691}
+          height={901}
           className="absolute inset-0 size-full object-cover opacity-35"
           loading="eager"
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
         />
       ) : null}
 
@@ -50,11 +52,11 @@ export function PageHero({
             {eyebrow}
           </Eyebrow>
 
-          <h1 className="font-display text-display font-bold text-white mt-3 leading-[1.08]">
+          <h1 className="mt-3 font-display text-display font-bold leading-[1.08] text-white">
             {title}
           </h1>
 
-          <p className="mt-5 max-w-xl text-lede leading-relaxed text-foam/75 font-light">
+          <p className="mt-5 max-w-xl font-light text-lede leading-relaxed text-foam/75">
             {lede}
           </p>
 

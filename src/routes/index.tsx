@@ -103,6 +103,23 @@ const credentials = [
   },
 ];
 
+/*
+ * Convert:
+ *
+ * /images/homepage-hearing-aids.webp
+ *
+ * into:
+ *
+ * /images/homepage-hearing-aids-400.webp
+ *
+ * This lets the browser download the smaller image on
+ * mobile while retaining the 800px original for larger
+ * screens.
+ */
+function getSmallImage(image: string) {
+  return image.replace(/\.webp$/i, "-400.webp");
+}
+
 function Home() {
   return (
     <main>
@@ -143,7 +160,6 @@ function Home() {
                 {stat.value}
               </span>
 
-              {/* Accessibility: stronger contrast */}
               <span className="mt-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
                 {stat.label}
               </span>
@@ -181,7 +197,9 @@ function Home() {
               {service.homeImage && (
                 <div className="h-40 overflow-hidden">
                   <img
-                    src={service.homeImage}
+                    src={getSmallImage(service.homeImage)}
+                    srcSet={`${getSmallImage(service.homeImage)} 400w, ${service.homeImage} 800w`}
+                    sizes="(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"
                     alt={service.imageAlt}
                     width={800}
                     height={533}
@@ -193,7 +211,6 @@ function Home() {
               )}
 
               <div className="flex flex-1 flex-col p-5">
-                {/* Accessibility: darker label */}
                 <p className="text-xs font-bold uppercase tracking-widest text-primary-deep">
                   {service.eyebrow}
                 </p>
@@ -293,7 +310,6 @@ function Home() {
       <div className="border-y border-border bg-sky-pale py-10">
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-7 text-center">
-            {/* Accessibility: darker heading */}
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-deep">
               Private medical insurance
             </p>
@@ -378,7 +394,6 @@ function Home() {
         <div className="pointer-events-none absolute -bottom-16 -left-16 size-48 rounded-full bg-white/5" />
 
         <div className="relative mx-auto max-w-2xl px-4">
-          {/* Accessibility: full white instead of low-opacity sky */}
           <Eyebrow className="text-white">
             Take the first step
           </Eyebrow>

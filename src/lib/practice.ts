@@ -64,7 +64,7 @@ export const services = [
     to: "/hearing-assessments" as const,
 
     image: "/images/hearing-assessment-clinical-equipment.jpg",
-    homeImage: "/images/homepage-hearing-assessments.jpg",
+    homeImage: "/images/homepage-hearing-assessments.webp",
 
     imageAlt:
       "Clinical audiology equipment used during a hearing assessment",
@@ -97,7 +97,7 @@ export const services = [
     to: "/hearing-aids" as const,
 
     image: "/images/hearing-aid-consultation-female.jpg",
-    homeImage: "/images/homepage-hearing-aids.jpg",
+    homeImage: "/images/homepage-hearing-aids.webp",
 
     imageAlt:
       "Audiologist discussing hearing aid options with a patient",
@@ -129,7 +129,7 @@ export const services = [
     to: "/musicians" as const,
 
     image: "/images/musician-violinist-earplugs.jpg",
-    homeImage: "/images/homepage-musician-earplugs.jpg",
+    homeImage: "/images/homepage-musician-earplugs.webp",
 
     imageAlt:
       "Musician wearing custom hearing protection while performing",
@@ -162,7 +162,7 @@ export const services = [
     to: "/paediatric" as const,
 
     image: "/images/paediatric-hearing-assessment.jpg",
-    homeImage: "/images/homepage-childrens-hearing.jpg",
+    homeImage: "/images/homepage-childrens-hearing.webp",
 
     imageAlt:
       "Child taking part in a specialist hearing assessment",
@@ -195,7 +195,7 @@ export const services = [
     to: "/swim-moulds" as const,
 
     image: "/images/swimmer-wearing-swim-moulds.jpg",
-    homeImage: "/images/homepage-swim-moulds.jpg",
+    homeImage: "/images/homepage-swim-moulds.webp",
 
     imageAlt:
       "Swimmer wearing custom-made ear protection",

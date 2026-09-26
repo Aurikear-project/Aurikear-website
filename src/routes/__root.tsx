@@ -140,11 +140,27 @@ export const Route = createRootRoute({
       },
 
       /*
-       * Fonts are now served locally from /public/fonts
+       * Preload the homepage hero image.
+       *
+       * PageSpeed identifies this image as the
+       * Largest Contentful Paint (LCP) resource.
+       * Preloading allows the browser to start
+       * fetching it earlier.
+       */
+      {
+        rel: "preload",
+        as: "image",
+        href: "/images/hearing-assessment-clinical-equipment.webp",
+        type: "image/webp",
+        fetchPriority: "high",
+      },
+
+      /*
+       * Fonts are served locally from /public/fonts
        * via @font-face declarations in styles.css.
        *
-       * No Google Fonts stylesheet or preconnects are
-       * required here.
+       * No Google Fonts stylesheet or preconnects
+       * are required here.
        */
 
       // PWA manifest

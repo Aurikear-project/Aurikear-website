@@ -1,4 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap");
+/*
+ * ─────────────────────────────────────────────
+ * AURIKEAR LOCAL FONTS
+ * ─────────────────────────────────────────────
+ *
+ * Fonts are served locally from /public/fonts.
+ * This removes the render-blocking Google Fonts
+ * stylesheet request identified by PageSpeed.
+ */
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -40,10 +65,6 @@
   --text-title:   clamp(1.8rem, 1.2rem + 2.2vw, 2.75rem);
   --text-lede:    clamp(1.12rem, 1.03rem + 0.4vw, 1.25rem);
 
-  /*
-   * Slightly more generous small-text scale.
-   * Improves readability without making the site feel oversized.
-   */
   --text-sm: 0.91rem;
   --text-sm--line-height: 1.65;
 
@@ -91,19 +112,7 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    /*
-     * Keep route changes immediate rather than smoothly
-     * scrolling back to the top of the page.
-     * This creates a calmer navigation experience,
-     * particularly on mobile.
-     */
     scroll-behavior: auto;
-
-    /*
-     * 17px gives Aurikear a slightly more generous
-     * reading size than the usual 16px default.
-     */
     font-size: 17px;
   }
 
@@ -114,12 +123,6 @@
     line-height: 1.7;
   }
 
-  /*
-   * Display typography
-   *
-   * DM Sans provides the clean, contemporary identity.
-   * Nunito remains the softer reading face for body copy.
-   */
   h1,
   h2,
   h3,
@@ -129,33 +132,18 @@
     letter-spacing: -0.015em;
     line-height: 1.15;
     color: var(--color-ink);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
     font-weight: 600;
   }
 
-  /*
-   * Comfortable paragraph rhythm is particularly
-   * important for longer clinical explanations.
-   */
   p {
     text-wrap: pretty;
     line-height: 1.75;
   }
 
-  /*
-   * Links inherit their surrounding colour unless
-   * explicitly styled by a component.
-   */
   a {
     text-underline-offset: 0.18em;
   }
 
-  /* Accessible keyboard focus */
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
@@ -182,12 +170,6 @@
  * ─────────────────────────────────────────────
  * DISPLAY HEADING WEIGHTS
  * ─────────────────────────────────────────────
- *
- * Some existing Aurikear components use
- * "font-display font-bold".
- *
- * Keep those headings at DM Sans 600 so they
- * retain the softer Aurikear appearance.
  */
 
 @layer utilities {
@@ -238,7 +220,6 @@
     box-shadow: var(--shadow-lift);
   }
 
-  /* Premium button interaction */
   .btn-base {
     transition:
       transform 0.2s var(--ease-spring),

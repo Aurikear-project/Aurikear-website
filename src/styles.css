@@ -38,7 +38,13 @@
   --color-border:        #d4ecf2;
   --color-primary:       #1a7a8a;
   --color-primary-deep:  #0b5468;
-  --color-primary-light: #2d96b0;
+
+  /*
+   * Darkened from #2d96b0 to improve WCAG AA
+   * contrast on white and pale backgrounds.
+   */
+  --color-primary-light: #1a7185;
+
   --color-primary-fg:    #f7fbfc;
   --color-foam:          #f7fbfc;
   --color-ring:          #1a7a8a;
@@ -178,7 +184,11 @@
   }
 }
 
-/* ── Scroll-triggered animations ── */
+/*
+ * ─────────────────────────────────────────────
+ * SCROLL-TRIGGERED ANIMATIONS
+ * ─────────────────────────────────────────────
+ */
 
 @layer utilities {
   .animate-fade-up {
@@ -205,7 +215,11 @@
   }
 }
 
-/* ── Card interactions ── */
+/*
+ * ─────────────────────────────────────────────
+ * CARD AND BUTTON INTERACTIONS
+ * ─────────────────────────────────────────────
+ */
 
 @layer components {
   .card-hover {
@@ -237,7 +251,11 @@
   }
 }
 
-/* ── Reduced-motion accessibility ── */
+/*
+ * ─────────────────────────────────────────────
+ * REDUCED-MOTION ACCESSIBILITY
+ * ─────────────────────────────────────────────
+ */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -253,7 +271,11 @@
   }
 }
 
-/* ── Aurikear utility classes ── */
+/*
+ * ─────────────────────────────────────────────
+ * AURIKEAR UTILITY CLASSES
+ * ─────────────────────────────────────────────
+ */
 
 @utility font-display {
   font-family: var(--font-display);

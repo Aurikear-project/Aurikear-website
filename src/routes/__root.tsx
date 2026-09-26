@@ -139,22 +139,13 @@ export const Route = createRootRoute({
         href: appCss,
       },
 
-      // Google Fonts connection optimisation
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-      },
-
-      // Fonts
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap",
-      },
+      /*
+       * Fonts are now served locally from /public/fonts
+       * via @font-face declarations in styles.css.
+       *
+       * No Google Fonts stylesheet or preconnects are
+       * required here.
+       */
 
       // PWA manifest
       {

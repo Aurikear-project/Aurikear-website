@@ -182,6 +182,10 @@ function Home() {
                   <img
                     src={service.homeImage}
                     alt={service.imageAlt}
+                    width={800}
+                    height={533}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -319,31 +323,31 @@ function Home() {
             {[
               {
                 name: "Bupa",
-                src: "/images/insurers/bupa.png",
+                src: "/images/insurers/bupa.webp",
               },
               {
                 name: "AXA Health",
-                src: "/images/insurers/axa.png",
+                src: "/images/insurers/axa.webp",
               },
               {
                 name: "Vitality",
-                src: "/images/insurers/vitality.png",
+                src: "/images/insurers/vitality.webp",
               },
               {
                 name: "Aviva",
-                src: "/images/insurers/aviva.png",
+                src: "/images/insurers/aviva.webp",
               },
               {
                 name: "Cigna",
-                src: "/images/insurers/cigna.png",
+                src: "/images/insurers/cigna.webp",
               },
               {
                 name: "WPA",
-                src: "/images/insurers/wpa.png",
+                src: "/images/insurers/wpa.webp",
               },
               {
                 name: "Healix",
-                src: "/images/insurers/healix.png",
+                src: "/images/insurers/healix.webp",
               },
             ].map((insurer) => (
               <div
@@ -353,6 +357,10 @@ function Home() {
                 <img
                   src={insurer.src}
                   alt={insurer.name}
+                  width={160}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-8 max-w-full object-contain grayscale opacity-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 />
               </div>

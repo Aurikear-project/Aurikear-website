@@ -84,8 +84,8 @@ function About() {
       {/* Hero */}
       <PageHero
         eyebrow="About Aurikear"
-        title="Meet your audiologist"
-        lede="Specialist hearing care for babies, children and adults, delivered with clinical experience, clear explanations and an individual approach."
+        title="Hello, I'm Kinjal"
+        lede="I'm an audiologist for babies, children and adults. My appointments are unhurried, my explanations are clear, and I treat you, or your child, as a person and not a set of results."
       >
         <Button asChild variant="foam" className="mt-7">
           <Link to="/contact">
@@ -95,102 +95,89 @@ function About() {
         </Button>
       </PageHero>
 
-      {/* Clinician profile */}
+      {/* Approach to care, then portrait */}
       <Section>
         <div className="grid items-start gap-10 lg:grid-cols-[360px_1fr] lg:gap-16">
-          {/* Portrait */}
-          <div>
-            <FramedImage
-              src="/images/audiologist-portrait.jpg"
-              alt="Dr Kinjal Mehta, Consultant Audiologist"
-              className="aspect-portrait rounded-2xl"
-            />
-          </div>
+          <FramedImage
+            src="/images/audiologist-portrait.jpg"
+            alt="Dr Kinjal Mehta, Consultant Audiologist"
+            className="aspect-portrait rounded-t-full rounded-b-2xl"
+          />
 
-          {/* Biography */}
           <div>
-            <Eyebrow>Your audiologist</Eyebrow>
+            <Eyebrow>How I care for my patients</Eyebrow>
 
-            <h1 className="font-display text-title font-semibold text-ink">
-              Dr Kinjal Mehta
-            </h1>
+            <h2 className="font-display text-title font-semibold text-ink">
+              Time to listen, and answers you can understand
+            </h2>
 
             <p className="mt-2 font-semibold leading-relaxed text-primary-deep">
-              BSc (Hons), PhD, RAHD · HCPC Registered Audiologist
-            </p>
-
-            <p className="mt-1 text-sm font-semibold text-muted">
-              Practising since 2009
+              Dr Kinjal Mehta · BSc (Hons), PhD, RAHD · HCPC Registered Audiologist
             </p>
 
             <div className="mt-7 max-w-3xl space-y-5 leading-relaxed text-mid">
               <p>
-                Dr Kinjal Mehta is a Consultant Audiologist specialising in
-                hearing assessment and management for adults, babies and
-                children. She practises privately at Nuffield Health The Holly
-                and Nuffield Health Brentwood hospitals and is a Paediatric
-                Team Lead at Whittington Health NHS Trust.
+                Hearing care is about more than completing a test. I want to
+                understand the person behind the results, explain what I find in
+                plain language, and help you and your family feel confident about
+                the options.
               </p>
 
               <p>
-                Dr Mehta began her audiology career in 2009 after graduating
-                with First Class Honours in Audiology from University College
-                London. She subsequently completed a PhD at UCL and has
-                developed extensive experience in paediatric and adult
-                audiology, including the diagnosis of hearing loss in newborn
-                babies and the rehabilitation and ongoing management of
-                hearing difficulties.
+                If you&apos;re a parent, please ask me anything, at any point. I
+                know an appointment about your child&apos;s hearing can feel
+                worrying, so I&apos;ll always tell you what I&apos;m doing and
+                what I&apos;m finding as we go. With little ones I use play and
+                gentle games, so it feels like fun and not a test.
               </p>
 
               <p>
-                Her paediatric work includes monitoring children with glue ear
-                and using age-appropriate assessment techniques including
-                visual reinforcement audiometry, play audiometry and
-                tympanometry. She also assesses and manages hearing loss in
-                adults and children, including hearing aid prescription and
-                aural impressions.
+                If you&apos;re an adult, you&apos;ll have the time and
+                information you need to make decisions at your own pace. Nothing
+                is rushed, and there&apos;s no pressure.
               </p>
-
-              <p>
-                Her wider clinical interests include custom ear protection and
-                in-ear monitors for musicians and shooters, sleep and swim
-                plugs, and audiological assessment and special damages
-                reporting for medico-legal cases.
-              </p>
+              {/* TODO: optional anonymised example, e.g. a child who was nervous at first but ended up enjoying the games. */}
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Philosophy of care */}
+      {/* Background */}
       <Section tone="off">
         <div className="mx-auto max-w-4xl">
-          <Eyebrow>Approach to care</Eyebrow>
+          <Eyebrow>My background</Eyebrow>
 
           <h2 className="max-w-3xl font-display text-title font-semibold text-ink">
-            Specialist expertise with a personal approach
+            Specialist experience, built over fifteen years
           </h2>
 
           <div className="mt-6 space-y-5 leading-relaxed text-mid">
             <p>
-              Hearing care is about more than completing a test. Dr Mehta aims
-              to understand the individual behind the results, explain
-              findings clearly and help each patient and family understand the
-              options available to them.
+              I began my career in 2009 after graduating with First Class Honours
+              in Audiology from University College London, and went on to
+              complete a PhD at UCL. Since then I&apos;ve diagnosed hearing loss
+              in newborn babies and supported people through rehabilitation and
+              long-term hearing care.
             </p>
 
             <p>
-              Her clinical approach combines extensive experience in adult and
-              paediatric audiology with an academic background in hearing
-              science. Assessments and recommendations are tailored to the
-              patient&apos;s age, hearing needs and individual circumstances.
+              I&apos;m a Paediatric Team Lead at Whittington Health NHS Trust,
+              and I see private patients at Nuffield Health The Holly and Nuffield
+              Health Brentwood hospitals.
             </p>
 
             <p>
-              Parents and carers are encouraged to ask questions throughout a
-              child&apos;s assessment, while adult patients are given the time
-              and information needed to make informed decisions about their
-              hearing care.
+              My work with children includes monitoring glue ear and using
+              age-appropriate assessments such as visual reinforcement
+              audiometry, play audiometry and tympanometry. For adults and
+              children I also prescribe hearing aids and take ear impressions.
+            </p>
+
+            <p>
+              I have particular interests in custom ear protection and in-ear
+              monitors for musicians and shooters, sleep and swim plugs, and
+              audiological assessments and special damages reports for
+              medico-legal cases.
             </p>
           </div>
         </div>
@@ -202,12 +189,12 @@ function About() {
           <Eyebrow>Clinical services</Eyebrow>
 
           <h2 className="font-display text-title font-semibold text-ink">
-            Explore Aurikear&apos;s hearing care
+            Where would you like to start?
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            Find out more about hearing assessments, children&apos;s audiology,
-            hearing aids and specialist ear protection.
+            Read about the care I offer for adults, children, hearing aids and
+            specialist ear protection.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -267,8 +254,8 @@ function About() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-foam/80">
-            Explore our clinic locations and arrange an audiology appointment
-            at the hospital most appropriate for your needs.
+            Find the clinic that suits you best and arrange an appointment, or send
+            me a message first.
           </p>
 
           <Button asChild variant="foam" size="lg" className="mt-8">

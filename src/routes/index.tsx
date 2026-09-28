@@ -102,7 +102,7 @@ export const Route = createFileRoute("/")({
 });
 
 /*
- * Generate the responsive service-card filenames from
+ * Generate responsive service-card filenames from
  * the original 800px WebP path.
  */
 function getServiceImage400(image: string) {
@@ -116,9 +116,8 @@ function getServiceImage640(image: string) {
 function Home() {
   return (
     <main>
-      {/* Hero */}
+      {/* Hero — intentionally no eyebrow */}
       <PageHero
-        eyebrow="Private audiology for adults & children"
         title={practice.headline}
         lede={practice.lede}
         image={HERO_IMAGE_960}

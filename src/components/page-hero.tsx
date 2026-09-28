@@ -12,7 +12,7 @@ export function PageHero({
   imageAlt,
   children,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   lede: string;
   image?: string;
@@ -30,7 +30,7 @@ export function PageHero({
           sizes={imageSizes}
           alt={imageAlt ?? ""}
           width={960}
-          height={540}
+          height={1252}
           className="absolute inset-0 size-full object-cover opacity-35"
           loading="eager"
           fetchPriority="high"
@@ -54,11 +54,18 @@ export function PageHero({
 
       <div className="relative mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-32">
         <div className="max-w-2xl">
-          <Eyebrow className="text-sky/90 tracking-[0.18em]">
-            {eyebrow}
-          </Eyebrow>
+          {eyebrow ? (
+            <Eyebrow className="text-sky/90 tracking-[0.18em]">
+              {eyebrow}
+            </Eyebrow>
+          ) : null}
 
-          <h1 className="mt-3 font-display text-display font-bold leading-[1.08] text-white">
+          <h1
+            className={cn(
+              "font-display text-display font-bold leading-[1.08] text-white",
+              eyebrow ? "mt-3" : "",
+            )}
+          >
             {title}
           </h1>
 

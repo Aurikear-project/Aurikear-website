@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
-import { practice, services, stats } from "@/lib/practice";
+import { practice, services } from "@/lib/practice";
 
 const SITE_URL = "https://www.aurikear.co.uk";
 
@@ -116,7 +116,7 @@ function getServiceImage640(image: string) {
 function Home() {
   return (
     <main>
-      {/* Hero — intentionally no eyebrow */}
+      {/* Hero */}
       <PageHero
         title={practice.headline}
         lede={practice.lede}
@@ -132,35 +132,6 @@ function Home() {
           </Link>
         </Button>
       </PageHero>
-
-      {/* Credibility stats */}
-      <div className="border-y border-white/10 bg-primary-deep">
-        <div className="mx-auto grid max-w-4xl grid-cols-2 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={[
-                "flex flex-col items-center px-6 py-8 text-center text-white md:px-8",
-                index > 0 ? "md:border-l md:border-white/15" : "",
-                index % 2 === 1
-                  ? "border-l border-white/15 md:border-l"
-                  : "",
-                index >= 2
-                  ? "border-t border-white/15 md:border-t-0"
-                  : "",
-              ].join(" ")}
-            >
-              <span className="font-display text-4xl font-semibold tracking-tight">
-                {stat.value}
-              </span>
-
-              <span className="mt-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Service pathways */}
       <Section>

@@ -1,12 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-
-import {
-  ArrowRight,
-  Award,
-  BadgeCheck,
-  GraduationCap,
-  Microscope,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
@@ -107,25 +100,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
-
-const credentials = [
-  {
-    icon: BadgeCheck,
-    title: "HCPC registered",
-  },
-  {
-    icon: GraduationCap,
-    title: "First Class BSc, UCL",
-  },
-  {
-    icon: Microscope,
-    title: "PhD, UCL",
-  },
-  {
-    icon: Award,
-    title: "15+ years",
-  },
-];
 
 /*
  * Generate the responsive service-card filenames from
@@ -272,62 +246,40 @@ function Home() {
         </div>
       </Section>
 
-      {/* Compact audiologist introduction */}
+      {/* Audiologist introduction */}
       <Section tone="off">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
-            <Eyebrow>Your audiologist</Eyebrow>
+        <div className="mx-auto max-w-4xl">
+          <Eyebrow>Your audiologist</Eyebrow>
 
-            <h2 className="mt-2 max-w-2xl font-display text-title font-semibold">
-              Specialist audiology.
-              <br />
-              Personal care.
-            </h2>
+          <h2 className="mt-2 font-display text-title font-semibold text-ink">
+            Dr Kinjal Mehta
+          </h2>
 
-            <p className="mt-4 max-w-2xl leading-relaxed text-mid">
-              Aurikear is led by an HCPC-registered audiologist with a First
-              Class BSc and PhD from University College London and more than 15
-              years of clinical experience.
-            </p>
+          <p className="mt-2 font-semibold leading-relaxed text-primary-deep">
+            BSc (Hons), PhD, RAHD · HCPC Registered Audiologist
+          </p>
 
-            <Link
-              to="/about"
-              className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
-            >
-              Meet your audiologist
+          <p className="mt-1 text-sm font-semibold text-muted">
+            Practising since 2009
+          </p>
 
-              <ArrowRight
-                className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
+          <p className="mt-5 max-w-2xl leading-relaxed text-mid">
+            Consultant Audiologist providing specialist hearing care for
+            babies, children and adults, with clinical experience spanning NHS
+            and private hospital practice.
+          </p>
 
-          {/* Credentials */}
-          <div className="grid gap-3 sm:grid-cols-2">
-            {credentials.map((credential) => {
-              const Icon = credential.icon;
+          <Link
+            to="/about"
+            className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+          >
+            Meet Dr Mehta
 
-              return (
-                <div
-                  key={credential.title}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-white p-4 shadow-border"
-                >
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-sky-pale text-primary">
-                    <Icon
-                      className="size-4.5"
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <span className="text-sm font-semibold leading-snug text-primary-deep">
-                    {credential.title}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+            <ArrowRight
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </Section>
 

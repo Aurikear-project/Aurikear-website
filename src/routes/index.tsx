@@ -12,7 +12,7 @@ const PAGE_TITLE =
   "Private Audiologist for Adults & Children | Aurikear";
 
 const PAGE_DESCRIPTION =
-  "Private audiology for babies, children and adults. HCPC-registered, UCL-trained expertise in hearing assessments, hearing aids and specialist ear protection.";
+  "Private audiology for babies, children and adults. Specialist hearing assessments, hearing aids and custom ear protection.";
 
 const HERO_IMAGE =
   "/images/hearing-assessment-clinical-equipment.webp";
@@ -118,7 +118,7 @@ function Home() {
     <main>
       {/* Hero */}
       <PageHero
-        eyebrow="HCPC Registered · UCL PhD · 15+ Years' Experience"
+        eyebrow="Private audiology for adults & children"
         title={practice.headline}
         lede={practice.lede}
         image={HERO_IMAGE_960}

@@ -3,10 +3,10 @@ export const practice = {
   legalName: "Aurikear",
   tagline: "Hear for good",
 
-  headline: "Hearing care that starts with listening to you",
+  headline: "Hear more of what matters",
 
   lede:
-    "Whether it's your baby's first screening, your child's glue ear, or the conversations you've been struggling to follow, I'll take the time to understand what matters to you and explain every step.",
+    "Expert, personalised hearing care for babies, children and adults — combining clinical expertise with technology and care tailored to you.",
 
   addressLines: [
     "Nuffield Health Brentwood Hospital",

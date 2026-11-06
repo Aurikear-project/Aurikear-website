@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { FramedImage } from "@/components/framed-image";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow } from "@/components/section";
 import { Button } from "@/components/ui/button";
@@ -137,15 +136,15 @@ function Home() {
       {/* Service pathways */}
       <Section>
         <div className="text-center">
-          <Eyebrow>Where would you like to start?</Eyebrow>
+          <Eyebrow>How can we help?</Eyebrow>
 
           <h2 className="mt-2 font-display text-title font-semibold">
-            Whatever is on your mind, we can start there
+            Find the right hearing care for you
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-mid">
-            Choose whatever sounds closest to what you&apos;re worried about. If
-            you&apos;re not sure, <Link to="/contact" className="font-semibold text-primary-deep underline underline-offset-4">send me a message</Link> and we&apos;ll work it out together.
+            Choose the area most relevant to you, or view all our services if
+            you&apos;re not sure where to start.
           </p>
         </div>
 
@@ -219,49 +218,38 @@ function Home() {
 
       {/* Audiologist introduction */}
       <Section tone="off">
-        <div className="grid items-center gap-10 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <FramedImage
-            src="/images/audiologist-portrait.jpg"
-            alt="Dr Kinjal Mehta, Consultant Audiologist"
-            className="aspect-portrait max-w-xs rounded-t-full rounded-b-2xl"
-          />
+        <div className="mx-auto max-w-4xl">
+          <Eyebrow>Your audiologist</Eyebrow>
 
-          <div className="max-w-2xl">
-            <Eyebrow>A little about me</Eyebrow>
+          <h2 className="mt-2 font-display text-title font-semibold text-ink">
+            Dr Kinjal Mehta
+          </h2>
 
-            <h2 className="mt-2 font-display text-title font-semibold text-ink">
-              Hello, I&apos;m Kinjal
-            </h2>
+          <p className="mt-2 font-semibold leading-relaxed text-primary-deep">
+            BSc (Hons), PhD, RAHD · HCPC Registered Audiologist
+          </p>
 
-            {/* TODO: add one or two sentences in Dr Mehta's own words about why she became an audiologist. */}
-            <p className="mt-5 leading-relaxed text-mid">
-              I&apos;m a Consultant Audiologist and I&apos;ve cared for newborn
-              babies, nervous children and adults of every age since 2009, in
-              both NHS and private hospital practice. What stays with me is how
-              much better an appointment goes when people feel unhurried and
-              understood.
-            </p>
+          <p className="mt-1 text-sm font-semibold text-muted">
+            Practising since 2009
+          </p>
 
-            <p className="mt-4 leading-relaxed text-mid">
-              So I explain what I&apos;m doing and what I find as we go, and I
-              make sure you leave knowing your options.
-            </p>
+          <p className="mt-5 max-w-2xl leading-relaxed text-mid">
+            Consultant Audiologist providing specialist hearing care for
+            babies, children and adults, with clinical experience spanning NHS
+            and private hospital practice.
+          </p>
 
-            <p className="mt-4 text-sm font-semibold text-primary-deep">
-              Dr Kinjal Mehta · BSc (Hons), PhD, RAHD · HCPC Registered Audiologist
-            </p>
+          <Link
+            to="/about"
+            className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
+          >
+            Meet Dr Mehta
 
-            <Link
-              to="/about"
-              className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary-deep transition-colors hover:text-primary"
-            >
-              Read more about my approach
-              <ArrowRight
-                className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
+            <ArrowRight
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </Section>
 
@@ -278,10 +266,9 @@ function Home() {
             </h2>
 
             <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-mid">
-              I work with a range of leading health insurers. Cover and authorisation
-              requirements vary, so please check with your insurer and the
-              hospital when booking. If you&apos;re unsure what your policy
-              covers, get in touch and I&apos;ll help you work it out.
+              Aurikear works with a range of leading health insurers. Cover and
+              authorisation requirements can vary, so please check with your
+              insurer and the hospital when arranging your appointment.
             </p>
 
             <Link
@@ -359,12 +346,12 @@ function Home() {
           </Eyebrow>
 
           <h2 className="mt-2 font-display text-title font-semibold !text-white">
-            Not sure whether you need an appointment?
+            Ready to hear more of what matters?
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-foam/80">
-            Send me your questions. There&apos;s no such thing as a silly one, and
-            I&apos;m always happy to talk it through.
+            Whether you have concerns about your hearing, your child&apos;s
+            hearing, or simply want expert advice, we&apos;re here to help.
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
